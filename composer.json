@@ -1,0 +1,13 @@
+{
+    "name": "selftawt/agisty",
+    "description": "Best damn WordPress theme on the planet.",
+    "type": "wordpress-theme",
+    "license": "GPLv3.0",
+    "authors": [
+        {
+            "name": "Rey Sanchez",
+            "email": "reysanchez.me@gmail.com"
+        }
+    ],
+    "require": {}
+}

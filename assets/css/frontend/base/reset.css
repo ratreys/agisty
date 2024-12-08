@@ -1,0 +1,186 @@
+/**
+ * This is my own CSS reset.
+ *
+ * https://piccalil.li/blog/a-more-modern-css-reset/
+ * https://getbootstrap.com/docs/5.3/content/reboot/
+ * https://www.joshwcomeau.com/css/custom-css-reset/
+ */
+
+:root {
+  --theme-line-height: calc(1ex / 0.32);
+  --theme-content-spacing: 1.5rem;
+}
+
+/* *,
+*::before,
+*::after {
+  outline: 1px solid red;
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * Set the font size to none to prevent the browser from changing the font size.
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage
+ */
+html {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  background-color: var(--theme-color-white);
+  color: var(--theme-color-black);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-feature-settings: "kern","liga","calt";
+  font-kerning: normal;
+  font-size: var(--wp--preset--font-size--normal);
+  font-weight: 400;
+  line-height: var(--theme-line-height);
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--theme-color-link-initial);
+}
+
+a:hover {
+  color: var(--theme-color-link-hover);
+}
+
+/* Remove default margin in favor of better control in authored CSS */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+p {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+abbr[title] {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  font-style: normal;
+  line-height: inherit;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+blockquote:where(:not(.wp-block)),
+figure:where(:not(.wp-block)),
+dl,
+dd,
+pre {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  overflow-wrap: break-word;
+}
+
+/**
+ * Remove list styles on ul, ol elements with a list role,
+ * which suggests default styling will be removed.
+ */
+ol[role='list'],
+ul[role='list'] {
+  list-style: none;
+}
+
+ol, ul {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+ol {
+	padding-inline-start: 4ch;
+}
+
+ul {
+	padding-inline-start: 2ch;
+}
+
+/* Make images easier to work with */
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+img {
+	display: block;
+}
+
+
+li img,
+p img {
+  display: inline-block;
+  vertical-align: sub;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+button,
+input,
+label {
+  line-height: 1.2;
+}
+
+/* Inherit fonts for inputs and buttons */
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+iframe {
+  border: 0;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10rem;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+::selection {
+  background-color: #1d70b8; /* --theme-color-blue */
+  color: #ffe;
+}
+
+/* Create a root stacking context */
+.wp-site-blocks {
+  isolation: isolate;
+}
