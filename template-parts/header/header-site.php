@@ -4,7 +4,7 @@
 			<?php get_template_part( 'template-parts/header/header-logo' ); ?>
 		</div>
 		<div class="is-layout-flex header-menu__container" itemscope itemtype="https://schema.org/SiteNavigationElement">
-			<button class="header-menu-button" aria-label="<?php esc_attr_e( 'Menu', 'your-text-domain' ); ?>" type="button">
+			<button class="header-menu-button" aria-label="<?php esc_attr_e( 'Menu', 'agisty' ); ?>" type="button">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="28"
