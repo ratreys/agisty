@@ -5,7 +5,18 @@
 		</div>
 		<div class="is-layout-flex header-menu__container" itemscope itemtype="https://schema.org/SiteNavigationElement">
 			<button class="header-menu-button" aria-label="<?php esc_attr_e( 'Menu', 'your-text-domain' ); ?>" type="button">
-				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8571428571428571" stroke-linecap="round" stroke-linejoin="round" class="header-menu-icon">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="28"
+					height="28"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="0.8571428571428571"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="header-menu-icon"
+				>
 					<line x1="4" x2="20" y1="12" y2="12"/>
 					<line x1="4" x2="20" y1="6" y2="6"/>
 					<line x1="4" x2="20" y1="18" y2="18"/>
