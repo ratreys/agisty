@@ -33,9 +33,11 @@
   column-gap: 2rem;
 }
 
-.header-menu-wrapper {
-  flex-direction: column;
-  overflow-x: auto;
+.type-post {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	max-width: var(--wp--style--global--content-size);
 }
 
 /* .site-header__menu a,

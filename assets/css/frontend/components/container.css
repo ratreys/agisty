@@ -10,13 +10,20 @@ body {
   flex-wrap: nowrap;
 }
 
-.agisty-main__container{
-  margin-block-start: 3rem;
-  margin-block-end: 3rem;
+.agisty__main {
+	gap: 2rem;
+  padding-block-start: 5rem;
+  padding-block-end: 5rem;
 }
 
-.entry-header {
-  margin-block-end: 2rem;
+.agisty__sidebar {
+	flex-direction: column;
+	flex-grow: 1;
+	gap: 2rem;
+}
+
+.agisty-article__container {
+	gap: 2rem;
 }
 
 .agisty__footer {
@@ -26,8 +33,8 @@ body {
 }
 
 .footer-menu__container {
+	gap: 5rem;
   padding-block-end: 1rem;
-  gap: 5rem
 }
 
 /* .agisty-body__container {
