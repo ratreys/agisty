@@ -103,6 +103,6 @@ add_action( 'wp_enqueue_scripts', function() {
         'agisty-main',
         get_theme_file_uri( '/assets/css/main.css' ),
         [],
-        filemtime( get_theme_file_path( '/assets/css/main.css') )
+        filemtime( get_theme_file_path( '/assets/css/main.css' ) )
 	);
 } );

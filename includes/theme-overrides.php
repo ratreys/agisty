@@ -86,7 +86,6 @@ add_filter( 'post_class', function( $classes ) {
 
 	$allowed_classes = [
 		'entry',
-		'is-layout-flex',
 		'type-' . get_post_type(),
 	];
 
