@@ -2,39 +2,51 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
-    overflow-x: hidden;
 }
 
 .agisty__header {
-  justify-content: space-between;
-  flex-wrap: nowrap;
+	justify-content: space-between;
+	flex-wrap: nowrap;
 }
 
 .agisty__main {
+	align-items: stretch;
 	gap: 2rem;
-  padding-block-start: 5rem;
-  padding-block-end: 5rem;
+	padding-block: 5rem;
+}
+
+/*
+	https://every-layout.dev/layouts/sidebar/
+	https://www.youtube.com/watch?v=k_3pRxdv-cI
+*/
+.agisty__main > article {
+	/* ↓ Grow from nothing */
+	flex-grow: 999;
+	flex-basis: 0;
+	/* ↓ Wrap when main is less than 500px. */
+	min-inline-size: min(500px, 100%);
+}
+
+.agisty__main > aside {
+	/* ↓ The width of the sidebar sidebar */
+	flex-grow: 1;
+	flex-basis: 350px;
 }
 
 .agisty__sidebar {
-	flex-direction: column;
-	flex-grow: 1;
-	gap: 2rem;
-}
-
-.agisty-article__container {
-	gap: 2rem;
+	align-items: flex-start;
+	max-width: var(--wp--style--global--content-size);
 }
 
 .agisty__footer {
-  border-top: 5px solid var(--theme-color-black);
-  padding-block-start: 1rem;
-  padding-block-end: 1rem;
+	border-top: 5px solid var(--theme-color-black);
+	padding-block-start: 1rem;
+	padding-block-end: 1rem;
 }
 
 .footer-menu__container {
 	gap: 5rem;
-  padding-block-end: 1rem;
+	padding-block-end: 1rem;
 }
 
 /* .agisty-body__container {

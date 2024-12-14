@@ -24,6 +24,6 @@
 		<?php the_content(); ?>
 	</div>
 </article>
-<aside class="is-layout-flex agisty__sidebar">
-	<div style="background-color: yellow;"><h2>Sidebar</h2></div>
+<aside class="is-layout-flex agisty__sidebar" style="background-color: #f0f0f1;">
+	<h2>Related Posts</h2>
 </aside>

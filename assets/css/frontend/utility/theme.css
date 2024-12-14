@@ -33,13 +33,6 @@
   column-gap: 2rem;
 }
 
-.type-post {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	max-width: var(--wp--style--global--content-size);
-}
-
 /* .site-header__menu a,
 .site-footer__menu a {
   color: var(--theme-color-black);

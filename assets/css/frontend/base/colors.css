@@ -7,15 +7,15 @@
 */
 
 :root {
-    --theme-color-black: #0b0c0d;
-    --theme-color-gray: #505a5f;
+    --theme-color-black: #11171d;
+    --theme-color-gray: #4b555f;
     --theme-color-red: #a51c30;
     --theme-color-green: #00703c;
     --theme-color-blue: #1d70b8;
     --theme-color-yellow: #fd0;
 
     --theme-color-link-initial: #0033a6;
-    --theme-color-link-hover: #003078;
+    --theme-color-link-hover: #1d70b8;
 
     --theme-color-border: #b1b4b7;
 
