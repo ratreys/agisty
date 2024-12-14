@@ -23,28 +23,26 @@
   box-sizing: border-box;
 }
 
-/**
- * Set the font size to none to prevent the browser from changing the font size.
- *
- * https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage
- */
 html {
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+	/* 	↓ Set the font size to none to prevent the browser from changing the font size. */
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage */
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--theme-color-white);
-  color: var(--theme-color-black);
-  font-family: system-ui, -apple-system, sans-serif;
-  font-feature-settings: "kern","liga","calt";
-  font-kerning: normal;
-  font-size: var(--wp--preset--font-size--normal);
-  font-weight: 400;
-  line-height: var(--theme-line-height);
-  min-height: 100vh;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+	background-color: var(--theme-color-white);
+	color: var(--theme-color-black);
+	font-family: system-ui, -apple-system, sans-serif;
+	font-feature-settings: "kern","liga","calt";
+	font-kerning: normal;
+	font-size: var(--wp--preset--font-size--normal);
+	font-weight: 400;
+	line-height: var(--theme-line-height);
+	min-height: 100vh;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -110,16 +108,8 @@ ul[role='list'] {
 }
 
 ol, ul {
-	margin-block-start: 0;
-	margin-block-end: 0;
-}
-
-ol {
-	padding-inline-start: 4ch;
-}
-
-ul {
-	padding-inline-start: 2ch;
+	margin-block: 0;
+	padding-inline: 0;
 }
 
 /* Make images easier to work with */
