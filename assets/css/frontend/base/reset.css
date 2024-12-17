@@ -7,8 +7,31 @@
  */
 
 :root {
-  --theme-line-height: calc(1ex / 0.32);
-  --theme-content-spacing: 1.5rem;
+	/**
+	* Make sure that the contrast ratio of text and interactive elements
+	* meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
+	*
+	* https://www.w3.org/TR/WCAG22/#contrast-minimum
+	* https://design-system.service.gov.uk/styles/colour/
+	*/
+    --theme-color-black: #11171d;
+    --theme-color-gray: #4b555f;
+    --theme-color-red: #a51c30;
+    --theme-color-green: #00703c;
+    --theme-color-blue: #1d70b8;
+    --theme-color-yellow: #fabf46;
+
+    --theme-color-link-initial: #0033a6;
+    --theme-color-link-hover: #1d70b8;
+
+    --theme-color-border: #b1b4b7;
+
+    --theme-color-white: #fbfbfb;
+}
+
+:root {
+	--theme-line-height: calc(1ex / 0.32);
+	--theme-content-spacing: 1.5rem;
 }
 
 *,
@@ -45,6 +68,14 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+header,
+main,
+article,
+section,
+footer {
+	container-type: inline-size;
+}
+
 a {
   color: var(--theme-color-link-initial);
 }
@@ -60,6 +91,7 @@ h1, h2, h3, h4 {
   margin: 0;
   margin-block: 0;
   overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 p {
@@ -67,7 +99,10 @@ p {
   margin-block-start: 0;
   margin-block-end: 0;
   overflow-wrap: break-word;
-  text-wrap: pretty;
+}
+
+p, li, figcaption {
+	text-wrap: pretty;
 }
 
 abbr[title] {
