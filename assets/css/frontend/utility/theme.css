@@ -10,10 +10,6 @@
 	outline-width: .25rem;
 }
 
-.agisty__header{
-  border-bottom: 1px solid var(--theme-color-border);
-}
-
 .entry-content > * + * {
 	margin-block-start: var(--theme-content-spacing, 1rem);
 }
@@ -32,3 +28,13 @@
 .footer-menu-wrapper {
   column-gap: 2rem;
 }
+
+.theme-header-wrapper {
+	border-bottom: 2px solid var(--theme-color-black);
+	padding-block: 2rem;
+}
+
+.theme-main-wrapper {
+	padding-block: 4rem;
+}
+

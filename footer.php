@@ -1,6 +1,6 @@
 </main>
-</div><!-- `main` wrapper -->
-<div class="is-layout-constrained" itemscope itemtype="https://schema.org/WPFooter">
+</div>
+<div class="is-layout-constrained theme-footer-wrapper" itemscope itemtype="https://schema.org/WPFooter">
 	<footer id="footer" class="alignwide agisty__footer">
 		<div class="footer-menu__container" itemscope itemtype="https://schema.org/SiteNavigationElement">
 			<?php

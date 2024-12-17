@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
-	gap: 4rem;
+	overflow-x: clip;
 }
 
 .agisty__header {

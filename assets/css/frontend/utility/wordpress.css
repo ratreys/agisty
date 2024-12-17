@@ -38,3 +38,10 @@ article {
 	gap: 2rem;
 	max-width: var(--wp--style--global--content-size);
 }
+
+.wp-block-navigation :where(a),
+.wp-block-navigation :where(a:active),
+.wp-block-navigation :where(a:focus),
+.wp-block-navigation :where(a:hover) {
+	color: var(--theme-color-black);
+}
