@@ -32,16 +32,24 @@ button:where(:not(.components-button)) {
 	margin-inline: auto;
 }
 
-article {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	max-width: var(--wp--style--global--content-size);
-}
-
-.wp-block-navigation :where(a),
+/* .wp-block-navigation :where(a),
 .wp-block-navigation :where(a:active),
 .wp-block-navigation :where(a:focus),
 .wp-block-navigation :where(a:hover) {
 	color: var(--theme-color-black);
+
+	&:hover {
+		color: var(--theme-color-link-hover);
+		text-decoration: underline;
+	}
+} */
+
+.wp-block-navigation :where(a) {
+	color: var(--theme-color-black);
+
+	&:hover, &:active {
+		color: var(--theme-color-link-initial);
+		text-decoration: underline;
+	}
+
 }

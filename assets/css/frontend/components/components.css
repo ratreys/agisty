@@ -5,6 +5,13 @@ body {
 	overflow-x: clip;
 }
 
+article {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	max-width: var(--wp--style--global--content-size);
+}
+
 .agisty__header {
 	justify-content: space-between;
 	flex-wrap: nowrap;
@@ -13,24 +20,24 @@ body {
 .agisty__main {
 	align-items: stretch;
 	gap: 2rem;
-}
 
-/*
-	https://every-layout.dev/layouts/sidebar/
-	https://www.youtube.com/watch?v=k_3pRxdv-cI
-*/
-.agisty__main > article {
-	/* ↓ Grow from nothing */
-	flex-grow: 999;
-	flex-basis: 0;
-	/* ↓ Wrap when main is less than 500px. */
-	min-inline-size: min(550px, 100%);
-}
+	/*
+	 *	https://every-layout.dev/layouts/sidebar/
+	 *	https://www.youtube.com/watch?v=k_3pRxdv-cI
+	 */
+	> article {
+		/* ↓ Grow from nothing */
+		flex-grow: 999;
+		flex-basis: 0;
+		/* ↓ Wrap when main content is less than the specified width in px. */
+		min-inline-size: min(550px, 100%);
+	}
 
-.agisty__main > aside {
-	/* ↓ The width of the sidebar sidebar */
-	flex-grow: 1;
-	flex-basis: 350px;
+	> aside {
+		/* ↓ The width of the sidebar sidebar */
+		flex-grow: 1;
+		flex-basis: 350px;
+	}
 }
 
 .agisty__sidebar {
@@ -41,10 +48,5 @@ body {
 .agisty__footer {
 	border-top: 5px solid var(--theme-color-black);
 	padding-block-start: 1rem;
-	padding-block-end: 1rem;
-}
-
-.footer-menu__container {
-	gap: 5rem;
 	padding-block-end: 1rem;
 }

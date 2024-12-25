@@ -1,8 +1,8 @@
-/**
-* Frontend styling.
-*
-* https://medienbaecker.com/articles/focus-outlines
-*/
+/*
+ * Focus outlines.
+ *
+ * https://medienbaecker.com/articles/focus-outlines
+ */
 *:focus-visible {
 	outline-color: currentColor;
 	outline-style: solid;
@@ -10,18 +10,21 @@
 	outline-width: .25rem;
 }
 
-.entry-content > * + * {
-	margin-block-start: var(--theme-content-spacing, 1rem);
+
+.entry-content {
+	> * + * {
+		margin-block-start: var(--theme-content-spacing, 1rem);
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		margin-block-start: clamp(2.375rem, 1.98rem + 1.96vw, 3.75rem);
+	}
 }
 
 .entry-header h1 {
 	font-size: 2rem;
 	line-height: 1.15;
-}
-
-.entry-content h2 {
-  font-size: 1.5rem;
-	margin-block-start: clamp(2.375rem, 1.98rem + 1.96vw, 3.75rem);
 }
 
 .header-menu-wrapper,
@@ -36,5 +39,10 @@
 
 .theme-main-wrapper {
 	padding-block: 4rem;
+}
+
+.footer-menu__container {
+	gap: 5rem;
+	padding-block-end: 1rem;
 }
 
