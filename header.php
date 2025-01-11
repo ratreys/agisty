@@ -27,4 +27,3 @@
 <?php get_template_part( 'template-parts/header/header-site' ); ?>
 <div class="is-layout-constrained theme-main-wrapper">
 <main id="main" class="is-layout-flex alignwide agisty__main" tabindex="-1">
-

@@ -12,10 +12,18 @@
 namespace Agisty\Core;
 
 add_action( 'after_setup_theme', function() {
-    // This feature enables this theme to manage the document title tag.
+	/**
+	 * Allows WordPress to manage the document title.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
+	 */
 	add_theme_support( 'title-tag' );
-
-    // Enables Automatic Feed Links for post and comment in the head.
+    
+	/**
+	 * Enable RSS feed links in the head section of the theme.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#feed-links
+	 */
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
@@ -27,7 +35,7 @@ add_action( 'after_setup_theme', function() {
 
     add_theme_support( 'responsive-embeds' );
 
-    add_theme_support( 'customize-selective-refresh-widgets' );
+    add_theme_support( feature: 'customize-selective-refresh-widgets' );
 
 	add_theme_support(
 		'html5', [
@@ -37,7 +45,7 @@ add_action( 'after_setup_theme', function() {
 
 			/**
 			* Remove type="text/javascript" and type="text/css" from enqueued scripts and styles.
-			* Added in v5.3.
+			* Added in WordPress v5.3.
      		*
      		* @link https://make.wordpress.org/core/2019/10/15/miscellaneous-developer-focused-changes-in-5-3/
      		*/
@@ -46,7 +54,7 @@ add_action( 'after_setup_theme', function() {
 
 			/**
      		* Accessibility improvements to widgets outputting lists of links.
-			* Added in v5.5.
+			* Added in WordPress v5.5.
      		*
      		* @link https://make.wordpress.org/core/2020/07/09/accessibility-improvements-to-widgets-outputting-lists-of-links-in-5-5/
      		*/
@@ -55,7 +63,7 @@ add_action( 'after_setup_theme', function() {
 	);
 
 	/**
-	 * Adding custom logo support.
+	 * Adding custom logo support. First introduced in WordPress v4.5.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/custom-logo/#adding-custom-logo-support-to-your-theme
 	 */

@@ -1,4 +1,4 @@
-/*
+/**
  * CSS reset.
  *
  * https://piccalil.li/blog/a-more-modern-css-reset/
@@ -7,7 +7,7 @@
  */
 
 :root {
-	/*
+  /**
 	 * Make sure that the contrast ratio of text and interactive elements
 	 * meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
 	 *
@@ -15,72 +15,68 @@
 	 * https://design-system.service.gov.uk/styles/colour/
 	 */
 
-    --theme-color-black: #11171d;
-    --theme-color-gray: #4b555f;
-    --theme-color-red: #a51c30;
-    --theme-color-green: #00703c;
-    --theme-color-blue: #0033a6;
-    --theme-color-yellow: #fabf46;
-
-    --theme-color-link-initial: #0033a6;
-    --theme-color-link-hover: #1d70b8;
-
-    --theme-color-border: #b1b4b7;
-
-    --theme-color-white: #fbfbfb;
-
-	--theme-line-height: calc(1ex / 0.32);
-	--theme-content-spacing: 1.5rem;
+  --theme-color-black: #11171d;
+  --theme-color-gray: #4b555f;
+  --theme-color-red: #a51c30;
+  --theme-color-green: #00703c;
+  --theme-color-blue: #0033a6;
+  --theme-color-yellow: #fabf46;
+  --theme-color-link-initial: #0033a6;
+  --theme-color-link-hover: #003078;
+  --theme-color-border: #b1b4b7;
+  --theme-color-white: #fbfbfb;
+  --theme-line-height: calc(1ex / 0.32);
+  --theme-content-spacing: 1.5rem;
+  --wp--style--global--content-size: 750px;
+  --wp--style--global--wide-size: 1200px;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	outline: 1px solid #a51c30;
+  box-sizing: border-box;
+  outline: 1px solid #5b6268;
 
-	/*
+  /** 
 	 * Resources on prefers-reduced-motion:
-	 *
 	 * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
 	 * https://web.dev/articles/prefers-reduced-motion
-	 * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+	 * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
 	 */
-	@media (prefers-reduced-motion: reduce) {
-		animation-delay: -1ms !important;
-		animation-duration: 1ms !important;
-		animation-iteration-count: 1 !important;
-		background-attachment: initial !important;
-		scroll-behavior: auto !important;
-		transition-duration: 1ms !important;
-		transition-delay: -1ms !important;
-	}
+
+  @media (prefers-reduced-motion: reduce) {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+    transition-delay: -1ms !important;
+  }
 }
 
 html {
-	/* 	↓ Set the font size to none to prevent the browser from changing the font size. */
-	/* https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage */
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
-	scroll-behavior: smooth;
-
-	@supports (scrollbar-width: auto) {
-		scrollbar-color: var(--theme-color-yellow) var(--theme-color-black);
-	}
+  /**
+	 * Set the font size to none to prevent the browser from changing the font size.
+	 *
+	 * https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage
+	 */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body {
-	background-color: var(--theme-color-white);
-	color: var(--theme-color-black);
-	font-family: system-ui, -apple-system, sans-serif;
-	font-feature-settings: "kern","liga","calt";
-	font-kerning: normal;
-	font-size: var(--wp--preset--font-size--normal);
-	font-weight: 400;
-	line-height: var(--theme-line-height);
-	min-height: 100vh;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
+  background-color: var(--theme-color-white);
+  color: var(--theme-color-black);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-feature-settings: "kern", "liga", "calt";
+  font-kerning: normal;
+  font-size: var(--wp--preset--font-size--normal);
+  font-weight: 400;
+  line-height: var(--theme-line-height);
+  min-height: 100vh;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 header,
@@ -88,46 +84,67 @@ main,
 article,
 section,
 footer {
-	container-type: inline-size;
+  container-type: inline-size;
 }
 
 a {
-	color: var(--theme-color-link-initial);
+  color: var(--theme-color-link-initial);
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+
+  &:is(:hover) {
+    color: var(--theme-color-link-hover);
+    text-decoration-thickness: 3px;
+  }
+
+  &:is(:focus, :focus-visible) {
+    background-color: var(--theme-color-yellow);
+    box-shadow: 0 -2px var(--theme-color-yellow), 0 4px var(--theme-color-black);
+    color: var(--theme-color-black);
+    outline: none;
+    text-decoration-line: none;
+  }
 }
 
 /* Remove default margin in favor of better control in authored CSS */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 600;
   line-height: 1.2;
   margin: 0;
   margin-block: 0;
   overflow-wrap: break-word;
-  text-wrap: balance;
+  text-wrap: pretty;
+}
+
+img {
+  display: block;
 }
 
 p {
-	margin: 0;
-	margin-block-start: 0;
-	margin-block-end: 0;
-	overflow-wrap: break-word;
-	text-wrap: pretty;
+  margin: 0;
+  margin-block: 0;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
 
-	img {
-		display: inline-block;
-	}
+  img {
+    display: inline-block;
+  }
 }
 
 li {
-	text-wrap: pretty;
+  text-wrap: pretty;
 
-	img {
-		display: inline-block;
-		vertical-align: sub;
-	}
+  img {
+    display: inline-block;
+    vertical-align: sub;
+  }
 }
 
 figcaption {
-	text-wrap: pretty;
+  text-wrap: pretty;
 }
 
 abbr[title] {
@@ -151,24 +168,23 @@ dl,
 dd,
 pre {
   margin: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+  margin-block: 0;
+  margin-inline: 0;
   overflow-wrap: break-word;
 }
 
-ol, ul {
-	margin-block: 0;
-	padding-inline: 0;
+ol,
+ul {
+  margin-block: 0;
+  padding-inline: 0;
 
-	/**
+  /**
 	 * Remove list styles on ul, ol elements with a list role,
 	 * which suggests default styling will be removed.
 	 */
-	&[role="list"] {
-		list-style: none;
-	}
+  &[role="list"] {
+    list-style: none;
+  }
 }
 
 /* Make images easier to work with */
@@ -180,11 +196,6 @@ svg {
   height: auto;
   max-width: 100%;
 }
-
-img {
-	display: block;
-}
-
 
 /* Set shorter line heights on headings and interactive elements */
 button,
@@ -217,7 +228,7 @@ textarea:not([rows]) {
 }
 
 ::selection {
-  background-color: #1d70b8; /* --theme-color-blue */
+  background-color: #0033a6;
   color: #ffe;
 }
 

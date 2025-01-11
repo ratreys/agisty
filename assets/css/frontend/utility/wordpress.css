@@ -14,42 +14,38 @@
  * https://github.com/WordPress/gutenberg/issues/10178
  */
 
-a:where(:not(.components-external-link)) {
+/* a:where(:not(.components-external-link)) {
 
 }
 
 button:where(:not(.components-button)) {
 
-}
+} */
 
 .wp-block-image :where(figcaption) {
-	margin-block: 0.5rem;
-    text-align: left;
+  margin-block: 0.5rem;
+  text-align: left;
 }
 
 .is-layout-constrained {
-	width: min(100% - 4rem, var(--wp--style--global--wide-size));
-	margin-inline: auto;
+  width: min(100% - 4rem, var(--wp--style--global--wide-size));
+  margin-inline: auto;
 }
 
-/* .wp-block-navigation :where(a),
-.wp-block-navigation :where(a:active),
-.wp-block-navigation :where(a:focus),
-.wp-block-navigation :where(a:hover) {
-	color: var(--theme-color-black);
-
-	&:hover {
-		color: var(--theme-color-link-hover);
-		text-decoration: underline;
-	}
-} */
-
 .wp-block-navigation :where(a) {
-	color: var(--theme-color-black);
+  color: var(--theme-color-black);
 
-	&:hover, &:active {
-		color: var(--theme-color-link-initial);
-		text-decoration: underline;
-	}
+  &:is(:hover, :active) {
+    color: var(--theme-color-link-initial);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+  }
 
+  &:is(:focus, :focus-visible) {
+    background-color: var(--theme-color-yellow);
+    box-shadow: 0 -2px var(--theme-color-yellow), 0 4px var(--theme-color-black);
+    color: var(--theme-color-black);
+    outline: none;
+    text-decoration-line: none;
+  }
 }

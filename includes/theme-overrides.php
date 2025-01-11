@@ -30,8 +30,8 @@ remove_action( 'wp_head', 'rsd_link');
  * @link https://developer.wordpress.org/reference/functions/rest_output_link_wp_head/
  * @link https://github.com/WordPress/WordPress/blob/master/wp-includes/default-filters.php
  */
-remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
-remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+remove_action( 'wp_head', 'rest_output_link_wp_head', 10, );
+remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
 
 /** Remove rel=shortlink from the <head>.  */

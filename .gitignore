@@ -1,4 +1,5 @@
-/vendor/
-
+.vscode/
+vendor/
+node_modules/
 
 .cursorrules
