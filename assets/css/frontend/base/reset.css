@@ -27,8 +27,8 @@
   --theme-color-white: #fbfbfb;
   --theme-line-height: calc(1ex / 0.32);
   --theme-content-spacing: 1.5rem;
-  --wp--style--global--content-size: 750px;
-  --wp--style--global--wide-size: 1200px;
+  --theme-content-narrow: 750px;
+  --theme-content-wide: 1200px;
 }
 
 *,

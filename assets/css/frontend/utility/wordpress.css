@@ -22,14 +22,14 @@ button:where(:not(.components-button)) {
 
 } */
 
+.is-layout-constrained {
+  width: min(100% - 4rem, var(--theme-content-wide));
+  margin-inline: auto;
+}
+
 .wp-block-image :where(figcaption) {
   margin-block: 0.5rem;
   text-align: left;
-}
-
-.is-layout-constrained {
-  width: min(100% - 4rem, var(--wp--style--global--wide-size));
-  margin-inline: auto;
 }
 
 .wp-block-navigation :where(a) {
@@ -48,4 +48,8 @@ button:where(:not(.components-button)) {
     outline: none;
     text-decoration-line: none;
   }
+}
+
+.wp-block-navigation {
+  justify-content: space-between;
 }

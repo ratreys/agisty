@@ -29,7 +29,7 @@ html {
   }
 }
 
-.entry-header h1 {
+.entry-header .wp-block-post-title {
   font-size: 2rem;
   line-height: 1.15;
 }
