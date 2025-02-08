@@ -44,20 +44,20 @@ add_action( 'after_setup_theme', function() {
 			'caption',
 
 			/**
-			* Remove type="text/javascript" and type="text/css" from enqueued scripts and styles.
-			* Added in WordPress v5.3.
-     		*
-     		* @link https://make.wordpress.org/core/2019/10/15/miscellaneous-developer-focused-changes-in-5-3/
-     		*/
+			 * Remove type="text/javascript" and type="text/css" from enqueued scripts and styles.
+			 * Added in WordPress v5.3.
+			 * 
+			 * @link https://make.wordpress.org/core/2019/10/15/miscellaneous-developer-focused-changes-in-5-3/
+			 */
 			'script',
 			'style',
 
 			/**
-     		* Accessibility improvements to widgets outputting lists of links.
-			* Added in WordPress v5.5.
-     		*
-     		* @link https://make.wordpress.org/core/2020/07/09/accessibility-improvements-to-widgets-outputting-lists-of-links-in-5-5/
-     		*/
+			 * Accessibility improvements to widgets outputting lists of links.
+			 * Added in WordPress v5.5.
+			 *
+			 * @link https://make.wordpress.org/core/2020/07/09/accessibility-improvements-to-widgets-outputting-lists-of-links-in-5-5/
+			 */
 			'navigation-widgets'
 		]
 	);
