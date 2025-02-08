@@ -1,11 +1,11 @@
-/*
-* Override WordPress generated classes to use rems instead of px for scalable component spacing.
-*
-* https://developer.wordpress.org/advanced-administration/wordpress/css/#wordpress-generated-classes
-*
-*/
+/**
+ * Override WordPress generated classes to use rems instead of px for scalable component spacing.
+ *
+ * https://developer.wordpress.org/advanced-administration/wordpress/css/#wordpress-generated-classes
+ *
+ */
 
-/*
+/**
  * Ensure that we are not overriding the editor styles of the
  * WordPress Components.
  *
