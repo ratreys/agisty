@@ -1,19 +1,19 @@
 /**
- * CSS reset.
+ * CSS reset specific to WordPress themes.
  *
  * https://piccalil.li/blog/a-more-modern-css-reset/
  * https://getbootstrap.com/docs/5.3/content/reboot/
  * https://www.joshwcomeau.com/css/custom-css-reset/
  */
 
-/**
- * Make sure that the contrast ratio of text and interactive elements
- * meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
- *
- * https://www.w3.org/TR/WCAG22/#contrast-minimum
- * https://design-system.service.gov.uk/styles/colour/
- */
 :root {
+  /**
+   * Make sure that the contrast ratio of text and interactive elements
+   * meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
+   *
+   * https://www.w3.org/TR/WCAG22/#contrast-minimum
+   * https://design-system.service.gov.uk/styles/colour/
+   */
   --theme-color-black: #11171d;
   --theme-color-gray: #4b555f;
   --theme-color-red: #a51c30;
@@ -38,6 +38,7 @@
 
   /** 
    * Resources on prefers-reduced-motion:
+   *
    * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
    * https://web.dev/articles/prefers-reduced-motion
    * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
@@ -89,7 +90,7 @@ footer {
 a {
   color: var(--theme-color-link-initial);
   text-decoration-thickness: max(1px, 0.0625rem);
-  text-underline-offset: 0.1578em;
+  text-underline-offset: 0.1578rem;
 
   &:is(:hover) {
     color: var(--theme-color-link-hover);
