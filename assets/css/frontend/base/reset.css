@@ -6,25 +6,24 @@
  * https://www.joshwcomeau.com/css/custom-css-reset/
  */
 
+/**
+ * Make sure that the contrast ratio of text and interactive elements
+ * meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
+ *
+ * https://www.w3.org/TR/WCAG22/#contrast-minimum
+ * https://design-system.service.gov.uk/styles/colour/
+ */
 :root {
-  /**
-	 * Make sure that the contrast ratio of text and interactive elements
-	 * meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
-	 *
-	 * https://www.w3.org/TR/WCAG22/#contrast-minimum
-	 * https://design-system.service.gov.uk/styles/colour/
-	 */
-
   --theme-color-black: #11171d;
   --theme-color-gray: #4b555f;
   --theme-color-red: #a51c30;
   --theme-color-green: #00703c;
   --theme-color-blue: #0033a6;
   --theme-color-yellow: #fabf46;
+  --theme-color-white: #fbfbfb;
   --theme-color-link-initial: #0033a6;
   --theme-color-link-hover: #003078;
   --theme-color-border: #b1b4b7;
-  --theme-color-white: #fbfbfb;
   --theme-line-height: calc(1ex / 0.32);
   --theme-content-spacing: 1.5rem;
   --theme-content-narrow: 750px;
@@ -38,11 +37,11 @@
   outline: 1px solid #5b6268;
 
   /** 
-	 * Resources on prefers-reduced-motion:
-	 * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
-	 * https://web.dev/articles/prefers-reduced-motion
-	 * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
-	 */
+   * Resources on prefers-reduced-motion:
+   * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
+   * https://web.dev/articles/prefers-reduced-motion
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
+   */
 
   @media (prefers-reduced-motion: reduce) {
     animation-delay: -1ms !important;
@@ -57,10 +56,10 @@
 
 html {
   /**
-	 * Set the font size to none to prevent the browser from changing the font size.
-	 *
-	 * https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage
-	 */
+   * Set the font size to none to prevent the browser from changing the font size.
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage
+   */
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
@@ -71,7 +70,7 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   font-feature-settings: "kern", "liga", "calt";
   font-kerning: normal;
-  font-size: var(--wp--preset--font-size--normal);
+  font-size: 17px;
   font-weight: 400;
   line-height: var(--theme-line-height);
   min-height: 100vh;
@@ -179,9 +178,9 @@ ul {
   padding-inline: 0;
 
   /**
-	 * Remove list styles on ul, ol elements with a list role,
-	 * which suggests default styling will be removed.
-	 */
+   * Remove list styles on ul, ol elements with a list role,
+   * which suggests default styling will be removed.
+   */
   &[role="list"] {
     list-style: none;
   }
