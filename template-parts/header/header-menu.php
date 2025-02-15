@@ -8,7 +8,8 @@
  *
  * @package Agisty
  */
-if ( has_nav_menu( 'menu-header' ) ) : ?>
+if ( has_nav_menu( 'menu-header' ) ) : 
+?>
 	<div itemscope itemtype="https://schema.org/SiteNavigationElement">
 		<?php
 		wp_nav_menu( [
@@ -19,5 +20,6 @@ if ( has_nav_menu( 'menu-header' ) ) : ?>
 			'theme_location' 	=> 'menu-header',
 		] );
 		?>
-	</div><?php 
+	</div>
+<?php 
 endif;
