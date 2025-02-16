@@ -22,7 +22,7 @@ remove_action( 'wp_enqueue_scripts', 'wp_enqueue_emoji_styles' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); /** Retained for backwards compatibility */
 
 /** Remove the link to the Really Simple Discovery service endpoint from the frontend. */
-remove_action( 'wp_head', 'rsd_link');
+remove_action( 'wp_head', 'rsd_link' );
 
 /**
  * Remove REST API link tag from <head>.
