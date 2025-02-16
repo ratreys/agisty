@@ -11,7 +11,7 @@ $site_tagline = get_bloginfo( 'description' );
 if ( has_custom_logo() ) :
 	the_custom_logo();
 else : 
-	?>
+?>
 	<a class="wp-block-site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html_e( $site_title, 'agisty' ) ?></a>
-	<?php 
+<?php 
 endif;
