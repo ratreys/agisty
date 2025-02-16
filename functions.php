@@ -37,7 +37,7 @@ add_action( 'after_setup_theme', function() {
 
     add_theme_support( 'responsive-embeds' );
 
-    add_theme_support( feature: 'customize-selective-refresh-widgets' );
+    add_theme_support( 'customize-selective-refresh-widgets' );
 
 	add_theme_support(
 		'html5', [
@@ -60,7 +60,7 @@ add_action( 'after_setup_theme', function() {
 			 *
 			 * @link https://make.wordpress.org/core/2020/07/09/accessibility-improvements-to-widgets-outputting-lists-of-links-in-5-5/
 			 */
-			'navigation-widgets'
+			'navigation-widgets',
 		]
 	);
 
@@ -105,7 +105,8 @@ add_action( 'after_setup_theme', function() {
 
 	add_theme_support( 'editor-styles' );
 	// add_editor_style();
-} );
+
+} ); // End of `after_setup_theme` hook.
 
 
 add_action( 'wp_enqueue_scripts', function() {
