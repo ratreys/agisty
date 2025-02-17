@@ -2,9 +2,48 @@
  * CSS reset specific to WordPress themes.
  *
  * https://piccalil.li/blog/a-more-modern-css-reset/
- * https://getbootstrap.com/docs/5.3/content/reboot/
  * https://www.joshwcomeau.com/css/custom-css-reset/
+ * https://getbootstrap.com/docs/5.3/content/reboot/
+ * https://tailwindcss.com/docs/preflight
  */
+
+::selection {
+  background-color: #0033a6;
+  color: #ffe;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  /** 
+   * Resources on prefers-reduced-motion:
+   *
+   * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
+   * https://web.dev/articles/prefers-reduced-motion
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
+   */
+  @media (prefers-reduced-motion: reduce) {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+    transition-delay: -1ms !important;
+  }
+}
+
+html {
+  /**
+   * Set the font size to none to prevent the browser from changing the font size.
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage
+   */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
 
 :root {
   /**
@@ -30,39 +69,9 @@
   --theme-content-wide: 1200px;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  outline: 1px solid #5b6268;
-
-  /** 
-   * Resources on prefers-reduced-motion:
-   *
-   * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
-   * https://web.dev/articles/prefers-reduced-motion
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
-   */
-
-  @media (prefers-reduced-motion: reduce) {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 1ms !important;
-    transition-delay: -1ms !important;
-  }
-}
-
-html {
-  /**
-   * Set the font size to none to prevent the browser from changing the font size.
-   *
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage
-   */
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+/* Anything that has been anchored to should have extra scroll margin. */
+:target {
+  scroll-margin-block: 5ex;
 }
 
 body {
@@ -87,26 +96,7 @@ footer {
   container-type: inline-size;
 }
 
-a {
-  color: var(--theme-color-link-initial);
-  text-decoration-thickness: max(1px, 0.0625rem);
-  text-underline-offset: 0.1578rem;
-
-  &:is(:hover) {
-    color: var(--theme-color-link-hover);
-    text-decoration-thickness: 3px;
-  }
-
-  &:is(:focus, :focus-visible) {
-    background-color: var(--theme-color-yellow);
-    box-shadow: 0 -2px var(--theme-color-yellow), 0 4px var(--theme-color-black);
-    color: var(--theme-color-black);
-    outline: none;
-    text-decoration-line: none;
-  }
-}
-
-/* Remove default margin in favor of better control in authored CSS */
+/* Remove default margin in favor of better control in authored CSS. */
 h1,
 h2,
 h3,
@@ -119,28 +109,33 @@ h4 {
   text-wrap: pretty;
 }
 
-img {
+/**
+ * Make images and other replaced elements easier to work with.
+ *
+ * https://tailwindcss.com/docs/preflight#images-are-block-level
+ */
+img,
+audio,
+picture,
+iframe,
+embed,
+video,
+canvas,
+svg {
   display: block;
+  vertical-align: middle;
 }
 
-p {
-  margin: 0;
-  margin-block: 0;
-  overflow-wrap: break-word;
-  text-wrap: pretty;
-
-  img {
-    display: inline-block;
-  }
-}
-
-li {
-  text-wrap: pretty;
-
-  img {
-    display: inline-block;
-    vertical-align: sub;
-  }
+/**
+ * Images and videos are constrained to the parent width in a way that 
+ * preserves their intrinsic aspect ratio.
+ *
+ * https://tailwindcss.com/docs/preflight#images-are-constrained
+ */
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 figcaption {
@@ -173,30 +168,6 @@ pre {
   overflow-wrap: break-word;
 }
 
-ol,
-ul {
-  margin-block: 0;
-  padding-inline: 0;
-
-  /**
-   * Remove list styles on ul, ol elements with a list role,
-   * which suggests default styling will be removed.
-   */
-  &[role="list"] {
-    list-style: none;
-  }
-}
-
-/* Make images easier to work with */
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
-
 /* Set shorter line heights on headings and interactive elements */
 button,
 input,
@@ -222,14 +193,57 @@ textarea:not([rows]) {
   min-height: 10rem;
 }
 
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
+a {
+  color: var(--theme-color-link-initial);
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578rem;
+
+  &:is(:hover) {
+    color: var(--theme-color-link-hover);
+    text-decoration-thickness: 3px;
+  }
+
+  &:is(:focus, :focus-visible) {
+    background-color: var(--theme-color-yellow);
+    box-shadow: 0 -2px var(--theme-color-yellow), 0 4px var(--theme-color-black);
+    color: var(--theme-color-black);
+    outline: none;
+    text-decoration-line: none;
+  }
 }
 
-::selection {
-  background-color: #0033a6;
-  color: #ffe;
+p {
+  margin: 0;
+  margin-block: 0;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+
+  img {
+    display: inline-block;
+  }
+}
+
+li {
+  text-wrap: pretty;
+
+  img {
+    display: inline-block;
+    vertical-align: sub;
+  }
+}
+
+ol,
+ul {
+  margin-block: 0;
+  padding-inline: 0;
+
+  /**
+   * Remove list styles on ul, ol elements with a list role,
+   * which suggests default styling will be removed.
+   */
+  &[role="list"] {
+    list-style: none;
+  }
 }
 
 /* Create a root stacking context */
