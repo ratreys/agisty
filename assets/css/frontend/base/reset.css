@@ -53,20 +53,16 @@ html {
    * https://www.w3.org/TR/WCAG22/#contrast-minimum
    * https://design-system.service.gov.uk/styles/colour/
    */
-  --theme-color-black: #11171d;
-  --theme-color-gray: #4b555f;
-  --theme-color-red: #a51c30;
-  --theme-color-green: #00703c;
-  --theme-color-blue: #0033a6;
-  --theme-color-yellow: #fabf46;
-  --theme-color-white: #fbfbfb;
-  --theme-color-link-initial: #0033a6;
-  --theme-color-link-hover: #003078;
-  --theme-color-border: #b1b4b7;
-  --theme-line-height: calc(1ex / 0.32);
-  --theme-content-spacing: 1.5rem;
-  --theme-content-narrow: 750px;
-  --theme-content-wide: 1200px;
+  --agisty-color-black: #11171d;
+  --agisty-color-gray: #4b555f;
+  --agisty-color-red: #a51c30;
+  --agisty-color-blue: #0033a6;
+  --agisty-color-green: #00703c;
+  --agisty-color-yellow: #fabf46;
+  --agisty-color-white: #fbfbfb;
+  --agisty-color-link-initial: #0033a6;
+  --agisty-color-link-hover: #003078;
+  --agisty-color-border: #b1b4b7;
 }
 
 /* Anything that has been anchored to should have extra scroll margin. */
@@ -75,15 +71,16 @@ html {
 }
 
 body {
-  background-color: var(--theme-color-white);
-  color: var(--theme-color-black);
+  background-color: var(--agisty-color-white);
+  color: var(--agisty-color-black);
   font-family: system-ui, -apple-system, sans-serif;
   font-feature-settings: "kern", "liga", "calt";
   font-kerning: normal;
-  font-size: 17px;
+  font-size: var(--wp--preset--font-size--normal);
   font-weight: 400;
-  line-height: var(--theme-line-height);
+  line-height: 1.5;
   min-height: 100vh;
+  min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -194,19 +191,20 @@ textarea:not([rows]) {
 }
 
 a {
-  color: var(--theme-color-link-initial);
+  color: var(--agisty-color-link-initial);
   text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1578rem;
 
   &:is(:hover) {
-    color: var(--theme-color-link-hover);
+    color: var(--agisty-color-link-hover);
     text-decoration-thickness: 3px;
   }
 
   &:is(:focus, :focus-visible) {
-    background-color: var(--theme-color-yellow);
-    box-shadow: 0 -2px var(--theme-color-yellow), 0 4px var(--theme-color-black);
-    color: var(--theme-color-black);
+    background-color: var(--agisty-color-yellow);
+    box-shadow: 0 -2px var(--agisty-color-yellow),
+      0 4px var(--agisty-color-black);
+    color: var(--agisty-color-black);
     outline: none;
     text-decoration-line: none;
   }
