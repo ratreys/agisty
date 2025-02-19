@@ -5,7 +5,7 @@
 
 if ( has_nav_menu( 'menu-footer' ) ) : 
 ?>
-	<nav id="footer-nav" class="wp-block-navigation is-layout-flex footer-menu__nav" aria-label="<?php esc_attr_e( 'Footer menu', 'agisty' ); ?>">
+	<nav id="footer-nav" class="wp-block-navigation is-layout-flex agisty-footer__menu" aria-label="<?php esc_attr_e( 'Footer menu', 'agisty' ); ?>">
 		<?php
 		wp_nav_menu( [
 			'container'			=> false,
