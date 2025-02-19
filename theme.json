@@ -46,6 +46,10 @@
       "textDecoration": false,
       "textTransform": false,
       "writingMode": false
+    },
+    "layout": {
+      "contentSize": "750px",
+      "wideSize": "1200px"
     }
   }
 }
