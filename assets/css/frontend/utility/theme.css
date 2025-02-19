@@ -4,10 +4,8 @@
  * https://medienbaecker.com/articles/focus-outlines
  */
 *:focus-visible {
-  outline-color: currentcolor;
-  outline-style: solid;
+  outline: 2px solid currentcolor;
   outline-offset: 2px;
-  outline-width: 2px;
 }
 
 html {
@@ -19,6 +17,8 @@ html {
 }
 
 .entry-content {
+  font-size: 1.125rem;
+
   > * + * {
     margin-block-start: var(--theme-content-spacing, 1rem);
   }
@@ -51,4 +51,10 @@ html {
 .footer-menu__container {
   gap: 5rem;
   padding-block-end: 1rem;
+}
+
+.agisty-footer__copyright,
+.agisty-footer__menu :where(a) {
+  color: var(--theme-color-gray);
+  font-size: 16px;
 }
