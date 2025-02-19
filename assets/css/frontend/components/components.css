@@ -1,7 +1,6 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-x: clip;
 }
 
@@ -9,7 +8,7 @@ article {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: var(--theme-content-narrow);
+  max-width: var(--wp--style--global--content-size);
 }
 
 .agisty__header {
@@ -44,7 +43,7 @@ article {
 
 .agisty__sidebar {
   align-items: flex-start;
-  max-width: var(--theme-content-narrow);
+  max-width: var(--wp--style--global--content-size);
 }
 
 .agisty__footer {
