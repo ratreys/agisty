@@ -1,5 +1,5 @@
 /**
- * CSS reset specific to WordPress themes.
+ * My CSS reset specific to WordPress themes.
  *
  * https://piccalil.li/blog/a-more-modern-css-reset/
  * https://www.joshwcomeau.com/css/custom-css-reset/
@@ -7,43 +7,10 @@
  * https://tailwindcss.com/docs/preflight
  */
 
-::selection {
-  background-color: #0033a6;
-  color: #ffe;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: 1px solid #0033a6;
-
-  /** 
-   * Resources on prefers-reduced-motion:
-   *
-   * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
-   * https://web.dev/articles/prefers-reduced-motion
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
-   */
-  @media (prefers-reduced-motion: reduce) {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 1ms !important;
-    transition-delay: -1ms !important;
-  }
-}
-
-html {
-  /**
-   * Set the font size to none to prevent the browser from changing the font size.
-   *
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust#basic_disabling_usage
-   */
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
 }
 
 :root {
@@ -86,14 +53,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* header,
-main,
-article,
-section,
-footer {
-  container-type: inline-size;
-} */
-
 /* Remove default margin in favor of better control in authored CSS. */
 h1,
 h2,
@@ -104,6 +63,12 @@ h4 {
   margin: 0;
   margin-block: 0;
   overflow-wrap: break-word;
+
+  /**
+  * Available in Baseline since March 2024.
+  *
+  * https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap
+  */
   text-wrap: pretty;
 }
 
@@ -112,14 +77,14 @@ h4 {
  *
  * https://tailwindcss.com/docs/preflight#images-are-block-level
  */
-img,
 audio,
-picture,
-iframe,
-embed,
-video,
 canvas,
-svg {
+embed,
+iframe,
+img,
+picture,
+svg,
+video {
   display: block;
   vertical-align: middle;
 }
@@ -166,20 +131,14 @@ pre {
   overflow-wrap: break-word;
 }
 
-/* Set shorter line heights on headings and interactive elements */
 button,
 input,
-label {
-  line-height: 1.2;
-}
-
-/* Inherit fonts for inputs and buttons */
-button,
-input,
+label,
 textarea,
 select {
   font-family: inherit;
   font-size: inherit;
+  line-height: 1.2;
 }
 
 iframe {
