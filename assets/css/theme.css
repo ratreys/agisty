@@ -3,6 +3,12 @@
  *
  * https://medienbaecker.com/articles/focus-outlines
  */
+
+::selection {
+  background-color: #0033a6;
+  color: #ffe;
+}
+
 *:focus-visible {
   outline: 2px solid currentcolor;
   outline-offset: 2px;
@@ -12,7 +18,7 @@ html {
   scroll-behavior: smooth;
 
   @supports (scrollbar-width: auto) {
-    scrollbar-color: var(--theme-color-yellow) var(--theme-color-black);
+    scrollbar-color: var(--agisty-color-yellow) var(--agisty-color-black);
   }
 }
 
@@ -25,14 +31,23 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: clip;
+  width: min(100% - 4rem, var(--wp--style--global--wide-size));
+  margin-inline: auto;
 }
 
 article {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: var(--wp--style--global--wide-size);
 }
+
+/* header,
+main,
+article,
+section,
+footer {
+  container-type: inline-size;
+} */
 
 .agisty__header {
   justify-content: space-between;
@@ -109,11 +124,27 @@ article {
 
 .agisty-footer__copyright,
 .agisty-footer__menu :where(a) {
-  color: var(--agisty-color-gray);
   font-size: 16px;
 }
 
 .agisty__footer {
   border-top: 4px solid var(--agisty-color-black);
   padding-block: 1rem;
+}
+
+/** 
+ * Resources on prefers-reduced-motion:
+ *
+ * https://webkit.org/blog/7551/responsive-design-for-motion/
+ * https://web.dev/articles/prefers-reduced-motion
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
+ */
+@media (prefers-reduced-motion: reduce) {
+  animation-delay: -1ms !important;
+  animation-duration: 1ms !important;
+  animation-iteration-count: 1 !important;
+  background-attachment: initial !important;
+  scroll-behavior: auto !important;
+  transition-duration: 1ms !important;
+  transition-delay: -1ms !important;
 }
