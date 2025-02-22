@@ -26,6 +26,7 @@
   --agisty-color-link-initial: #0033a6;
   --agisty-color-link-hover: #003078;
   --agisty-color-border: #b1b4b7;
+  --agisty-color-background: #f6f8fa;
 
   /** CSS Variables. More will be added over time. */
   --agisty-font-system: system-ui, -apple-system, sans-serif;
@@ -76,11 +77,6 @@ html {
   @supports (scrollbar-width: auto) {
     scrollbar-color: var(--agisty-color-yellow) var(--agisty-color-black);
   }
-}
-
-/* Anything that has been anchored to should have extra scroll margin. */
-:target {
-  scroll-margin-block: 5ex;
 }
 
 body {
@@ -134,7 +130,6 @@ audio,
 canvas,
 embed,
 iframe,
-img,
 picture,
 svg,
 video {
@@ -148,25 +143,16 @@ video {
  *
  * https://tailwindcss.com/docs/preflight#images-are-constrained
  */
-img,
 video {
   max-width: 100%;
   height: auto;
-}
-
-figcaption {
-  text-wrap: pretty;
-}
-
-small {
-  font-size: var(--agisty-font-size-small);
 }
 
 code,
 kbd,
 pre,
 samp {
-  background-color: #f6f8fa;
+  background-color: var(--agisty-color-background);
   border: 1px solid var(--agisty-color-border);
   font-family: var(--agisty-font-monospace);
   font-size: var(--agisty-font-size-small);
@@ -192,15 +178,17 @@ kbd {
   box-shadow: 0 2px 0 1px var(--agisty-color-border);
   color: var(--agisty-color-gray);
 
-  &:hover {
+  &:is(:hover) {
     box-shadow: 0 1px 0 0.5px var(--agisty-color-border);
   }
 }
 
 pre {
   line-height: 1.5;
-  padding: var(--agisty-content-spacing) var(--agisty-content-spacing);
+  margin: 0;
   overflow: auto;
+  overflow-wrap: break-word;
+  padding: var(--agisty-content-spacing) var(--agisty-content-spacing);
 
   code {
     background-color: inherit;
@@ -210,15 +198,24 @@ pre {
   }
 }
 
-blockquote:where(:not(.wp-block)),
+:where(figure) {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+/* blockquote:where(:not(.wp-block)),
 figure:where(:not(.wp-block)),
 dl,
-dd,
-pre {
+dd {
   margin: 0;
   margin-block: 0;
   margin-inline: 0;
   overflow-wrap: break-word;
+} */
+
+blockquote {
+  margin-block: 0;
+  margin-inline: 0;
 }
 
 button,
@@ -233,11 +230,6 @@ select {
 
 iframe {
   border: 0;
-}
-
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10rem;
 }
 
 a {
@@ -271,15 +263,6 @@ p {
   }
 }
 
-li {
-  text-wrap: pretty;
-
-  img {
-    display: inline-block;
-    vertical-align: sub;
-  }
-}
-
 ol,
 ul {
   margin-block: 0;
@@ -291,6 +274,15 @@ ul {
    */
   &[role="list"] {
     list-style: none;
+  }
+}
+
+li {
+  text-wrap: pretty;
+
+  img {
+    display: inline-block;
+    vertical-align: sub;
   }
 }
 
