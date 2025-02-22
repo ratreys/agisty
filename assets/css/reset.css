@@ -4,8 +4,8 @@
  * This is to provide consistent, and simple baseline CSS
  * that works across many devices and browser versions.
  *
- * Rey Sanchez (https://selftawt.com)
- * GPLv3.0
+ * author:  Rey Sanchez (https://selftawt.com)
+ * license: GPLv3.0
  */
 
 :root {
@@ -26,11 +26,15 @@
   --agisty-color-link-initial: #0033a6;
   --agisty-color-link-hover: #003078;
   --agisty-color-border: #b1b4b7;
+
+  /** CSS Variables. More will be added over time. */
   --agisty-line-height: calc(1ex / 0.32);
   --agisty-content-spacing: 1.5rem;
   --agisty-font-system: system-ui, -apple-system, sans-serif;
   --agisty-font-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
     Monaco, Consolas, monospace;
+  --agisty-link-decoration: solid underline currentColor 2px;
+  --agisty-underline-offset: 0.1578rem;
 }
 
 /**
@@ -97,7 +101,6 @@ h3,
 h4 {
   font-weight: 500;
   line-height: 1.2;
-  margin: 0;
   margin-block: 0;
   overflow-wrap: break-word;
 
@@ -196,8 +199,8 @@ textarea:not([rows]) {
 
 a {
   color: var(--agisty-color-link-initial);
-  text-decoration-thickness: max(1px, 0.0625rem);
-  text-underline-offset: 0.1578rem;
+  text-decoration: var(--agisty-link-decoration);
+  text-underline-offset: var(--agisty-underline-offset);
 
   &:is(:hover) {
     color: var(--agisty-color-link-hover);
