@@ -1,0 +1,121 @@
+/**
+ * Theme-specific styles.
+ *
+ * author:  Rey Sanchez (https://selftawt.com)
+ * license: GPLv3.0
+ */
+
+/**
+ * Focus outlines.
+ *
+ * https://medienbaecker.com/articles/focus-outlines
+ */
+*:focus-visible {
+  outline: 2px solid currentcolor;
+  outline-offset: 2px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+  width: min(100% - 4rem, var(--wp--style--global--wide-size));
+  margin-inline: auto;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* header,
+main,
+article,
+section,
+footer {
+  container-type: inline-size;
+} */
+
+.agisty__header {
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.agisty__main {
+  align-items: stretch;
+  gap: 2rem;
+
+  /**
+   * https://every-layout.dev/layouts/sidebar/
+   * https://www.youtube.com/watch?v=k_3pRxdv-cI 
+   */
+
+  > article {
+    /* ↓ Grow from nothing */
+    flex-grow: 999;
+    flex-basis: 0;
+
+    /* ↓ Wrap when main content is less than the specified width in px. */
+    min-inline-size: min(550px, 100%);
+  }
+
+  > aside {
+    /* ↓ The width of the sidebar sidebar */
+    flex-grow: 1;
+    flex-basis: 350px;
+  }
+}
+
+.entry-content {
+  font-size: 1.125rem;
+  line-height: var(--agisty-line-height);
+
+  > * + * {
+    margin-block-start: var(--agisty-content-spacing, 1rem);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-block-start: clamp(2.375rem, 1.98rem + 1.96vw, 3.75rem);
+  }
+}
+
+.entry-header .wp-block-post-title {
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.header-menu-wrapper,
+.footer-menu-wrapper {
+  column-gap: 2rem;
+}
+
+.agisty__sidebar {
+  align-items: flex-start;
+  max-width: var(--wp--style--global--content-size);
+}
+
+.agisty-wrapper-header {
+  border-bottom: 2px solid var(--agisty-color-black);
+  padding-block: 2rem;
+}
+
+.agisty-wrapper-main {
+  padding-block: 4rem;
+}
+
+.footer-menu__container {
+  gap: 4rem;
+  padding-block-end: 1rem;
+}
+
+.agisty-footer__copyright,
+.agisty-footer__menu :where(a) {
+  font-size: 16px;
+}
+
+.agisty__footer {
+  border-top: 4px solid var(--agisty-color-black);
+  padding-block: 1rem;
+}

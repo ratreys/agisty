@@ -1,0 +1,50 @@
+/**
+ * Override WordPress generated classes to use rems instead of px for scalable component spacing.
+ *
+ * https://developer.wordpress.org/advanced-administration/wordpress/css/#wordpress-generated-classes
+ *
+ */
+
+/**
+ * Ensure that we are not overriding the editor styles of the
+ * WordPress Components.
+ *
+ * using :where to prevent the specificity increase of using :not
+ *
+ * https://github.com/WordPress/gutenberg/issues/10178
+ */
+
+/* a:where(:not(.components-external-link)) {
+
+}
+
+button:where(:not(.components-button)) {
+
+} */
+
+.wp-block-image :where(figcaption) {
+  margin-block: 0.5rem;
+  text-align: left;
+}
+
+/* .wp-block-navigation {
+  justify-content: space-between;
+} */
+
+.wp-block-navigation :where(a) {
+  color: var(--agisty-color-black);
+
+  &:is(:hover, :active) {
+    color: var(--agisty-color-link-initial);
+    text-decoration: solid underline currentColor 3px;
+  }
+
+  &:is(:focus, :focus-visible) {
+    background-color: var(--agisty-color-yellow);
+    box-shadow: 0 -2px var(--agisty-color-yellow),
+      0 4px var(--agisty-color-black);
+    color: var(--agisty-color-black);
+    outline: none;
+    text-decoration-line: none;
+  }
+}

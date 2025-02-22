@@ -1,0 +1,300 @@
+/**
+ * My CSS reset specific to WordPress themes.
+ *
+ * This is to provide consistent, and simple baseline CSS
+ * that works across many devices and browser versions.
+ *
+ * author:  Rey Sanchez (https://selftawt.com)
+ * license: GPLv3.0
+ */
+
+:root {
+  /**
+   * Make sure that the contrast ratio of text and interactive elements
+   * meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
+   *
+   * https://www.w3.org/TR/WCAG22/#contrast-minimum
+   * https://design-system.service.gov.uk/styles/colour/
+   */
+  --agisty-color-black: #11171d;
+  --agisty-color-gray: #4b555f;
+  --agisty-color-red: #a51c30;
+  --agisty-color-blue: #0033a6;
+  --agisty-color-green: #00703c;
+  --agisty-color-yellow: #fabf46;
+  --agisty-color-white: #fbfbfb;
+  --agisty-color-link-initial: #0033a6;
+  --agisty-color-link-hover: #003078;
+  --agisty-color-border: #b1b4b7;
+
+  /** CSS Variables. More will be added over time. */
+  --agisty-font-system: system-ui, -apple-system, sans-serif;
+  --agisty-font-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+    Monaco, Consolas, monospace;
+  --agisty-line-height: calc(1ex / 0.32);
+  --agisty-content-spacing: 1.5rem;
+  --agisty-font-size-small: 0.9rem;
+  --agisty-link-decoration: solid underline currentColor 2px;
+  --agisty-underline-offset: 0.175rem;
+}
+
+/**
+ * This ensures that the declared width of element is never exceeded 
+ * due to padding or border.
+ *
+ * https://getbootstrap.com/docs/5.3/content/reboot/
+ * https://piccalil.li/blog/a-more-modern-css-reset/
+ * https://www.joshwcomeau.com/css/custom-css-reset/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* outline: 1px solid #00703c; */
+
+  /** 
+   * Resources on prefers-reduced-motion:
+   *
+   * https://web.dev/articles/prefers-reduced-motion
+   * https://webkit.org/blog/7551/responsive-design-for-motion/
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
+   */
+  @media (prefers-reduced-motion: reduce) {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+    transition-delay: -1ms !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @supports (scrollbar-width: auto) {
+    scrollbar-color: var(--agisty-color-yellow) var(--agisty-color-black);
+  }
+}
+
+/* Anything that has been anchored to should have extra scroll margin. */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  background-color: var(--agisty-color-white);
+  color: var(--agisty-color-black);
+  font-family: var(--agisty-font-system);
+  font-kerning: normal;
+  font-size: var(--wp--preset--font-size--normal);
+  font-weight: 400;
+  line-height: var(--agisty-line-height);
+  min-height: 100vh;
+  min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
+  text-rendering: optimizeLegibility;
+}
+
+/* Remove default margin in favor of better control in authored CSS. */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-block: 0;
+  overflow-wrap: break-word;
+
+  /**
+  * Available in Baseline since March 2024.
+  *
+  * https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap
+  */
+  text-wrap: pretty;
+}
+
+abbr[title] {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  font-style: normal;
+  line-height: inherit;
+}
+
+/**
+ * Make images and other replaced elements easier to work with.
+ *
+ * https://tailwindcss.com/docs/preflight#images-are-block-level
+ */
+audio,
+canvas,
+embed,
+iframe,
+img,
+picture,
+svg,
+video {
+  display: block;
+  vertical-align: middle;
+}
+
+/**
+ * Images and videos are constrained to the parent width in a way that 
+ * preserves their intrinsic aspect ratio.
+ *
+ * https://tailwindcss.com/docs/preflight#images-are-constrained
+ */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  text-wrap: pretty;
+}
+
+small {
+  font-size: var(--agisty-font-size-small);
+}
+
+code,
+kbd,
+pre,
+samp {
+  background-color: #f6f8fa;
+  border: 1px solid var(--agisty-color-border);
+  font-family: var(--agisty-font-monospace);
+  font-size: var(--agisty-font-size-small);
+}
+
+code,
+kbd {
+  padding: 0.125rem 0.25rem;
+}
+
+code {
+  color: var(--agisty-color-red);
+}
+
+/**
+ * Style the kbd element to look like a button. 
+ *
+ * https://dylanatsmith.com/wrote/styling-the-kbd-element
+ * https://grtcalculator.com/styles/
+*/
+kbd {
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 0 1px var(--agisty-color-border);
+  color: var(--agisty-color-gray);
+
+  &:hover {
+    box-shadow: 0 1px 0 0.5px var(--agisty-color-border);
+  }
+}
+
+pre {
+  line-height: 1.5;
+  padding: var(--agisty-content-spacing) var(--agisty-content-spacing);
+  overflow: auto;
+
+  code {
+    background-color: inherit;
+    border: none;
+    color: inherit;
+    padding: 0;
+  }
+}
+
+blockquote:where(:not(.wp-block)),
+figure:where(:not(.wp-block)),
+dl,
+dd,
+pre {
+  margin: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  overflow-wrap: break-word;
+}
+
+button,
+input,
+label,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.2;
+}
+
+iframe {
+  border: 0;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10rem;
+}
+
+a {
+  color: var(--agisty-color-link-initial);
+  text-decoration: var(--agisty-link-decoration);
+  text-underline-offset: var(--agisty-underline-offset);
+
+  &:is(:hover) {
+    color: var(--agisty-color-link-hover);
+    text-decoration-thickness: 3px;
+  }
+
+  &:is(:focus, :focus-visible) {
+    background-color: var(--agisty-color-yellow);
+    box-shadow: 0 -2px var(--agisty-color-yellow),
+      0 4px var(--agisty-color-black);
+    color: var(--agisty-color-black);
+    outline: none;
+    text-decoration-line: none;
+  }
+}
+
+p {
+  margin: 0;
+  margin-block: 0;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+
+  img {
+    display: inline-block;
+  }
+}
+
+li {
+  text-wrap: pretty;
+
+  img {
+    display: inline-block;
+    vertical-align: sub;
+  }
+}
+
+ol,
+ul {
+  margin-block: 0;
+  padding-inline-start: 1rem;
+
+  /**
+   * Remove list styles on ul, ol elements with a list role,
+   * which suggests default styling will be removed.
+   */
+  &[role="list"] {
+    list-style: none;
+  }
+}
+
+/* Create a root stacking context */
+.wp-site-blocks {
+  isolation: isolate;
+}
