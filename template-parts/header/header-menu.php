@@ -16,7 +16,7 @@ if ( has_nav_menu( 'menu-header' ) ) :
 			'container'		 	=> false,
 			'fallback_cb'		=> false,
 			'items_wrap'		=> '<ul id="header-menu-list" class="%2$s">%3$s</ul>',
-			'menu_class'	 	=> 'header-menu-wrapper is-layout-flex wp-block-navigation__container',
+			'menu_class'	 	=> 'is-layout-flex wp-block-navigation__container header-menu-wrapper',
 			'theme_location' 	=> 'menu-header',
 		] );
 		?>
