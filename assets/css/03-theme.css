@@ -79,6 +79,10 @@ footer {
     font-size: 1.5rem;
     margin-block-start: clamp(2.375rem, 1.98rem + 1.96vw, 3.75rem);
   }
+
+  li {
+    margin-block-start: 1rem;
+  }
 }
 
 .entry-header .wp-block-post-title {
@@ -118,4 +122,23 @@ footer {
 .agisty__footer {
   border-top: 4px solid var(--agisty-color-black);
   padding-block: 1rem;
+}
+
+.agisty-box-red {
+  background-color: rgba(255, 0, 0, 0.15);
+  border: 1px solid var(--agisty-color-red);
+  padding: var(--agisty-content-spacing);
+}
+
+.agisty-box-green {
+  background-color: rgba(0, 128, 0, 0.15);
+  border: 1px solid var(--agisty-color-green);
+  padding: var(--agisty-content-spacing);
+}
+
+.agisty-box-blue {
+  background-color: rgba(0, 0, 255, 0.75);
+  border: 1px solid var(--agisty-color-blue);
+  color: var(--agisty-color-white);
+  padding: var(--agisty-content-spacing);
 }
