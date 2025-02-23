@@ -9,9 +9,9 @@
  * Text
  *    1. List
  *    2. Quote
- *    3. Code
+ *    3. Code         -- Already included in CSS reset.
  *    4. Details
- *    5. Preformatted
+ *    5. Preformatted -- Already included in CSS reset.
  *    6. Pullquote
  *    7. Table
  * Media
@@ -39,7 +39,6 @@
 
   li {
     margin-block-start: 1rem;
-    text-wrap: pretty;
 
     &:where(:first-child) {
       margin-block-start: 0;
@@ -55,25 +54,34 @@
 /* ------------------------------
  | 2. Quote
  * --------------------------- */
-
-/* ------------------------------
- | 3. Code
- * --------------------------- */
+.wp-block-quote {
+  margin-block: 0;
+  margin-inline: 0;
+}
 
 /* ------------------------------
  | 4. Details
  * --------------------------- */
 
 /* ------------------------------
- | 5. Preformatted
- * --------------------------- */
-
-/* ------------------------------
  | 6. Pullquote
  * --------------------------- */
-:root :where(.wp-block-pullquote) {
+.wp-block-pullquote {
+  background-color: var(--agisty-color-background);
+  border-left: 4px solid var(--agisty-color-border);
   margin: 0;
-  padding: 0;
+  padding: 1rem;
+  text-align: left;
+
+  cite {
+    color: var(--agisty-color-gray);
+    font-size: var(--wp--preset--font-size--normal);
+  }
+}
+
+:root :where(.wp-block-pullquote) {
+  font-size: inherit;
+  line-height: var(--agisty-line-height);
 }
 
 /* ------------------------------
@@ -82,6 +90,11 @@
 .wp-block-table {
   caption-side: bottom;
   font-size: var(--wp--preset--font-size--normal);
+
+  table {
+    border-spacing: 0;
+    border-color: var(--agisty-color-border);
+  }
 
   thead {
     background-color: #e6e6e6;
@@ -110,19 +123,24 @@
   margin-block-end: 0;
   padding-block-end: 0.5rem;
   text-align: left;
-  text-wrap: pretty;
 }
 
 /* ------------------------------
  | 9. Buttons
  * --------------------------- */
 :root :where(.wp-element-button, .wp-block-button__link) {
-  background-image: linear-gradient(#991b1b, #7f1d1d);
+  /** https://ui.shadcn.com/colors */
+  --red-800: #991b1b;
+  --red-900: #7f1d1d;
+  --red-950: #450a0a;
+
+  background-color: var(--agisty-color-red);
+  background-image: linear-gradient(var(--red-800), var(--red-900));
   border-radius: 0.5rem;
-  box-shadow: 0 0.25rem #450a0a, 0 0 0 0.5rem #fff;
+  box-shadow: 0 0.25rem var(--red-950), 0 0 0 0.5rem var(--agisty-color-white);
   font-size: var(--wp--preset--font-size--normal);
   line-height: 1.2;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 25%);
 
   &:is(:hover) {
     color: var(--agisty-color-white);
