@@ -71,17 +71,21 @@ footer {
   font-size: 1.125rem;
   line-height: var(--agisty-line-height);
 
-  > * + * {
+  * + * {
     margin-block-start: var(--agisty-content-spacing, 1rem);
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     margin-block-start: clamp(2.375rem, 1.98rem + 1.96vw, 3.75rem);
   }
 
-  li {
-    margin-block-start: 1rem;
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: inherit;
   }
 }
 
@@ -110,7 +114,6 @@ footer {
 }
 
 .footer-menu__container {
-  gap: 4rem;
   padding-block-end: 1rem;
 }
 
@@ -125,20 +128,19 @@ footer {
 }
 
 .agisty-box-red {
-  background-color: rgba(255, 0, 0, 0.15);
+  background-color: rgb(255 0 0 / 15%);
   border: 1px solid var(--agisty-color-red);
   padding: var(--agisty-content-spacing);
 }
 
 .agisty-box-green {
-  background-color: rgba(0, 128, 0, 0.15);
+  background-color: rgb(0 128 0 / 15%);
   border: 1px solid var(--agisty-color-green);
   padding: var(--agisty-content-spacing);
 }
 
 .agisty-box-blue {
-  background-color: rgba(0, 0, 255, 0.75);
+  background-color: rgb(0 0 255 / 15%);
   border: 1px solid var(--agisty-color-blue);
-  color: var(--agisty-color-white);
   padding: var(--agisty-content-spacing);
 }
