@@ -1,82 +1,87 @@
 /**
- * Override WordPress generated classes to use rems instead of px for scalable component spacing.
+ * Override default styling of WordPress blocks.
  *
- * https://developer.wordpress.org/advanced-administration/wordpress/css/#wordpress-generated-classes
- *
+ * author:  Rey Sanchez (https://selftawt.com)
+ * license: GPLv3.0
  */
 
-/**
- * Ensure that we are not overriding the editor styles of the
- * WordPress Components.
- *
- * using :where to prevent the specificity increase of using :not
- *
- * https://github.com/WordPress/gutenberg/issues/10178
- */
+/* ------------------------------
+ * Text
+ *    1. List
+ *    2. Quote
+ *    3. Code
+ *    4. Details
+ *    5. Preformatted
+ *    6. Pullquote
+ *    7. Table
+ * Media
+ *    8. Image
+ * Design
+ *    9. Button
+ * Theme
+ *   10. Navigation
+ * --------------------------- */
 
-/* a:where(:not(.components-external-link)) {
+/* ------------------------------
+ | 1. List
+ * --------------------------- */
+.wp-block-list {
+  margin-block: 0;
+  padding-inline-start: 1rem;
 
-}
-
-button:where(:not(.components-button)) {
-
-} */
-
-.wp-block-image :where(figcaption) {
-  border-bottom: 1px dashed var(--agisty-color-border);
-  font-size: var(--wp--preset--font-size--normal);
-  line-height: 1.5;
-  margin-block: 0.5rem 0;
-  padding-block-end: 0.5rem;
-  text-align: left;
-  text-wrap: pretty;
-}
-
-/* .wp-block-navigation {
-  justify-content: space-between;
-} */
-
-.wp-block-navigation :where(a) {
-  color: var(--agisty-color-black);
-
-  &:is(:hover, :active) {
-    color: var(--agisty-color-link-initial);
-    text-decoration: solid underline currentColor 3px;
+  /**
+   * Remove list styles on ul, ol elements with a list role,
+   * which suggests default styling will be removed.
+   */
+  &[role="list"] {
+    list-style: none;
   }
 
-  &:is(:focus, :focus-visible) {
-    background-color: var(--agisty-color-yellow);
-    box-shadow: 0 -2px var(--agisty-color-yellow),
-      0 4px var(--agisty-color-black);
-    color: var(--agisty-color-black);
-    outline: none;
-    text-decoration-line: none;
+  li {
+    margin-block-start: 1rem;
+    text-wrap: pretty;
+
+    &:where(:first-child) {
+      margin-block-start: 0;
+    }
+  }
+
+  ol,
+  ul {
+    margin-block-start: 1rem;
   }
 }
 
-:root :where(.wp-element-button, .wp-block-button__link) {
-  background-color: var(--agisty-color-red);
-  background-image: linear-gradient(#991b1b, #7f1d1d);
-  border-radius: 0.5rem;
-  box-shadow: 0 0.25rem #450a0a, 0 0 0 0.5rem #fff;
-  font-size: var(--wp--preset--font-size--normal);
-  line-height: 1.2;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+/* ------------------------------
+ | 2. Quote
+ * --------------------------- */
 
-  &:is(:hover) {
-    color: var(--agisty-color-white);
-    background-image: linear-gradient(#9a3412, #7c2d12);
-  }
+/* ------------------------------
+ | 3. Code
+ * --------------------------- */
+
+/* ------------------------------
+ | 4. Details
+ * --------------------------- */
+
+/* ------------------------------
+ | 5. Preformatted
+ * --------------------------- */
+
+/* ------------------------------
+ | 6. Pullquote
+ * --------------------------- */
+:root :where(.wp-block-pullquote) {
+  margin: 0;
+  padding: 0;
 }
 
+/* ------------------------------
+ | 7. Table
+ * --------------------------- */
 .wp-block-table {
   caption-side: bottom;
   font-size: var(--wp--preset--font-size--normal);
-
-  table {
-    border-spacing: 0;
-    border-color: var(--agisty-color-border);
-  }
 
   thead {
     background-color: #e6e6e6;
@@ -95,7 +100,53 @@ button:where(:not(.components-button)) {
   }
 }
 
-:root :where(.wp-block-pullquote) {
-  margin: 0;
-  padding: 0;
+/* ------------------------------
+ | 8. Image
+ * --------------------------- */
+.wp-block-image :where(figcaption) {
+  border-bottom: 1px dashed var(--agisty-color-border);
+  font-size: var(--wp--preset--font-size--normal);
+  line-height: 1.5;
+  margin-block-end: 0;
+  padding-block-end: 0.5rem;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+/* ------------------------------
+ | 9. Buttons
+ * --------------------------- */
+:root :where(.wp-element-button, .wp-block-button__link) {
+  background-image: linear-gradient(#991b1b, #7f1d1d);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem #450a0a, 0 0 0 0.5rem #fff;
+  font-size: var(--wp--preset--font-size--normal);
+  line-height: 1.2;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+
+  &:is(:hover) {
+    color: var(--agisty-color-white);
+    background-image: linear-gradient(#9a3412, #7c2d12);
+  }
+}
+
+/* ------------------------------
+ | 10. Navigation
+ * --------------------------- */
+.wp-block-navigation :where(a) {
+  color: var(--agisty-color-black);
+
+  &:is(:hover, :active) {
+    color: var(--agisty-color-link-initial);
+    text-decoration: solid underline currentColor 3px;
+  }
+
+  &:is(:focus, :focus-visible) {
+    background-color: var(--agisty-color-yellow);
+    box-shadow: 0 -2px var(--agisty-color-yellow),
+      0 4px var(--agisty-color-black);
+    color: var(--agisty-color-black);
+    outline: none;
+    text-decoration-line: none;
+  }
 }
