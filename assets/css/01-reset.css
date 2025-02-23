@@ -34,7 +34,7 @@
     Monaco, Consolas, monospace;
   --agisty-line-height: calc(1ex / 0.32);
   --agisty-content-spacing: 1.5rem;
-  --agisty-font-size-small: 0.9rem;
+  --agisty-font-size-small: 14px;
   --agisty-link-decoration: solid underline currentColor 2px;
   --agisty-underline-offset: 0.175rem;
 }
@@ -88,8 +88,9 @@ body {
   font-weight: 400;
   line-height: var(--agisty-line-height);
   min-height: 100vh;
-  min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
+  min-height: 100svh; /** https://www.youtube.com/watch?v=ru3U8MHbFFI */
   text-rendering: optimizeLegibility;
+  text-wrap: pretty; /** Available in Baseline since March 2024. */
 }
 
 /* Remove default margin in favor of better control in authored CSS. */
@@ -101,13 +102,6 @@ h4 {
   line-height: 1.2;
   margin-block: 0;
   overflow-wrap: break-word;
-
-  /**
-   * Available in Baseline since March 2024.
-   *
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap
-   */
-  text-wrap: pretty;
 }
 
 abbr[title] {
@@ -204,16 +198,6 @@ pre {
   margin-inline: 0;
 }
 
-blockquote {
-  margin-block: 0;
-  margin-inline: 0;
-}
-
-table {
-  border-spacing: 0;
-  border-color: var(--agisty-color-border);
-}
-
 button,
 input,
 label,
@@ -252,7 +236,6 @@ p {
   margin: 0;
   margin-block: 0;
   overflow-wrap: break-word;
-  text-wrap: pretty;
 
   img {
     display: inline-block;
