@@ -103,10 +103,10 @@ h4 {
   overflow-wrap: break-word;
 
   /**
-  * Available in Baseline since March 2024.
-  *
-  * https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap
-  */
+   * Available in Baseline since March 2024.
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap
+   */
   text-wrap: pretty;
 }
 
@@ -172,7 +172,7 @@ code {
  *
  * https://dylanatsmith.com/wrote/styling-the-kbd-element
  * https://grtcalculator.com/styles/
-*/
+ */
 kbd {
   border-radius: 0.25rem;
   box-shadow: 0 2px 0 1px var(--agisty-color-border);
@@ -180,6 +180,7 @@ kbd {
 
   &:is(:hover) {
     box-shadow: 0 1px 0 0.5px var(--agisty-color-border);
+    color: var(--agisty-color-black);
   }
 }
 
@@ -203,19 +204,14 @@ pre {
   margin-inline: 0;
 }
 
-/* blockquote:where(:not(.wp-block)),
-figure:where(:not(.wp-block)),
-dl,
-dd {
-  margin: 0;
-  margin-block: 0;
-  margin-inline: 0;
-  overflow-wrap: break-word;
-} */
-
 blockquote {
   margin-block: 0;
   margin-inline: 0;
+}
+
+table {
+  border-spacing: 0;
+  border-color: var(--agisty-color-border);
 }
 
 button,
@@ -260,29 +256,6 @@ p {
 
   img {
     display: inline-block;
-  }
-}
-
-ol,
-ul {
-  margin-block: 0;
-  padding-inline-start: 1rem;
-
-  /**
-   * Remove list styles on ul, ol elements with a list role,
-   * which suggests default styling will be removed.
-   */
-  &[role="list"] {
-    list-style: none;
-  }
-}
-
-li {
-  text-wrap: pretty;
-
-  img {
-    display: inline-block;
-    vertical-align: sub;
   }
 }
 
