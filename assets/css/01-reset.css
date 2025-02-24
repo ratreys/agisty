@@ -33,10 +33,27 @@
   --agisty-font-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
     Monaco, Consolas, monospace;
   --agisty-line-height: calc(1ex / 0.32);
-  --agisty-content-spacing: 1.5rem;
-  --agisty-font-size-small: 14px;
   --agisty-link-decoration: solid underline currentColor 2px;
   --agisty-underline-offset: 0.175rem;
+
+  /**
+   * Calculated font sizes.
+   *
+   * https://utopia.fyi
+   */
+
+  /** 16.5px @550px → 18.5px @750 */
+  --agisty-font-size-0: clamp(1.0313rem, 0.6875rem + 1vw, 1.1563rem);
+  --agisty-font-size-small: 14px;
+
+  /**
+   * Calculated spacing.
+   *
+   * https://utopia.fyi
+   */
+
+  /** 32px @1196px → 100px @1264 */
+  --agisty-spacing-0: clamp(2rem, -72.75rem + 100vw, 6.25rem);
 }
 
 /**
@@ -82,15 +99,21 @@ html {
 body {
   background-color: var(--agisty-color-white);
   color: var(--agisty-color-black);
+  display: flex;
+  flex-direction: column;
   font-family: var(--agisty-font-system);
   font-kerning: normal;
   font-size: var(--wp--preset--font-size--normal);
   font-weight: 400;
   line-height: var(--agisty-line-height);
+  margin-inline: auto;
   min-height: 100vh;
   min-height: 100svh; /** https://www.youtube.com/watch?v=ru3U8MHbFFI */
+  overflow-wrap: break-word;
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
   text-wrap: pretty; /** Available in Baseline since March 2024. */
+  width: min(100% - 4rem, var(--wp--style--global--wide-size));
 }
 
 /* Remove default margin in favor of better control in authored CSS. */
@@ -101,7 +124,6 @@ h4 {
   font-weight: 600;
   line-height: 1.2;
   margin-block: 0;
-  overflow-wrap: break-word;
 }
 
 abbr[title] {
@@ -154,7 +176,8 @@ samp {
 
 code,
 kbd {
-  padding: 0.125rem 0.25rem;
+  padding-block: 0.125rem;
+  padding-inline: 0.25rem;
 }
 
 code {
@@ -182,14 +205,14 @@ pre {
   line-height: 1.5;
   margin: 0;
   overflow: auto;
-  overflow-wrap: break-word;
-  padding: var(--agisty-content-spacing) var(--agisty-content-spacing);
+  padding-block: var(--wp--preset--spacing--50);
+  padding-inline: var(--wp--preset--spacing--50);
 
   code {
-    background-color: inherit;
     border: none;
     color: inherit;
-    padding: 0;
+    padding-block: 0;
+    padding-inline: 0;
   }
 }
 
@@ -235,7 +258,6 @@ a {
 p {
   margin: 0;
   margin-block: 0;
-  overflow-wrap: break-word;
 
   img {
     display: inline-block;
