@@ -30,14 +30,15 @@
 
   /** CSS Variables. More will be added over time. */
   --agisty-font-system: system-ui, -apple-system, sans-serif;
-  --agisty-font-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
-    Monaco, Consolas, monospace;
+  --agisty-font-monospace: ui-monospace, Menlo, Monaco, Consolas, monospace;
   --agisty-line-height: calc(1ex / 0.32);
+  --agisty-line-height-s: 1.2;
+  --agisty-line-height-m: 1.5;
   --agisty-link-decoration: solid underline currentColor 2px;
   --agisty-underline-offset: 0.175rem;
 
   /**
-   * Calculated font sizes.
+   * Calculated font sizes and spacing.
    *
    * https://utopia.fyi
    */
@@ -46,13 +47,10 @@
   --agisty-font-size-0: clamp(1.0313rem, 0.6875rem + 1vw, 1.1563rem);
   --agisty-font-size-small: 14px;
 
-  /**
-   * Calculated spacing.
-   *
-   * https://utopia.fyi
+  /** 
+   * Spacing between main content and sidebar.
+   * 32px @1196px → 100px @1264px
    */
-
-  /** 32px @1196px → 100px @1264 */
   --agisty-spacing-0: clamp(2rem, -72.75rem + 100vw, 6.25rem);
 }
 
@@ -68,7 +66,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  /* outline: 1px solid #00703c; */
 
   /** 
    * Resources on prefers-reduced-motion:
@@ -122,7 +119,7 @@ h2,
 h3,
 h4 {
   font-weight: 600;
-  line-height: 1.2;
+  line-height: var(--agisty-line-height-s);
   margin-block: 0;
 }
 
@@ -228,11 +225,7 @@ textarea,
 select {
   font-family: inherit;
   font-size: inherit;
-  line-height: 1.2;
-}
-
-iframe {
-  border: 0;
+  line-height: var(--agisty-line-height-s);
 }
 
 a {
