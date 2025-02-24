@@ -15,15 +15,8 @@
   outline-offset: 2px;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  overflow-x: clip;
-  width: min(100% - 4rem, var(--wp--style--global--wide-size));
-  margin-inline: auto;
-}
-
-article {
+article,
+aside {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -43,8 +36,10 @@ footer {
 }
 
 .agisty__main {
+  --sidebar--width: 350px;
+
   align-items: stretch;
-  gap: 2rem;
+  gap: 2rem var(--agisty-spacing-0);
 
   /**
    * https://every-layout.dev/layouts/sidebar/
@@ -63,16 +58,18 @@ footer {
   > aside {
     /* ↓ The width of the sidebar sidebar */
     flex-grow: 1;
-    flex-basis: 350px;
+    flex-basis: var(--sidebar--width);
+    background-color: var(--agisty-color-background);
+    border: 1px solid var(--agisty-color-border);
   }
 }
 
 .entry-content {
-  font-size: 1.125rem;
+  font-size: var(--agisty-font-size-0);
   line-height: var(--agisty-line-height);
 
   * + * {
-    margin-block-start: var(--agisty-content-spacing, 1rem);
+    margin-block-start: var(--wp--preset--spacing--50, 1rem);
   }
 
   h2 {
@@ -89,10 +86,10 @@ footer {
   }
 }
 
-.entry-header .wp-block-post-title {
+/* .entry-header .wp-block-post-title {
   font-size: 2rem;
   line-height: 1.15;
-}
+} */
 
 .header-menu-wrapper,
 .footer-menu-wrapper {
@@ -130,17 +127,20 @@ footer {
 .agisty-box-red {
   background-color: rgb(255 0 0 / 15%);
   border: 1px solid var(--agisty-color-red);
-  padding: var(--agisty-content-spacing);
+  padding-block: var(--wp--preset--spacing--50);
+  padding-inline: var(--wp--preset--spacing--50);
 }
 
 .agisty-box-green {
   background-color: rgb(0 128 0 / 15%);
   border: 1px solid var(--agisty-color-green);
-  padding: var(--agisty-content-spacing);
+  padding-block: var(--wp--preset--spacing--50);
+  padding-inline: var(--wp--preset--spacing--50);
 }
 
 .agisty-box-blue {
   background-color: rgb(0 0 255 / 15%);
   border: 1px solid var(--agisty-color-blue);
-  padding: var(--agisty-content-spacing);
+  padding-block: var(--wp--preset--spacing--50);
+  padding-inline: var(--wp--preset--spacing--50);
 }
