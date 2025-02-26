@@ -129,8 +129,8 @@ add_action( 'after_setup_theme', function() {
 	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
 	 * @link https://developer.wordpress.org/reference/functions/add_editor_style/
 	 */
-	// add_theme_support( 'editor-styles' );
-	// add_editor_style();
+	add_theme_support( 'editor-styles' );
+	add_editor_style( '/assets/css/admin/style-editor.css' );
 
 } ); // End of `after_setup_theme` hook.
 
