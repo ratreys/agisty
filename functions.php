@@ -13,6 +13,11 @@ namespace Agisty;
 
 define( 'AGISTYINC', get_template_directory() . '/includes' );
 
+/**
+ * Perform basic setup, registration, and init actions for the theme.
+ * 
+ * @link https://developer.wordpress.org/reference/hooks/after_setup_theme/
+ */
 add_action( 'after_setup_theme', function() {
 	/**
 	 * Allows WordPress to manage the document title.
@@ -35,7 +40,15 @@ add_action( 'after_setup_theme', function() {
 	 */
     add_theme_support( 'post-thumbnails' );
 
-    add_theme_support( 'responsive-embeds' );
+	/**
+	 * Responsive embedded content.
+	 * 
+	 * To make the content resize and keep its aspect ratio, the `body` element needs the wp-embed-responsive class.
+	 * This is not set by default, and requires the theme to opt in to the responsive-embeds feature:
+	 * 
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#responsive-embedded-content
+	 */
+	add_theme_support( 'responsive-embeds' );
 
     add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -103,7 +116,20 @@ add_action( 'after_setup_theme', function() {
 		'menu-footer' => esc_html__( 'Footer Menu', 'agisty' ),
 	] );
 
-	add_theme_support( 'editor-styles' );
+	/**
+	 * Remove WordPress core block patterns.
+	 * 
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#disabling-the-default-block-patterns
+	 */
+	remove_theme_support( 'core-block-patterns' );
+	
+	/**
+	 * Theme's editor style.
+	 * 
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+	 * @link https://developer.wordpress.org/reference/functions/add_editor_style/
+	 */
+	// add_theme_support( 'editor-styles' );
 	// add_editor_style();
 
 } ); // End of `after_setup_theme` hook.
@@ -118,4 +144,5 @@ add_action( 'wp_enqueue_scripts', function() {
 	);
 } );
 
-require_once AGISTYINC . '/agisty-overrides.php';
+// require_once AGISTYINC . '/agisty-overrides.php';
+// require_once AGISTYINC . '/agisty-functions.php';
