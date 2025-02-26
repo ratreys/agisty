@@ -19,6 +19,7 @@ define( 'AGISTYINC', get_template_directory() . '/includes' );
  * @link https://developer.wordpress.org/reference/hooks/after_setup_theme/
  */
 add_action( 'after_setup_theme', function() {
+
 	/**
 	 * Allows WordPress to manage the document title.
 	 *
@@ -41,10 +42,8 @@ add_action( 'after_setup_theme', function() {
     add_theme_support( 'post-thumbnails' );
 
 	/**
-	 * Responsive embedded content.
-	 * 
-	 * To make the content resize and keep its aspect ratio, the `body` element needs the wp-embed-responsive class.
-	 * This is not set by default, and requires the theme to opt in to the responsive-embeds feature:
+	 * Add `wp-embed-responsive` class to the `body` element to make embeds responsive.
+	 * This is to make the content resize and keep its aspect ratio.
 	 * 
 	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#responsive-embedded-content
 	 */
