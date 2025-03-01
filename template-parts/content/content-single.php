@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying single posts.
  *
@@ -24,6 +25,6 @@
 		<?php the_content(); ?>
 	</div>
 </article>
-<aside class="is-layout-flex agisty__sidebar" style="background-color: #f0f0f1;">
+<aside class="is-layout-flex agisty__sidebar">
 	<h2>Related Posts</h2>
 </aside>
