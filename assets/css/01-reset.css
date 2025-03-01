@@ -30,7 +30,7 @@
 
   /** CSS Variables. More will be added over time. */
   --agisty-font-system: system-ui, -apple-system, sans-serif;
-  --agisty-font-monospace: ui-monospace, Menlo, Monaco, Consolas, monospace;
+  --agisty-font-monospace: ui-monospace, Fira Code, Menlo, monospace;
   --agisty-line-height: calc(1ex / 0.32);
   --agisty-line-height-s: 1.2;
   --agisty-line-height-m: 1.5;
