@@ -1,16 +1,16 @@
 body {
-  background-color: #d3ebf3;
-  color: #00005d;
+  background-color: #fbfbfb
+  color: #11171d;
 }
 
 /* Main column width */
 .wp-block {
-  max-width: 720px;
+  max-width: var(--wp--style--global--content-size);
 }
 
 /* Width of "wide" blocks */
 .wp-block[data-align="wide"] {
-  max-width: 1200px;
+  max-width: var(--wp--style--global--wide-size);
 }
 
 /* Width of "full-wide" blocks */
