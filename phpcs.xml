@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="Agisty">
+	<description>Rules for Agisty</description>
+
+    <!-- Exclude patterns. -->
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <!-- PHP Compatibility. -->
+    <config name="testVersion" value="7.4-"/>
+    <rule ref="PHPCompatibility"/>
+    <config name="minimum_supported_wp_version" value="6.5"/>
+
+    <!-- WordPress Coding Standards. -->
+	<rule ref="Pantheon-WP" />
+
+</ruleset>
