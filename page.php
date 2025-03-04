@@ -1,7 +1,6 @@
 <?php
 /**
  * Template for displaying default pages.
- * 
  */
 
 get_header();

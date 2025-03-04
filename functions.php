@@ -84,7 +84,7 @@ add_action( 'after_setup_theme', function () {
 	 */
 	add_theme_support(
 		'custom-logo', [
-			'height'      => 70, /* px */
+			'height'      => 70,  /* px */
 			'width'       => 350, /* px */
 			'flex-width'  => true,
 			'flex-height' => true,

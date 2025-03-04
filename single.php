@@ -15,8 +15,8 @@ while ( have_posts() ) :
 	$prev_label = esc_html__( 'Prev Post', 'agisty' );
 
 	// the_post_navigation( [
-	// 	'next-text' => '<p class="meta-nav">' . $next_label . '</p><p class="post-title">%title</p>',
-	// 	'prev-text' => '<p class="meta-nav">' . $prev_label . '</p><p class="post-title">%title</p>',
+	// 'next-text' => '<p class="meta-nav">' . $next_label . '</p><p class="post-title">%title</p>',
+	// 'prev-text' => '<p class="meta-nav">' . $prev_label . '</p><p class="post-title">%title</p>',
 	// ] );
 
 endwhile;

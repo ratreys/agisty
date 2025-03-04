@@ -14,7 +14,7 @@ $site_url   = home_url( '/' );
 if ( has_custom_logo() ) :
 	the_custom_logo();
 else : 
-?>
-	<a href="<?php echo esc_url( $site_url ); ?>" rel="home"><?php esc_html_e( $site_title, 'agisty' ) ?></a>
-<?php 
+	?>
+	<a href="<?php echo esc_url( $site_url ); ?>" rel="home"><?php esc_html_e( $site_title, 'agisty' ); ?></a>
+	<?php 
 endif;
