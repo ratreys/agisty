@@ -47,7 +47,7 @@ remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
  *
  * @link https://github.com/billerickson/BE-Starter/blob/master/inc/wordpress-cleanup.php
  */
-add_filter( 'body_class', function( $classes ) {
+add_filter( 'body_class', function ( $classes ) {
 
 	if ( ! is_array( $classes ) ) {
 		return $classes;
@@ -69,7 +69,6 @@ add_filter( 'body_class', function( $classes ) {
 	];
 
 	return array_intersect( $classes, $allowed_classes );
-
 }, 20 );
 
 /**
@@ -77,7 +76,7 @@ add_filter( 'body_class', function( $classes ) {
  *
  * @link https://github.com/billerickson/BE-Starter/blob/master/inc/wordpress-cleanup.php
  */
-add_filter( 'post_class', function( $classes ) {
+add_filter( 'post_class', function ( $classes ) {
 
 	if ( ! is_array( $classes ) ) {
 		return $classes;
@@ -89,7 +88,6 @@ add_filter( 'post_class', function( $classes ) {
 	];
 
 	return array_intersect( $classes, $allowed_classes );
-
 } );
 
 /**
@@ -105,9 +103,9 @@ add_filter( 'post_class', function( $classes ) {
  */
 // add_filter( 'nav_menu_css_class', function( $classes, $menu_item, $args, $depth ) {
 
-//     if ( ! is_array( $classes ) || false === $args || false === $depth ) {
-//         return $classes;
-//     }
+// if ( ! is_array( $classes ) || false === $args || false === $depth ) {
+// return $classes;
+// }
 
 
 // }, 5, 3 );
