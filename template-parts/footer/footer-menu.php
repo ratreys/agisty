@@ -1,6 +1,8 @@
 <?php
 /**
- * Displays the site footer menu.
+ * Display the site footer menu.
+ * 
+ * @package Agisty
  */
 
 if ( has_nav_menu( 'menu-footer' ) ) : 
