@@ -3,7 +3,7 @@
 namespace Agisty\Overrides;
 
 /**
- * Remove links to general and extra feeds from <head>.
+ * Remove links to general and extra feeds from head element.
  *
  * @link https://developer.wordpress.org/reference/functions/feed_links_extra/
  * @link https://developer.wordpress.org/reference/functions/feed_links/
@@ -25,7 +25,7 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' ); /** Retained for backw
 remove_action( 'wp_head', 'rsd_link' );
 
 /**
- * Remove REST API link tag from <head>.
+ * Remove REST API link tag from head element.
  *
  * @link https://developer.wordpress.org/reference/functions/rest_output_link_wp_head/
  * @link https://github.com/WordPress/WordPress/blob/master/wp-includes/default-filters.php
@@ -34,17 +34,16 @@ remove_action( 'wp_head', 'rest_output_link_wp_head', 10, );
 remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
 
-/** Remove rel=shortlink from the <head>.  */
+/** Remove shortlink from the head element.  */
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 
 /** Remove WordPress meta generator. */
 add_filter( 'the_generator', '__return_empty_string' );
 
-
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 
 /**
- * Clean the class names for the <body> element.
+ * Clean the class names for the body element.
  *
  * @link https://github.com/billerickson/BE-Starter/blob/master/inc/wordpress-cleanup.php
  */
@@ -74,7 +73,7 @@ add_filter( 'body_class', function( $classes ) {
 }, 20 );
 
 /**
- * Clean the list of CSS class names for the current `article`.
+ * Clean the list of CSS class names for the current article element.
  *
  * @link https://github.com/billerickson/BE-Starter/blob/master/inc/wordpress-cleanup.php
  */
