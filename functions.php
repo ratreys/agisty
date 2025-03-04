@@ -2,10 +2,10 @@
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * @link 	https://developer.wordpress.org/themes/basics/theme-functions/
- * @link 	https://developer.wordpress.org/reference/functions/add_theme_support/
+ * @link    https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link    https://developer.wordpress.org/reference/functions/add_theme_support/
  *
- * @author 	Rey Sanchez
+ * @author  Rey Sanchez
  * @license GPLv3.0
  */
 
@@ -18,7 +18,7 @@ define( 'AGISTYINC', get_template_directory() . '/includes' );
  * 
  * @link https://developer.wordpress.org/reference/hooks/after_setup_theme/
  */
-add_action( 'after_setup_theme', function() {
+add_action( 'after_setup_theme', function () {
 
 	/**
 	 * Allows WordPress to manage the document title.
@@ -26,7 +26,7 @@ add_action( 'after_setup_theme', function() {
 	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
 	 */
 	add_theme_support( 'title-tag' );
-    
+	
 	/**
 	 * Enable RSS feed links in the head section of the theme.
 	 *
@@ -39,7 +39,7 @@ add_action( 'after_setup_theme', function() {
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
-    add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	/**
 	 * Add `wp-embed-responsive` class to the `body` element to make embeds responsive.
@@ -49,7 +49,7 @@ add_action( 'after_setup_theme', function() {
 	 */
 	add_theme_support( 'responsive-embeds' );
 
-    add_theme_support( 'customize-selective-refresh-widgets' );
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	add_theme_support(
 		'html5', [
@@ -80,10 +80,11 @@ add_action( 'after_setup_theme', function() {
 	 * Adding custom logo support. First introduced in WordPress v4.5.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/custom-logo/#adding-custom-logo-support-to-your-theme
+	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
 	add_theme_support(
 		'custom-logo', [
-			'height'      =>  70, /* px */
+			'height'      => 70, /* px */
 			'width'       => 350, /* px */
 			'flex-width'  => true,
 			'flex-height' => true,
@@ -94,7 +95,7 @@ add_action( 'after_setup_theme', function() {
 	 * Enables Post Formats support.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/post-formats/#supported-formats
-     * @link https://developer.wordpress.org/advanced-administration/wordpress/post-formats/
+	 * @link https://developer.wordpress.org/advanced-administration/wordpress/post-formats/
 	 */
 	add_theme_support(
 		'post-formats', [
@@ -105,10 +106,19 @@ add_action( 'after_setup_theme', function() {
 			'quote',
 			'status',
 			'video',
-            'audio',
-            'chat',
+			'audio',
+			'chat',
 		]
 	);
+
+	/**
+	 * Theme's editor style.
+	 * 
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+	 * @link https://developer.wordpress.org/reference/functions/add_editor_style/
+	 */
+	add_theme_support( 'editor-styles' );
+	add_editor_style( '/assets/css/admin/style-editor.css' );
 
 	register_nav_menus( [
 		'menu-header' => esc_html__( 'Header Menu', 'agisty' ),
@@ -121,25 +131,15 @@ add_action( 'after_setup_theme', function() {
 	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#disabling-the-default-block-patterns
 	 */
 	remove_theme_support( 'core-block-patterns' );
-	
-	/**
-	 * Theme's editor style.
-	 * 
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
-	 * @link https://developer.wordpress.org/reference/functions/add_editor_style/
-	 */
-	add_theme_support( 'editor-styles' );
-	add_editor_style( '/assets/css/admin/style-editor.css' );
-
 } ); // End of `after_setup_theme` hook.
 
 
-add_action( 'wp_enqueue_scripts', function() {
+add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style(
-        'agisty-main',
-        get_theme_file_uri( '/assets/css/main.css' ),
-        [],
-        filemtime( get_theme_file_path( '/assets/css/main.css' ) )
+		'agisty-main',
+		get_theme_file_uri( '/assets/css/main.css' ),
+		[],
+		filemtime( get_theme_file_path( '/assets/css/main.css' ) )
 	);
 } );
 
