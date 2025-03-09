@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Fira Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Fira Mono"), url("../fonts/agisty-mono-rg.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fira Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Fira Mono"), url("../fonts/agisty-mono-bd.woff2") format("woff2");
+}
