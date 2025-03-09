@@ -8,7 +8,7 @@
  * @package Agisty
  */
 
-namespace Agisty\Core;
+namespace Agisty;
 
 /**
  * Perform basic setup, registration, and init actions for the theme.
