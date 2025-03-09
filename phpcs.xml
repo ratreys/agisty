@@ -14,4 +14,13 @@
     <!-- WordPress Coding Standards. -->
 	<rule ref="Pantheon-WP" />
 
+    <rule ref="WordPress-Core">
+		<!-- Allow with or without semicolons. -->
+		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
+        
+        <!-- Use of short arrays. -->
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
+	</rule>
+    
+
 </ruleset>
