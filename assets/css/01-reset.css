@@ -30,7 +30,7 @@
 
   /** CSS Variables. More will be added over time. */
   --agisty-font-system: system-ui, -apple-system, sans-serif;
-  --agisty-font-monospace: ui-monospace, Fira Code, Menlo, monospace;
+  --agisty-font-monospace: ui-monospace, Menlo, "Fira Mono", Consolas, monospace;
   --agisty-line-height: calc(1ex / 0.32);
   --agisty-line-height-s: 1.2;
   --agisty-line-height-m: 1.5;
@@ -51,7 +51,7 @@
 
   /** 28.5px → 30.5px */
   --agisty-font-size-2: clamp(1.7813rem, 1.4375rem + 1vw, 1.9063rem);
-  --agisty-font-size-small: 14px;
+  --agisty-font-size-small: 0.925rem;
 
   /** 
    * Spacing between main content and sidebar.
