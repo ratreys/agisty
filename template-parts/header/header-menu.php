@@ -8,6 +8,7 @@
  *
  * @package Agisty
  */
+
 if ( has_nav_menu( 'menu-header' ) ) : 
 	?>
 	<div itemscope itemtype="https://schema.org/SiteNavigationElement">
