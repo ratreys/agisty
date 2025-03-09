@@ -1,15 +1,11 @@
 <?php
-
-namespace Agisty\Overrides;
-
 /**
- * Remove links to general and extra feeds from head element.
- *
- * @link https://developer.wordpress.org/reference/functions/feed_links_extra/
- * @link https://developer.wordpress.org/reference/functions/feed_links/
+ * WP core cleanup.
+ * 
+ * @package Agisty
  */
-remove_action( 'wp_head', 'feed_links', 2 );
-remove_action( 'wp_head', 'feed_links_extra', 3 );
+
+namespace Agisty;
 
 /**
  * Remove emoji-related styles and scripts.
@@ -17,9 +13,19 @@ remove_action( 'wp_head', 'feed_links_extra', 3 );
  * @link https://selftawt.com/disable-wpemoji-correctly/
  * @link https://wordpress.org/plugins/remove-wp-emoji-correctly/
  */
+
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_emoji_styles' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); /** Retained for backwards compatibility */
+
+/** Prevent conversion of emoji to a static img element. */
+remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
+/** Embeds. */
+remove_action( 'embed_head', 'print_emoji_detection_script' );
+remove_action( 'enqueue_embed_scripts', 'wp_enqueue_emoji_styles' );
 
 /** Remove the link to the Really Simple Discovery service endpoint from the frontend. */
 remove_action( 'wp_head', 'rsd_link' );
@@ -89,23 +95,3 @@ add_filter( 'post_class', function ( $classes ) {
 
 	return array_intersect( $classes, $allowed_classes );
 } );
-
-/**
- * Clean CSS classes applied to a menu item’s list item element.
- *
- * @param   array       $classes    Array of the CSS classes that are applied to the menu item’s <li> element.
- * @param   WP_Post     $menu_item  The current menu item object.
- * @param   stdClass    $args       An object of wp_nav_menu() arguments.
- * @param   int         $dept       Depth of menu item. Used for padding.
- *
- * @link    https://developer.wordpress.org/reference/hooks/nav_menu_css_class/
- * @link    https://github.com/billerickson/BE-Starter/blob/master/inc/wordpress-cleanup.php
- */
-// add_filter( 'nav_menu_css_class', function( $classes, $menu_item, $args, $depth ) {
-
-// if ( ! is_array( $classes ) || false === $args || false === $depth ) {
-// return $classes;
-// }
-
-
-// }, 5, 3 );
