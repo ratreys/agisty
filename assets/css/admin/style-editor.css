@@ -1,6 +1,7 @@
 body {
-  background-color: #fbfbfb
-  color: #11171d;
+  font-size: 17px;
+  margin-inline: auto;
+  width: min(100% - 4rem, var(--wp--style--global--wide-size));
 }
 
 /* Main column width */
@@ -16,4 +17,50 @@ body {
 /* Width of "full-wide" blocks */
 .wp-block[data-align="full"] {
   max-width: none;
+}
+
+code,
+kbd,
+pre {
+  background-color: var(--wp--custom--background);
+  border: 1px solid var(--wp--custom--border);
+  font-family: var(--wp--custom--font-mono);
+  font-size: 14px;
+}
+
+code,
+kbd {
+  padding-block: 0.125rem;
+  padding-inline: 0.25rem;
+}
+
+code {
+  color: var(--wp--custom--red);
+}
+
+/**
+ * Style the kbd element to look like a button. 
+ *
+ * https://dylanatsmith.com/wrote/styling-the-kbd-element
+ * https://grtcalculator.com/styles/
+ */
+kbd {
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 0 1px var(--wp--custom--border);
+  color: var(--wp--custom--gray);
+}
+
+pre {
+  line-height: var(--wp--custom--line-height-normal);
+  margin: 0;
+  overflow: auto;
+  padding-block: var(--wp--preset--spacing--50);
+  padding-inline: var(--wp--preset--spacing--50);
+
+  code {
+    border: none;
+    color: inherit;
+    padding-block: 0;
+    padding-inline: 0;
+  }
 }
