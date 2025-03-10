@@ -71,12 +71,6 @@ html {
 }
 
 body {
-  background-color: var(--wp--custom--white);
-  color: var(--wp--custom--black);
-  font-family: var(--wp--custom--font-body);
-  font-size: var(--wp--preset--font-size--normal);
-  font-weight: 400;
-  line-height: var(--wp--custom--line-height-loose);
   min-height: 100vh;
   min-height: 100svh; /** https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
