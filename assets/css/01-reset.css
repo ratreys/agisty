@@ -9,32 +9,13 @@
  */
 
 :root {
-  /**
-   * Make sure that the contrast ratio of text and interactive elements
-   * meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
-   *
-   * https://www.w3.org/TR/WCAG22/#contrast-minimum
-   * https://design-system.service.gov.uk/styles/colour/
-   */
-  --agisty-color-black: #11171d;
-  --agisty-color-gray: #4b555f;
-  --agisty-color-red: #a51c30;
-  --agisty-color-blue: #0033a6;
-  --agisty-color-green: #00703c;
-  --agisty-color-yellow: #fabf46;
-  --agisty-color-white: #fbfbfb;
-  --agisty-color-link-initial: #0033a6;
-  --agisty-color-link-hover: #003078;
-  --agisty-color-border: #b1b4b7;
-  --agisty-color-background: #f6f8fa;
-
   /** CSS Variables. More will be added over time. */
   --agisty-font-system: system-ui, -apple-system, sans-serif;
-  --agisty-font-monospace: ui-monospace, Menlo, "Fira Mono", Consolas, monospace;
+  --agisty-font-monospace: Menlo, "Fira Mono", Consolas, Monaco, monospace;
   --agisty-line-height: calc(1ex / 0.32);
   --agisty-line-height-s: 1.2;
   --agisty-line-height-m: 1.5;
-  --agisty-link-decoration: solid underline currentColor 2px;
+  --agisty-link-decoration: solid underline currentcolor 2px;
   --agisty-underline-offset: 0.175rem;
 
   /**
@@ -51,7 +32,7 @@
 
   /** 28.5px → 30.5px */
   --agisty-font-size-2: clamp(1.7813rem, 1.4375rem + 1vw, 1.9063rem);
-  --agisty-font-size-small: 0.925rem;
+  --agisty-font-size-small: 14px;
 
   /** 
    * Spacing between main content and sidebar.
@@ -96,22 +77,28 @@ html {
 }
 
 body {
-  background-color: var(--agisty-color-white);
-  color: var(--agisty-color-black);
-  display: flex;
-  flex-direction: column;
+  background-color: var(--wp--custom--white);
+  color: var(--wp--custom--black);
   font-family: var(--agisty-font-system);
-  font-kerning: normal;
   font-size: var(--wp--preset--font-size--normal);
   font-weight: 400;
   line-height: var(--agisty-line-height);
-  margin-inline: auto;
   min-height: 100vh;
   min-height: 100svh; /** https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
   overflow-x: clip;
-  text-rendering: optimizeLegibility;
-  text-wrap: pretty; /** Available in Baseline since March 2024. */
+  text-wrap: pretty;
+
+  /* Override default display styling. */
+  display: flex;
+  flex-direction: column;
+
+  /* Turn on kerning and ligature. */
+  font-kerning: normal;
+  text-rendering: optimizelegibility;
+
+  /* Margin related. */
+  margin-inline: auto;
   width: min(100% - 4rem, var(--wp--style--global--wide-size));
 }
 
@@ -167,8 +154,8 @@ code,
 kbd,
 pre,
 samp {
-  background-color: var(--agisty-color-background);
-  border: 1px solid var(--agisty-color-border);
+  background-color: var(--wp--custom--background);
+  border: 1px solid var(--wp--custom--border);
   font-family: var(--agisty-font-monospace);
   font-size: var(--agisty-font-size-small);
 }
@@ -180,7 +167,7 @@ kbd {
 }
 
 code {
-  color: var(--agisty-color-red);
+  color: var(--wp--custom--red);
 }
 
 /**
@@ -191,12 +178,12 @@ code {
  */
 kbd {
   border-radius: 0.25rem;
-  box-shadow: 0 2px 0 1px var(--agisty-color-border);
-  color: var(--agisty-color-gray);
+  box-shadow: 0 2px 0 1px var(--wp--custom--border);
+  color: var(--wp--custom--gray);
 
   &:is(:hover) {
-    box-shadow: 0 1px 0 0.5px var(--agisty-color-border);
-    color: var(--agisty-color-black);
+    box-shadow: 0 1px 0 0.5px var(--wp--custom--border);
+    color: var(--wp--custom--black);
   }
 }
 
@@ -231,20 +218,19 @@ select {
 }
 
 a {
-  color: var(--agisty-color-link-initial);
+  color: var(--wp--custom--link);
   text-decoration: var(--agisty-link-decoration);
   text-underline-offset: var(--agisty-underline-offset);
 
   &:is(:hover) {
-    color: var(--agisty-color-link-hover);
+    color: #06c;
     text-decoration-thickness: 3px;
   }
 
   &:is(:focus, :focus-visible) {
-    background-color: var(--agisty-color-yellow);
-    box-shadow: 0 -2px var(--agisty-color-yellow),
-      0 4px var(--agisty-color-black);
-    color: var(--agisty-color-black);
+    background-color: var(--wp--custom--yellow);
+    box-shadow: 0 -2px var(--wp--custom--yellow), 0 4px var(--wp--custom--black);
+    color: var(--wp--custom--black);
     outline: none;
     text-decoration-line: none;
   }
