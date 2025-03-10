@@ -64,7 +64,10 @@
       "link": "#0033a6",
       "line-height-tight": 1.2,
       "line-height-normal": 1.5,
-      "line-height-loose": "calc(1ex / 0.32)"
+      "line-height-loose": 1.7,
+      "font-body": "\"Agisty Body\", system-ui, -apple-system, sans-serif",
+      "font-head": "\"Agisty Head\", system-ui, -apple-system, sans-serif",
+      "font-mono": "Menlo, \"Fira Mono\", Consolas, Monaco, monospace;"
     }
   }
 }
