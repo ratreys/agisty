@@ -9,9 +9,6 @@
  */
 
 :root {
-  /** CSS Variables. More will be added over time. */
-  --agisty-font-system: system-ui, -apple-system, sans-serif;
-  --agisty-font-monospace: Menlo, "Fira Mono", Consolas, Monaco, monospace;
   --agisty-link-decoration: solid underline currentcolor 2px;
   --agisty-underline-offset: 0.175rem;
 
@@ -76,7 +73,7 @@ html {
 body {
   background-color: var(--wp--custom--white);
   color: var(--wp--custom--black);
-  font-family: var(--agisty-font-system);
+  font-family: var(--wp--custom--font-body);
   font-size: var(--wp--preset--font-size--normal);
   font-weight: 400;
   line-height: var(--wp--custom--line-height-loose);
@@ -153,7 +150,7 @@ pre,
 samp {
   background-color: var(--wp--custom--background);
   border: 1px solid var(--wp--custom--border);
-  font-family: var(--agisty-font-monospace);
+  font-family: var(--wp--custom--font-mono);
   font-size: var(--agisty-font-size-small);
 }
 
