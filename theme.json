@@ -69,5 +69,17 @@
       "font-head": "\"Agisty Head\", system-ui, -apple-system, sans-serif",
       "font-mono": "Menlo, \"Fira Mono\", Consolas, Monaco, monospace;"
     }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--custom--white)",
+      "text": "var(--wp--custom--black)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--custom--font-body)",
+      "fontSize": "var(--wp--preset--font-size--normal)",
+      "lineHeight": "var(--wp--custom--line-height-loose)",
+      "fontWeight": "400"
+    }
   }
 }
