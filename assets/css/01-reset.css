@@ -12,9 +12,6 @@
   /** CSS Variables. More will be added over time. */
   --agisty-font-system: system-ui, -apple-system, sans-serif;
   --agisty-font-monospace: Menlo, "Fira Mono", Consolas, Monaco, monospace;
-  --agisty-line-height: calc(1ex / 0.32);
-  --agisty-line-height-s: 1.2;
-  --agisty-line-height-m: 1.5;
   --agisty-link-decoration: solid underline currentcolor 2px;
   --agisty-underline-offset: 0.175rem;
 
@@ -82,7 +79,7 @@ body {
   font-family: var(--agisty-font-system);
   font-size: var(--wp--preset--font-size--normal);
   font-weight: 400;
-  line-height: var(--agisty-line-height);
+  line-height: var(--wp--custom--line-height-loose);
   min-height: 100vh;
   min-height: 100svh; /** https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
@@ -108,7 +105,7 @@ h2,
 h3,
 h4 {
   font-weight: 600;
-  line-height: var(--agisty-line-height-s);
+  line-height: var(--wp--custom--line-height-tight);
   margin-block: 0;
 }
 
@@ -188,7 +185,7 @@ kbd {
 }
 
 pre {
-  line-height: var(--agisty-line-height-m);
+  line-height: var(--wp--custom--line-height-normal);
   margin: 0;
   overflow: auto;
   padding-block: var(--wp--preset--spacing--50);
@@ -214,7 +211,7 @@ textarea,
 select {
   font-family: inherit;
   font-size: inherit;
-  line-height: var(--agisty-line-height-s);
+  line-height: var(--wp--custom--line-height-tight);
 }
 
 a {
