@@ -61,13 +61,13 @@
       "white": "rgb(251 251 251)",
       "background": "rgb(246 248 250)",
       "border": "rgb(177 180 183)",
-      "marker": "rgb(177 180 183 / 17%)",
+      "guides": "rgb(177 180 183 / 17%)",
       "line-height-tight": 1.2,
       "line-height-normal": 1.5,
       "line-height-loose": 1.7,
       "font-body": "\"Agisty Body\", system-ui, -apple-system, sans-serif",
       "font-head": "\"Agisty Head\", system-ui, -apple-system, sans-serif",
-      "font-mono": "Menlo, \"Fira Mono\", Consolas, Monaco, monospace"
+      "font-mono": "\"Agisty Mono\", Menlo, monospace"
     }
   },
   "styles": {
