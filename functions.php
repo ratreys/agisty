@@ -6,6 +6,7 @@
  * @link    https://developer.wordpress.org/reference/functions/add_theme_support/
  *
  * @package Agisty
+ * @author  Rey Sanchez
  * @license GPLv3.0
  */
 
@@ -13,5 +14,5 @@ namespace Agisty;
 
 define( 'AGISTYINC', get_template_directory() . '/includes' );
 
-
 require_once AGISTYINC . '/agisty-core.php';
+require_once AGISTYINC . '/agisty-overrides.php';
