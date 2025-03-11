@@ -66,7 +66,7 @@ footer {
 
 .entry-content {
   font-size: var(--agisty-font-size-0);
-  line-height: var(--agisty-line-height);
+  line-height: var(--wp--custom--line-height-loose);
 
   * + * {
     margin-block-start: var(--wp--preset--spacing--50, 1rem);
