@@ -68,6 +68,10 @@
 
 html {
   scroll-behavior: smooth;
+
+  /* Disables the browser's inflation algorithm. */
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body {
