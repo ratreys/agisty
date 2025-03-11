@@ -52,22 +52,22 @@
       "wideSize": "1200px"
     },
     "custom": {
-      "black": "#11171d",
-      "gray": "#4b555f",
-      "red": "#a51c30",
-      "blue": "#0033a6",
-      "green": "#00703c",
-      "yellow": "#fabf46",
-      "white": "#fbfbfb",
-      "background": "#f6f8fa",
-      "border": "#b1b4b7",
-      "link": "#0033a6",
+      "black": "rgb(17 23 29)",
+      "gray": "rgb(75 85 95)",
+      "red": "rgb(165, 28, 48)",
+      "blue": "rgb(0 51 166)",
+      "green": "rgb(0 112 60)",
+      "yellow": "rgb(250 191 70)",
+      "white": "rgb(251 251 251)",
+      "background": "rgb(246 248 250)",
+      "border": "rgb(177 180 183)",
+      "marker": "rgb(177 180 183 / 17%)",
       "line-height-tight": 1.2,
       "line-height-normal": 1.5,
       "line-height-loose": 1.7,
       "font-body": "\"Agisty Body\", system-ui, -apple-system, sans-serif",
       "font-head": "\"Agisty Head\", system-ui, -apple-system, sans-serif",
-      "font-mono": "Menlo, \"Fira Mono\", Consolas, Monaco, monospace;"
+      "font-mono": "Menlo, \"Fira Mono\", Consolas, Monaco, monospace"
     }
   },
   "styles": {
