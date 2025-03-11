@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template part for displaying single posts.
  *
@@ -11,7 +10,7 @@
  */
 ?>
 
-<article <?php post_class(); ?>>
+<article <?php post_class() ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
@@ -22,7 +21,7 @@
 		?>
 	</header>
 	<div class="entry-content is-layout-flow wp-block-post-content">
-		<?php the_content(); ?>
+		<?php the_content() ?>
 	</div>
 </article>
 <aside class="is-layout-flex agisty__sidebar">
