@@ -128,24 +128,9 @@
 /* ------------------------------
  | 9. Buttons
  * --------------------------- */
-:root :where(.wp-element-button, .wp-block-button__link) {
-  /** https://ui.shadcn.com/colors */
-  --red-800: #991b1b;
-  --red-900: #7f1d1d;
-  --red-950: #450a0a;
-
-  background-color: var(--wp--custom--red);
-  background-image: linear-gradient(var(--red-800), var(--red-900));
-  border-radius: 0.5rem;
-  box-shadow: 0 0.25rem var(--red-950), 0 0 0 0.5rem var(--wp--custom--white);
-  font-size: var(--wp--preset--font-size--normal);
-  line-height: var(--agisty-line-height-s);
+:where(.wp-element-button, .wp-block-button__link) {
+  box-shadow: 0 0.25rem #450a0a, 0 0 0 0.5rem white;
   text-shadow: 1px 1px 1px rgb(0 0 0 / 25%);
-
-  &:is(:hover) {
-    color: var(--wp--custom--white);
-    background-image: linear-gradient(#9a3412, #7c2d12);
-  }
 }
 
 /* ------------------------------
