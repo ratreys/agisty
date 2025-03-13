@@ -52,19 +52,19 @@
       "wideSize": "1200px"
     },
     "custom": {
-      "black": "rgb(17 23 29)",
-      "gray": "rgb(75 85 95)",
-      "red": "rgb(165, 28, 48)",
-      "blue": "rgb(0 51 166)",
-      "green": "rgb(0 112 60)",
       "yellow": "rgb(250 191 70)",
-      "white": "rgb(251 251 251)",
-      "background": "rgb(246 248 250)",
-      "border": "rgb(177 180 183)",
-      "guides": "rgb(177 180 183 / 17%)",
-      "line-height-tight": 1.2,
-      "line-height-normal": 1.5,
-      "line-height-loose": 1.7,
+      "black": "rgb(17 23 29)",
+      "white": "rgb(250 250 250)",
+      "green": "rgb(0 112 60)",
+      "gray": "rgb(75 85 95)",
+      "blue": "rgb(0 51 166)",
+      "red": "rgb(165, 28, 48)",
+      "backgr": "rgb(246 248 250)",
+      "border": "rgb(from var(--wp--custom--gray) r g b / 23%)",
+      "guides": "rgb(from var(--wp--custom--gray) r g b / 17%)",
+      "line-height-2": "1.2",
+      "line-height-5": "1.5",
+      "line-height-c": "calc(1ex / 0.32)",
       "font-body": "\"Agisty Body\", system-ui, -apple-system, sans-serif",
       "font-head": "\"Agisty Head\", system-ui, -apple-system, sans-serif",
       "font-mono": "\"Agisty Mono\", Menlo, monospace"
@@ -78,7 +78,7 @@
     "typography": {
       "fontFamily": "var(--wp--custom--font-body)",
       "fontSize": "var(--wp--preset--font-size--normal)",
-      "lineHeight": "var(--wp--custom--line-height-loose)",
+      "lineHeight": "var(--wp--custom--line-height-5)",
       "fontWeight": "400"
     }
   }
