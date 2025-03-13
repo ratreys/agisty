@@ -9,9 +9,6 @@
  */
 
 :root {
-  --agisty-link-decoration: solid underline currentcolor 2px;
-  --agisty-underline-offset: 0.175rem;
-
   /**
    * Calculated font sizes and spacing.
    *
@@ -20,13 +17,13 @@
   --agisty-font-size-small: 14px;
 
   /** ↓ 16.5px → 18.5px */
-  --agisty-font-size-norms: clamp(1.0313rem, 0.6875rem + 1vw, 1.1563rem);
-
-  /** ↓ 28.5px → 30.5px */
-  --agisty-font-size-h1: clamp(1.7813rem, 1.4375rem + 1vw, 1.9063rem);
+  --agisty-font-size-normal: clamp(1.0313rem, 0.6875rem + 1vw, 1.1563rem);
 
   /** ↓ 20.5px → 25.5px */
-  --agisty-font-size-h2: clamp(1.2813rem, 0.4219rem + 2.5vw, 1.5938rem);
+  --agisty-font-size-step-1: clamp(1.2813rem, 0.4219rem + 2.5vw, 1.5938rem);
+
+  /** ↓ 28.5px → 30.5px */
+  --agisty-font-size-step-2: clamp(1.7813rem, 1.4375rem + 1vw, 1.9063rem);
 
   /** 
    * Spacing between main content and sidebar.
@@ -169,7 +166,6 @@ code {
 kbd {
   border-radius: 0.25rem;
   box-shadow: 0 2px 0 1px var(--wp--custom--border);
-  color: var(--wp--custom--gray);
 }
 
 pre {
@@ -204,13 +200,8 @@ select {
 
 a {
   color: var(--wp--custom--blue);
-  text-decoration: var(--agisty-link-decoration);
-  text-underline-offset: var(--agisty-underline-offset);
-
-  &:is(:hover) {
-    color: rgb(from var(--wp--custom--blue) r g b / 90%);
-    text-decoration-thickness: 3px;
-  }
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.175rem;
 
   &:is(:focus, :focus-visible) {
     background-color: var(--wp--custom--yellow);
@@ -218,6 +209,11 @@ a {
     color: var(--wp--custom--black);
     outline: none;
     text-decoration-line: none;
+  }
+
+  &:is(:hover):not(.wp-element-button) {
+    color: rgb(from var(--wp--custom--blue) r g b / 90%);
+    text-decoration-thickness: 3px;
   }
 }
 
