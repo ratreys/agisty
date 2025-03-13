@@ -58,9 +58,8 @@
       "gray": "rgb(75 85 95)",
       "blue": "rgb(0 51 166)",
       "red": "rgb(127 29 29)",
-      "backgr": "rgb(246 248 250)",
-      "border": "rgb(from var(--wp--custom--gray) r g b / 23%)",
-      "guides": "rgb(from var(--wp--custom--gray) r g b / 17%)",
+      "border": "rgb(from var(--wp--custom--gray) r g b / 29%)",
+      "guides": "rgb(from var(--wp--custom--gray) r g b / 11%)",
       "line-height-2": "1.2",
       "line-height-5": "1.5",
       "line-height-c": "calc(1ex / 0.32)",
@@ -81,14 +80,10 @@
       "fontWeight": "400"
     },
     "elements": {
-      "link": {
-        "color": {
-          "text": "var(--wp--custom--blue)"
-        }
-      },
       "button": {
         "border": {
-          "radius": ".5rem"
+          "radius": ".5rem",
+          "width": "1px"
         },
         "color": {
           "background": "var(--wp--custom--red)",
@@ -97,11 +92,6 @@
         "typography": {
           "fontSize": "var(--wp--preset--font-size--normal)",
           "lineHeight": "var(--wp--custom--line-height-2)"
-        },
-        ":hover": {
-          "color": {
-            "background": "rgb(from var(--wp--custom--red) r g b / 90%)"
-          }
         }
       }
     }
