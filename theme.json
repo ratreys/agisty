@@ -55,10 +55,9 @@
       "yellow": "rgb(250 191 70)",
       "black": "rgb(17 23 29)",
       "white": "rgb(250 250 250)",
-      "green": "rgb(0 112 60)",
       "gray": "rgb(75 85 95)",
       "blue": "rgb(0 51 166)",
-      "red": "rgb(165, 28, 48)",
+      "red": "rgb(127 29 29)",
       "backgr": "rgb(246 248 250)",
       "border": "rgb(from var(--wp--custom--gray) r g b / 23%)",
       "guides": "rgb(from var(--wp--custom--gray) r g b / 17%)",
@@ -80,6 +79,31 @@
       "fontSize": "var(--wp--preset--font-size--normal)",
       "lineHeight": "var(--wp--custom--line-height-5)",
       "fontWeight": "400"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--custom--blue)"
+        }
+      },
+      "button": {
+        "border": {
+          "radius": ".5rem"
+        },
+        "color": {
+          "background": "var(--wp--custom--red)",
+          "text": "var(--wp--custom--white)"
+        },
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--normal)",
+          "lineHeight": "var(--wp--custom--line-height-2)"
+        },
+        ":hover": {
+          "color": {
+            "background": "rgb(from var(--wp--custom--red) r g b / 90%)"
+          }
+        }
+      }
     }
   }
 }
