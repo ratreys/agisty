@@ -17,16 +17,16 @@
    *
    * https://utopia.fyi
    */
-
-  /** 16.5px → 18.5px */
-  --agisty-font-size-0: clamp(1.0313rem, 0.6875rem + 1vw, 1.1563rem);
-
-  /** 20.5px → 25.5px */
-  --agisty-font-size-1: clamp(1.2813rem, 0.4219rem + 2.5vw, 1.5938rem);
-
-  /** 28.5px → 30.5px */
-  --agisty-font-size-2: clamp(1.7813rem, 1.4375rem + 1vw, 1.9063rem);
   --agisty-font-size-small: 14px;
+
+  /** ↓ 16.5px → 18.5px */
+  --agisty-font-size-norms: clamp(1.0313rem, 0.6875rem + 1vw, 1.1563rem);
+
+  /** ↓ 28.5px → 30.5px */
+  --agisty-font-size-h1: clamp(1.7813rem, 1.4375rem + 1vw, 1.9063rem);
+
+  /** ↓ 20.5px → 25.5px */
+  --agisty-font-size-h2: clamp(1.2813rem, 0.4219rem + 2.5vw, 1.5938rem);
 
   /** 
    * Spacing between main content and sidebar.
@@ -68,9 +68,11 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding: var(--wp--preset--spacing--50);
 
   /* Disables the browser's inflation algorithm. */
   -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
 
@@ -80,10 +82,6 @@ body {
   overflow-wrap: break-word;
   overflow-x: clip;
   text-wrap: pretty;
-
-  /* Override default display styling. */
-  display: flex;
-  flex-direction: column;
 
   /* Turn on kerning and ligature. */
   font-kerning: normal;
@@ -100,7 +98,7 @@ h2,
 h3,
 h4 {
   font-weight: 600;
-  line-height: var(--wp--custom--line-height-tight);
+  line-height: var(--wp--custom--line-height-2);
   margin-block: 0;
 }
 
@@ -146,7 +144,7 @@ code,
 kbd,
 pre,
 samp {
-  background-color: var(--wp--custom--background);
+  background-color: var(--wp--custom--backgr);
   border: 1px solid var(--wp--custom--border);
   font-family: var(--wp--custom--font-mono);
   font-size: var(--agisty-font-size-small);
@@ -180,7 +178,7 @@ kbd {
 }
 
 pre {
-  line-height: var(--wp--custom--line-height-normal);
+  line-height: var(--wp--custom--line-height-5);
   margin: 0;
   overflow: auto;
   padding-block: var(--wp--preset--spacing--50);
@@ -206,16 +204,16 @@ textarea,
 select {
   font-family: inherit;
   font-size: inherit;
-  line-height: var(--wp--custom--line-height-tight);
+  line-height: var(--wp--custom--line-height-2);
 }
 
 a {
-  color: var(--wp--custom--link);
+  color: var(--wp--custom--blue);
   text-decoration: var(--agisty-link-decoration);
   text-underline-offset: var(--agisty-underline-offset);
 
   &:is(:hover) {
-    color: #06c;
+    color: rgb(from var(--wp--custom--blue) r g b / 90%);
     text-decoration-thickness: 3px;
   }
 
