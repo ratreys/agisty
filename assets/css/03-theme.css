@@ -59,31 +59,31 @@ footer {
     /* ↓ The width of the sidebar sidebar */
     flex-grow: 1;
     flex-basis: var(--sidebar--width);
-    background-color: var(--wp--custom--background);
+    background-color: var(--wp--custom--backgr);
     border: 1px solid var(--wp--custom--border);
   }
 }
 
 .entry-content {
-  font-size: var(--agisty-font-size-0);
-  line-height: var(--wp--custom--line-height-loose);
+  font-size: var(--agisty-font-size-norms);
+  line-height: var(--wp--custom--line-height-c);
 
   * + * {
     margin-block-start: var(--wp--preset--spacing--50, 1rem);
   }
 
   h2 {
-    font-size: var(--agisty-font-size-2);
-    margin-block-start: var(--agisty-font-size-2);
+    font-size: var(--agisty-font-size-h2);
+    margin-block-start: var(--agisty-font-size-h1);
   }
 
   h3 {
-    font-size: var(--agisty-font-size-1);
+    font-size: var(--agisty-font-size-norms);
   }
 }
 
 .entry-header .wp-block-post-title {
-  font-size: var(--agisty-font-size-2);
+  font-size: var(--agisty-font-size-h1);
 }
 
 .header-menu-wrapper,
@@ -127,16 +127,16 @@ footer {
 }
 
 .agisty-box-red {
-  background-color: rgb(255 0 0 / 15%);
+  background-color: rgb(from var(--wp--custom--red) r g b / 13%);
   border: 1px solid var(--wp--custom--red);
 }
 
 .agisty-box-green {
-  background-color: rgb(0 128 0 / 15%);
+  background-color: rgb(from var(--wp--custom--green) r g b / 13%);
   border: 1px solid var(--wp--custom--green);
 }
 
 .agisty-box-blue {
-  background-color: rgb(0 0 255 / 15%);
+  background-color: rgb(from var(--wp--custom--blue) r g b / 13%);
   border: 1px solid var(--wp--custom--blue);
 }
