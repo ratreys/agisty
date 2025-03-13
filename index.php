@@ -1,4 +1,14 @@
 <?php
+/**
+ * The main template file. It is required in all themes.
+ * 
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/basics/template-files/
+ * 
+ * @package Agisty
+ * @author  Rey Sanchez
+ * @license GPLv3.0
+ */
 
 get_header();
 
