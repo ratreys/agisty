@@ -120,7 +120,6 @@ footer {
 }
 
 .agisty-box-red,
-.agisty-box-green,
 .agisty-box-blue {
   padding-block: var(--wp--preset--spacing--50);
   padding-inline: var(--wp--preset--spacing--50);
@@ -129,11 +128,6 @@ footer {
 .agisty-box-red {
   background-color: rgb(from var(--wp--custom--red) r g b / 13%);
   border: 1px solid var(--wp--custom--red);
-}
-
-.agisty-box-green {
-  background-color: rgb(from var(--wp--custom--green) r g b / 13%);
-  border: 1px solid var(--wp--custom--green);
 }
 
 .agisty-box-blue {
