@@ -67,7 +67,7 @@
  | 6. Pullquote
  * --------------------------- */
 .wp-block-pullquote {
-  background-color: var(--wp--custom--background);
+  background-color: var(--wp--custom--backgr);
   border-left: 4px solid var(--wp--custom--border);
   margin: 0;
   padding: 1rem 1.5rem;
@@ -81,7 +81,7 @@
 
 :root :where(.wp-block-pullquote) {
   font-size: inherit;
-  line-height: var(--wp--custom--line-height-loose);
+  line-height: var(--wp--custom--line-height-c);
 }
 
 /* ------------------------------
@@ -97,7 +97,7 @@
   }
 
   thead {
-    background-color: #e6e6e6;
+    background-color: rgb(from var(--wp--custom--gray) r g b / 17%);
   }
 
   tfoot {
@@ -155,7 +155,7 @@
   color: var(--wp--custom--black);
 
   &:is(:hover, :active) {
-    color: var(--wp--custom--link);
+    color: var(--wp--custom--blue);
     text-decoration: solid underline currentColor 3px;
   }
 
