@@ -170,11 +170,6 @@ kbd {
   border-radius: 0.25rem;
   box-shadow: 0 2px 0 1px var(--wp--custom--border);
   color: var(--wp--custom--gray);
-
-  &:is(:hover) {
-    box-shadow: 0 1px 0 0.5px var(--wp--custom--border);
-    color: var(--wp--custom--black);
-  }
 }
 
 pre {
