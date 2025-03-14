@@ -52,12 +52,12 @@
       "wideSize": "1200px"
     },
     "custom": {
-      "yellow": "rgb(250 191 70)",
+      "blue": "rgb(0 50 150)",
+      "bttn": "rgb(130 30 30)",
+      "gray": "rgb(70 80 90)",
       "black": "rgb(17 23 29)",
+      "focus": "rgb(250 190 70)",
       "white": "rgb(250 250 250)",
-      "gray": "rgb(75 85 95)",
-      "blue": "rgb(0 51 166)",
-      "red": "rgb(127 29 29)",
       "border": "rgb(from var(--wp--custom--gray) r g b / 29%)",
       "guides": "rgb(from var(--wp--custom--gray) r g b / 11%)",
       "line-height-2": "1.2",
@@ -65,7 +65,7 @@
       "line-height-c": "calc(1ex / 0.32)",
       "font-body": "\"Agisty Body\", system-ui, -apple-system, sans-serif",
       "font-head": "\"Agisty Head\", system-ui, -apple-system, sans-serif",
-      "font-mono": "\"Agisty Mono\", Menlo, monospace"
+      "font-mono": "\"Agisty Mono\", \"SF Mono\", \"Fira Mono\", Menlo, monospace"
     }
   },
   "styles": {
@@ -82,11 +82,10 @@
     "elements": {
       "button": {
         "border": {
-          "radius": ".5rem",
-          "width": "1px"
+          "radius": ".5rem"
         },
         "color": {
-          "background": "var(--wp--custom--red)",
+          "background": "var(--wp--custom--bttn)",
           "text": "var(--wp--custom--white)"
         },
         "typography": {
