@@ -59,31 +59,31 @@ footer {
     /* ↓ The width of the sidebar sidebar */
     flex-grow: 1;
     flex-basis: var(--sidebar--width);
-    background-color: var(--wp--custom--backgr);
+    background-color: white;
     border: 1px solid var(--wp--custom--border);
   }
 }
 
 .entry-content {
-  font-size: var(--agisty-font-size-norms);
+  font-size: var(--agisty-font-size-step-1);
   line-height: var(--wp--custom--line-height-c);
 
   * + * {
-    margin-block-start: var(--wp--preset--spacing--50, 1rem);
+    margin-block-start: var(--agisty-spacing--step--1, 1rem);
   }
 
   h2 {
-    font-size: var(--agisty-font-size-h2);
-    margin-block-start: var(--agisty-font-size-h1);
+    font-size: var(--agisty-font-size-step-2);
+    margin-block-start: var(--agisty-spacing--step--2);
   }
 
   h3 {
-    font-size: var(--agisty-font-size-norms);
+    font-size: var(--agisty-font-size-step-1);
   }
 }
 
 .entry-header .wp-block-post-title {
-  font-size: var(--agisty-font-size-h1);
+  font-size: var(--agisty-font-size-step-3);
 }
 
 .header-menu-wrapper,
