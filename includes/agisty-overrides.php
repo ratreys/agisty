@@ -59,19 +59,16 @@ add_filter( 'body_class', function ( $classes ) {
 		return $classes;
 	}
 
-	if ( is_singular() ) {
-		$classes[] = 'singlular';
-	}
-
 	$allowed_classes = [
-		'singular',
-		'single',
+		'admin-bar',
 		'archive',
 		'home',
+		'page',
 		'search',
-		'admin-bar',
+		'single',
 		'logged-in',
 		'wp-embed-responsive',
+		'wp-singular',
 	];
 
 	return array_intersect( $classes, $allowed_classes );
