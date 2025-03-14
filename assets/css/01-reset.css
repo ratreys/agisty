@@ -12,24 +12,28 @@
   /**
    * Calculated font sizes and spacing.
    *
+   * Min values are based on 500px.
+   * Max values are based on 750px.
+   *
    * https://utopia.fyi
+   * https://clamp.font-size.app/
    */
   --agisty-font-size--small: 14px;
 
-  /* ↓ 16.5px → 18.5px */
-  --agisty-font-size-step-1: clamp(1.0313rem, 0.7813rem + 0.8vw, 1.1563rem);
+  /* ↓ 17px → 19px */
+  --agisty-font-size-step-1: clamp(1.0625rem, 0.8125rem + 0.8vw, 1.1875rem);
 
-  /* ↓ 20.5px → 25.5px */
-  --agisty-font-size-step-2: clamp(1.2813rem, 0.6563rem + 2vw, 1.5938rem);
+  /* ↓ 21px → 25px */
+  --agisty-font-size-step-2: clamp(1.3125rem, 0.8125rem + 1.6vw, 1.5625rem);
 
-  /* ↓ 28.5px → 30.5px */
-  --agisty-font-size-step-3: clamp(1.7813rem, 1.5313rem + 0.8vw, 1.9063rem);
+  /* ↓ 23px → 29px */
+  --agisty-font-size-step-3: clamp(1.4375rem, 0.6875rem + 2.4vw, 1.8125rem);
 
-  /* ↓ 22px → 24px */
-  --agisty-spacing--step--1: clamp(1.375rem, 1.125rem + 0.8vw, 1.5rem);
+  /* ↓ 19px → 22px */
+  --agisty-spacing--step--1: clamp(1.1875rem, 0.8125rem + 1.2vw, 1.375rem);
 
-  /* ↓ 28px → 34px */
-  --agisty-spacing--step--2: clamp(1.75rem, 1rem + 2.4vw, 2.125rem);
+  /* ↓ 34px → 41px */
+  --agisty-spacing--step--2: clamp(2.125rem, 1.25rem + 2.8vw, 2.5625rem);
 
   /** 
    * Spacing between main content and sidebar.
