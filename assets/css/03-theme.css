@@ -73,17 +73,8 @@ footer {
   }
 
   h2 {
-    font-size: var(--agisty-font-size-step-2);
     margin-block-start: var(--agisty-spacing--step--2);
   }
-
-  h3 {
-    font-size: var(--agisty-font-size-step-1);
-  }
-}
-
-.entry-header .wp-block-post-title {
-  font-size: var(--agisty-font-size-step-3);
 }
 
 .header-menu-wrapper,
