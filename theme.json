@@ -55,7 +55,7 @@
       "blue": "rgb(0 50 150)",
       "bttn": "rgb(130 30 30)",
       "gray": "rgb(70 80 90)",
-      "black": "rgb(17 23 29)",
+      "black": "rgb(10 20 30)",
       "focus": "rgb(250 190 70)",
       "white": "rgb(250 250 250)",
       "border": "rgb(from var(--wp--custom--gray) r g b / 29%)",
@@ -69,16 +69,6 @@
     }
   },
   "styles": {
-    "color": {
-      "background": "var(--wp--custom--white)",
-      "text": "var(--wp--custom--black)"
-    },
-    "typography": {
-      "fontFamily": "var(--wp--custom--font-body)",
-      "fontSize": "var(--wp--preset--font-size--normal)",
-      "lineHeight": "var(--wp--custom--line-height-5)",
-      "fontWeight": "400"
-    },
     "elements": {
       "button": {
         "border": {
