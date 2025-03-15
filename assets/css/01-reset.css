@@ -225,8 +225,8 @@ a:where(:not(.wp-element-button)) {
   }
 
   &:is(:focus, :focus-visible) {
-    background-color: var(--wp--custom--focus);
-    box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
+    background-color: var(--wp--custom--yellow);
+    box-shadow: 0 -2px var(--wp--custom--yellow), 0 4px var(--wp--custom--black);
     color: var(--wp--custom--black);
     outline: none;
     text-decoration-line: none;

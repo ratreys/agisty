@@ -53,11 +53,11 @@
     },
     "custom": {
       "blue": "rgb(0 50 150)",
-      "bttn": "rgb(130 30 30)",
       "gray": "rgb(70 80 90)",
       "black": "rgb(10 20 30)",
-      "focus": "rgb(250 190 70)",
       "white": "rgb(250 250 250)",
+      "yellow": "rgb(250 190 70)",
+      "button": "rgb(130 30 30)",
       "border": "rgb(from var(--wp--custom--gray) r g b / 29%)",
       "guides": "rgb(from var(--wp--custom--gray) r g b / 11%)",
       "line-height-2": "1.2",
@@ -75,7 +75,7 @@
           "radius": ".5rem"
         },
         "color": {
-          "background": "var(--wp--custom--bttn)",
+          "background": "var(--wp--custom--button)",
           "text": "var(--wp--custom--white)"
         },
         "typography": {
