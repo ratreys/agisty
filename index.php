@@ -6,8 +6,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/
  * 
  * @package Agisty
- * @author  Rey Sanchez
- * @license GPLv3.0
  */
 
 get_header();

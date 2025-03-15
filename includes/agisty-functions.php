@@ -2,8 +2,7 @@
 /**
  * Custom functions that act independently of the theme templates.
  * 
- * @author  Rey Sanchez
- * @license GPLv3.0
+ * @package Agisty
  */
 
 add_filter( 'post_class', function ( $classes ) {

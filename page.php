@@ -1,6 +1,8 @@
 <?php
 /**
  * Template for displaying default pages.
+ * 
+ * @package Agisty
  */
 
 get_header();

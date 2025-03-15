@@ -6,8 +6,6 @@
  * @link    https://developer.wordpress.org/reference/functions/add_theme_support/
  *
  * @package Agisty
- * @author  Rey Sanchez
- * @license GPLv3.0
  */
 
 namespace Agisty;

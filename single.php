@@ -1,6 +1,8 @@
 <?php
 /**
  * Template for displaying all posts.
+ * 
+ * @package Agisty
  */
 
 namespace Agisty;

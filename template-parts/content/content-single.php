@@ -3,10 +3,8 @@
  * Template part for displaying single posts.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- *  Technical debt:
- * - Add a post class using post_class()
- * - Change agisty-post to type-post
+ * 
+ * @package Agisty
  */
 ?>
 

@@ -3,7 +3,6 @@
  * Template part for displaying the site header.
  * 
  * @package Agisty
- * @license GPLv3.0
  */
 
 ?>
