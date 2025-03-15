@@ -48,6 +48,7 @@
   ol,
   ul {
     margin-block-start: 1rem;
+    padding-inline-start: var(--wp--preset--spacing--40);
   }
 }
 
@@ -67,9 +68,10 @@
  | 6. Pullquote
  * --------------------------- */
 .wp-block-pullquote {
-  background-color: var(--wp--custom--backgr);
+  background-color: white;
   border-left: 4px solid var(--wp--custom--border);
   margin: 0;
+  outline: 1px dashed var(--wp--custom--guides);
   padding: 1rem 1.5rem;
   text-align: left;
 
@@ -103,6 +105,7 @@
   tfoot {
     border-top: 2px solid var(--wp--custom--black);
     color: var(--wp--custom--gray);
+    font-size: var(--agisty-font-size--small);
   }
 
   tbody,
@@ -128,9 +131,17 @@
 /* ------------------------------
  | 9. Buttons
  * --------------------------- */
-:where(.wp-element-button, .wp-block-button__link) {
-  box-shadow: 0 0.25rem #450a0a, 0 0 0 0.5rem white;
+:root :where(.wp-element-button, .wp-block-button__link) {
+  --_btn-shadow: oklch(from var(--wp--custom--bttn) calc(l - 0.1) c h);
+
+  box-shadow: 0 0.25rem var(--_btn-shadow),
+    0 0 0 0.5rem var(--wp--custom--white);
   text-shadow: 1px 1px 1px rgb(0 0 0 / 25%);
+  text-underline-offset: auto;
+
+  &:is(:hover) {
+    background-color: rgb(from var(--wp--custom--bttn) r g b / 90%);
+  }
 }
 
 /* ------------------------------
@@ -145,8 +156,8 @@
   }
 
   &:is(:focus, :focus-visible) {
-    background-color: var(--wp--custom--yellow);
-    box-shadow: 0 -2px var(--wp--custom--yellow), 0 4px var(--wp--custom--black);
+    background-color: var(--wp--custom--focus);
+    box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
     color: var(--wp--custom--black);
     outline: none;
     text-decoration-line: none;
