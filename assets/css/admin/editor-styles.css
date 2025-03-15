@@ -1,7 +1,9 @@
 body {
+  background-color: var(--wp--custom--white);
   font-size: 17px;
+  line-height: 1.618;
   margin-inline: auto;
-  width: min(100% - 4rem, var(--wp--style--global--wide-size));
+  width: min(100% - 4rem, var(--wp--style--global--content-size));
 }
 
 /* Main column width */
@@ -22,7 +24,7 @@ body {
 code,
 kbd,
 pre {
-  background-color: var(--wp--custom--background);
+  background-color: white;
   border: 1px solid var(--wp--custom--border);
   font-family: var(--wp--custom--font-mono);
   font-size: 14px;
@@ -34,16 +36,6 @@ kbd {
   padding-inline: 0.25rem;
 }
 
-code {
-  color: var(--wp--custom--red);
-}
-
-/**
- * Style the kbd element to look like a button. 
- *
- * https://dylanatsmith.com/wrote/styling-the-kbd-element
- * https://grtcalculator.com/styles/
- */
 kbd {
   border-radius: 0.25rem;
   box-shadow: 0 2px 0 1px var(--wp--custom--border);
@@ -51,7 +43,7 @@ kbd {
 }
 
 pre {
-  line-height: var(--wp--custom--line-height-normal);
+  line-height: var(--wp--custom--line-height-5);
   margin: 0;
   overflow: auto;
   padding-block: var(--wp--preset--spacing--50);
