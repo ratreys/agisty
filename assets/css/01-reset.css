@@ -88,7 +88,7 @@ html {
 body {
   background-color: var(--wp--custom--white);
   color: var(--wp--custom--black);
-  font-family: var(--wp--custom--font-body);
+  font-family: "Agisty Body", system-ui, -apple-system, sans-serif;
   font-size: var(--wp--preset--font-size--normal);
   font-weight: 400;
   line-height: var(--wp--custom--line-height-5);
@@ -111,7 +111,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--wp--custom--font-head);
+  font-family: "Agisty Head", system-ui, -apple-system, sans-serif;
   font-weight: 600;
   line-height: var(--wp--custom--line-height-2);
   margin-block: 0;
@@ -174,7 +174,7 @@ pre,
 samp {
   background-color: white;
   border: 1px solid var(--wp--custom--border);
-  font-family: var(--wp--custom--font-mono);
+  font-family: "Agisty Mono", "SF Mono", "Fira Mono", Menlo, monospace;
   font-size: var(--agisty-font-size--small);
 }
 

@@ -37,7 +37,6 @@
       "customFontSize": false,
       "defaultFontSizes": false,
       "dropCap": false,
-      "fontSizes": null,
       "fontStyle": false,
       "fontWeight": false,
       "letterSpacing": false,
@@ -45,7 +44,8 @@
       "textAlign": false,
       "textDecoration": false,
       "textTransform": false,
-      "writingMode": false
+      "writingMode": false,
+      "fontSizes": null
     },
     "layout": {
       "contentSize": "750px",
@@ -62,10 +62,7 @@
       "guides": "rgb(from var(--wp--custom--gray) r g b / 11%)",
       "line-height-2": "1.2",
       "line-height-5": "1.5",
-      "line-height-c": "calc(1ex / 0.32)",
-      "font-body": "\"Agisty Body\", system-ui, -apple-system, sans-serif",
-      "font-head": "\"Agisty Head\", system-ui, -apple-system, sans-serif",
-      "font-mono": "\"Agisty Mono\", \"SF Mono\", \"Fira Mono\", Menlo, monospace"
+      "line-height-c": "calc(1ex / 0.32)"
     }
   },
   "styles": {
