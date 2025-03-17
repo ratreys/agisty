@@ -19,23 +19,23 @@
    * https://clamp.font-size.app/
    */
 
-  /* ↓ 14px → 16px */
+  /* 14px → 15px */
   --agisty-font-size--small: clamp(0.875rem, 0.75rem + 0.4vw, 0.9375rem);
 
-  /* ↓ 17px → 19px */
+  /* 17px → 19px */
   --agisty-font-size-step-1: clamp(1.0625rem, 0.8125rem + 0.8vw, 1.1875rem);
 
-  /* ↓ 21px → 25px */
+  /* 21px → 25px */
   --agisty-font-size-step-2: clamp(1.3125rem, 0.8125rem + 1.6vw, 1.5625rem);
 
-  /* ↓ 23px → 29px */
-  --agisty-font-size-step-3: clamp(1.4375rem, 0.6875rem + 2.4vw, 1.8125rem);
+  /* 26px → 34px */
+  --agisty-font-size-step-3: clamp(1.625rem, 0.625rem + 3.2vw, 2.125rem);
 
-  /* ↓ 19px → 22px */
-  --agisty-spacing--step--1: clamp(1.1875rem, 0.8125rem + 1.2vw, 1.375rem);
+  /* 19px → 23px */
+  --agisty-spacing--step--1: clamp(1.1875rem, 0.6875rem + 1.6vw, 1.4375rem);
 
-  /* ↓ 34px → 41px */
-  --agisty-spacing--step--2: clamp(2.125rem, 1.25rem + 2.8vw, 2.5625rem);
+  /* 40px → 48px */
+  --agisty-spacing--step--2: clamp(2.5rem, 1.5rem + 3.2vw, 3rem);
 
   /** 
    * Spacing between main content and sidebar.
@@ -92,7 +92,6 @@ body {
   font-size: var(--wp--preset--font-size--normal);
   font-weight: 400;
   line-height: var(--wp--custom--line-height-5);
-  min-height: 100vh;
   min-height: 100svh; /** https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
   overflow-x: clip;
