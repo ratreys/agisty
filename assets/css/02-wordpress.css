@@ -152,7 +152,7 @@
 
   &:is(:hover, :active) {
     color: var(--wp--custom--blue);
-    text-decoration: solid underline currentColor 3px;
+    text-decoration: solid underline currentcolor 3px;
   }
 
   &:is(:focus, :focus-visible) {
