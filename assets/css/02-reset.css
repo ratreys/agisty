@@ -9,6 +9,8 @@
  */
 
 :root {
+  color-scheme: light dark;
+
   /**
    * Calculated font sizes and spacing.
    *
@@ -56,6 +58,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  outline: 1px dashed rgb(from purple r g b / 7%);
 
   /** 
    * Resources on prefers-reduced-motion:
@@ -112,6 +115,7 @@ h2,
 h3,
 h4 {
   font-family: "Agisty Head", system-ui, -apple-system, sans-serif;
+  font-feature-settings: "lnum", "pnum";
   font-weight: 600;
   line-height: var(--wp--custom--line-height-2);
   margin-block: 0;
@@ -246,7 +250,6 @@ a:where(:not(.wp-element-button)) {
 }
 
 p {
-  margin: 0;
   margin-block: 0;
 
   img {

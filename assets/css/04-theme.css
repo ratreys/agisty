@@ -30,9 +30,9 @@ footer {
   container-type: inline-size;
 } */
 
-.agisty__header {
-  justify-content: space-between;
+.header-menu__nav {
   flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .agisty__main {
@@ -77,8 +77,8 @@ footer {
   }
 }
 
-.header-menu-wrapper,
-.footer-menu-wrapper {
+.header-menu__wrapper,
+.footer-menu__wrapper {
   column-gap: 2rem;
 }
 
@@ -92,11 +92,11 @@ footer {
   padding-block: 2rem;
 }
 
-.agisty-wrapper-main {
+.agisty-wrapper__main {
   padding-block: 4rem;
 }
 
-.footer-menu__container {
+.footer-menu__nav {
   padding-block-end: 1rem;
 }
 
@@ -105,7 +105,7 @@ footer {
   font-size: 16px;
 }
 
-.agisty__footer {
+.agisty-footer {
   border-top: 4px solid var(--wp--custom--black);
   padding-block: 1rem;
 }
