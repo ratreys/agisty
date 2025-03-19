@@ -5,14 +5,16 @@
  * @package Agisty
  */
 
-namespace Agisty;
-
 get_header();
-
-while ( have_posts() ) :
-	the_post();
-	get_template_part( 'template-parts/content/content-single' );
-
-endwhile;
-
-get_footer();
+?>
+<div class="is-layout-constrained agisty-wrapper__main">
+	<main id="main" class="is-layout-flex alignwide agisty__main" tabindex="-1">
+		<?php
+		while ( have_posts() ) : the_post();
+			// Display post content
+			get_template_part( 'template-parts/content/content-single' );
+		endwhile;
+		?>
+	</main>
+</div>
+<?php get_footer() ?>
