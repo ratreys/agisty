@@ -14,11 +14,11 @@ if ( has_nav_menu( 'menu-header' ) ) :
 	<div itemscope itemtype="https://schema.org/SiteNavigationElement">
 		<?php
 		wp_nav_menu( [
-			'container'         => false,
-			'fallback_cb'       => false,
-			'items_wrap'        => '<ul id="header-menu-list" class="%2$s">%3$s</ul>',
-			'menu_class'        => 'is-layout-flex wp-block-navigation__container header-menu-wrapper',
 			'theme_location'    => 'menu-header',
+			'menu_class'        => 'is-layout-flex wp-block-navigation__container header-menu__wrapper',
+			'items_wrap'        => '<ul id="header-menu-list" class="%2$s">%3$s</ul>',
+			'fallback_cb'       => false,
+			'container'         => false,
 		] );
 		?>
 	</div>
