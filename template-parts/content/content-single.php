@@ -6,8 +6,8 @@
  * 
  * @package Agisty
  */
-?>
 
+?>
 <article <?php post_class() ?>>
 	<header class="entry-header">
 		<?php
