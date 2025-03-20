@@ -1,32 +1,24 @@
-/**
- * Override default styling of WordPress blocks.
- *
- * author:  Rey Sanchez (https://selftawt.com)
- * license: GPLv3.0
- */
-
 /* ------------------------------
+ * Override default styling of some of the WordPress blocks.
+ *
  * Text
  *    1. List
  *    2. Quote
- *    3. Code         -- Already included in CSS reset.
- *    4. Details
- *    5. Preformatted -- Already included in CSS reset.
- *    6. Pullquote
- *    7. Table
+ *    3. Details
+ *    4. Pullquote
+ *    5. Table
  * Media
- *    8. Image
+ *    6. Image
  * Design
- *    9. Button
+ *    7. Button
  * Theme
- *   10. Navigation
+ *    8. Navigation
  * --------------------------- */
 
 /* ------------------------------
- | 1. List
+ | List
  * --------------------------- */
-.wp-block-list,
-.wp-block-footnotes {
+.wp-block-list {
   margin-block: 0;
   padding-inline-start: 3ch;
 
@@ -54,8 +46,19 @@
   }
 }
 
+/* Footnotes. */
+.wp-block-footnotes {
+  font-size: var(--agisty-font-size--small);
+  margin-block: 0;
+  padding-inline-start: 3ch;
+
+  li {
+    margin-block-start: 0;
+  }
+}
+
 /* ------------------------------
- | 2. Quote
+ | Quote
  * --------------------------- */
 .wp-block-quote {
   margin-block: 0;
@@ -63,11 +66,41 @@
 }
 
 /* ------------------------------
- | 4. Details
+ | Details
+ |
+ | Animate details & summary with a few lines of CSS.
+ | https://www.youtube.com/watch?v=Vzj3jSUbMtI
  * --------------------------- */
+.wp-block-details {
+  background-color: white;
+  border: 1px solid var(--wp--custom--border);
+  border-radius: 0.25rem;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  overflow: clip;
+
+  &::details-content {
+    block-size: 0;
+    transition: block-size 500ms, content-visibility 500ms;
+    transition-behavior: allow-discrete;
+  }
+
+  &[open]::details-content {
+    block-size: auto;
+  }
+
+  summary {
+    list-style-position: outside;
+    margin-inline-start: var(--agisty-spacing--step--1, 1rem);
+
+    &::marker {
+      font-size: var(--agisty-font-size--small);
+    }
+  }
+}
 
 /* ------------------------------
- | 6. Pullquote
+ | Pullquote
  * --------------------------- */
 .wp-block-pullquote {
   background-color: white;
@@ -89,7 +122,7 @@
 }
 
 /* ------------------------------
- | 7. Table
+ | Table
  * --------------------------- */
 .wp-block-table {
   caption-side: bottom;
@@ -119,7 +152,7 @@
 }
 
 /* ------------------------------
- | 8. Image
+ | Image
  * --------------------------- */
 
 /** 
@@ -146,7 +179,7 @@
 }
 
 /* ------------------------------
- | 9. Buttons
+ | Buttons
  * --------------------------- */
 :root :where(.wp-element-button, .wp-block-button__link) {
   --_btn-shadow: oklch(from var(--wp--custom--button) calc(l - 0.1) c h);
@@ -162,7 +195,7 @@
 }
 
 /* ------------------------------
- | 10. Navigation
+ | Navigation
  * --------------------------- */
 .wp-block-navigation :where(a) {
   color: var(--wp--custom--black);
