@@ -11,8 +11,8 @@
  * https://medienbaecker.com/articles/focus-outlines
  */
 *:focus-visible {
-  outline: 2px solid currentcolor;
-  outline-offset: 2px;
+  outline: 2px dashed var(--wp--custom--focus);
+  outline-offset: 3px;
 }
 
 article,
@@ -122,6 +122,6 @@ footer {
 }
 
 .agisty-box-blue {
-  background-color: rgb(from var(--wp--custom--blue) r g b / 13%);
-  border: 1px solid var(--wp--custom--blue);
+  background-color: rgb(from var(--wp--custom--link) r g b / 13%);
+  border: 1px solid var(--wp--custom--link);
 }
