@@ -4,8 +4,19 @@
  * This is to provide consistent, and simple baseline CSS
  * that works across many devices and browser versions.
  *
- * author:  Rey Sanchez (https://selftawt.com)
- * license: GPLv3.0
+ * Resources:
+ * 
+ * https://piccalil.li/blog/a-modern-css-reset
+ * https://www.joshwcomeau.com/css/custom-css-reset/
+ * https://getbootstrap.com/docs/5.3/content/reboot/
+ * https://tailwindcss.com/docs/preflight
+ * https://web.dev/articles/prefers-reduced-motion
+ * https://webkit.org/blog/7551/responsive-design-for-motion/
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+ * https://dylanatsmith.com/wrote/styling-the-kbd-element
+ * https://grtcalculator.com/styles/
+ * https://www.youtube.com/watch?v=ru3U8MHbFFI
+ * https://www.youtube.com/watch?v=345V2MU3E_w
  */
 
 :root {
@@ -44,27 +55,11 @@
   --agisty-spacing-0: clamp(2rem, -72.75rem + 100vw, 6.25rem);
 }
 
-/**
- * This ensures that the declared width of element is never exceeded 
- * due to padding or border.
- *
- * https://getbootstrap.com/docs/5.3/content/reboot/
- * https://piccalil.li/blog/a-more-modern-css-reset/
- * https://www.joshwcomeau.com/css/custom-css-reset/
- */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: 1px dashed rgb(from purple r g b / 7%);
 
-  /** 
-   * Resources on prefers-reduced-motion:
-   *
-   * https://web.dev/articles/prefers-reduced-motion
-   * https://webkit.org/blog/7551/responsive-design-for-motion/
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
-   */
   @media (prefers-reduced-motion: reduce) {
     animation-delay: -1ms !important;
     animation-duration: 1ms !important;
@@ -93,7 +88,7 @@ body {
   font-size: var(--wp--preset--font-size--normal);
   font-weight: 400;
   line-height: var(--wp--custom--line-height-5);
-  min-height: 100svh; /** https://www.youtube.com/watch?v=ru3U8MHbFFI */
+  min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
   overflow-x: clip;
   text-wrap: pretty;
@@ -107,7 +102,6 @@ body {
   width: min(100% - 4rem, var(--wp--style--global--wide-size));
 }
 
-/* Remove default margin in favor of better control in authored CSS. */
 h1,
 h2,
 h3,
@@ -135,11 +129,7 @@ h4 {
 p {
   margin-block: 0;
 
-  /** 
-   * A better image reset for your CSS.
-   *
-   * https://www.youtube.com/watch?v=345V2MU3E_w
-   */
+  /* A better image reset for your CSS. */
   img {
     background-repeat: no-repeat;
     background-size: cover;
@@ -168,11 +158,7 @@ a:where(:not(.wp-element-button)) {
   }
 }
 
-/**
- * Make images and other replaced elements easier to work with.
- *
- * https://tailwindcss.com/docs/preflight#images-are-block-level
- */
+/* Make images and other replaced elements easier to work with. */
 figure,
 iframe,
 svg {
@@ -201,12 +187,7 @@ kbd {
   padding-inline: 0.25rem;
 }
 
-/**
- * Style the kbd element to look like a button. 
- *
- * https://dylanatsmith.com/wrote/styling-the-kbd-element
- * https://grtcalculator.com/styles/
- */
+/* Style the kbd element to look like a button. */
 kbd {
   border-radius: 0.25rem;
   box-shadow: 0 2px 0 1px var(--wp--custom--border);
