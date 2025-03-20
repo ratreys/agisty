@@ -9,8 +9,6 @@
  */
 
 :root {
-  color-scheme: light dark;
-
   /**
    * Calculated font sizes and spacing.
    *
@@ -80,7 +78,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding: var(--wp--preset--spacing--50);
+  scroll-padding: var(--agisty-spacing--step--1);
 
   /* Disables the browser's inflation algorithm. */
   -moz-text-size-adjust: none;
@@ -134,15 +132,40 @@ h4 {
   font-size: var(--agisty-font-size-step-1);
 }
 
-abbr[title] {
-  cursor: help;
-  text-decoration: underline dotted;
-  text-decoration-skip-ink: none;
+p {
+  margin-block: 0;
+
+  /** 
+   * A better image reset for your CSS.
+   *
+   * https://www.youtube.com/watch?v=345V2MU3E_w
+   */
+  img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    font-style: italic;
+    vertical-align: middle;
+  }
 }
 
-address {
-  font-style: normal;
-  line-height: inherit;
+a:where(:not(.wp-element-button)) {
+  color: var(--wp--custom--link);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.175rem;
+
+  &:is(:hover) {
+    color: rgb(from var(--wp--custom--link) r g b / 90%);
+    text-decoration-thickness: 3px;
+  }
+
+  &:is(:focus, :focus-visible) {
+    background-color: var(--wp--custom--focus);
+    box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
+    color: var(--wp--custom--black);
+    outline: none;
+    text-decoration-line: none;
+  }
 }
 
 /**
@@ -150,26 +173,16 @@ address {
  *
  * https://tailwindcss.com/docs/preflight#images-are-block-level
  */
-audio,
-canvas,
-embed,
+figure,
 iframe,
-picture,
-svg,
-video {
+svg {
   display: block;
   vertical-align: middle;
 }
 
-/**
- * Images and videos are constrained to the parent width in a way that 
- * preserves their intrinsic aspect ratio.
- *
- * https://tailwindcss.com/docs/preflight#images-are-constrained
- */
-video {
-  max-width: 100%;
-  height: auto;
+:where(figure) {
+  margin-block: 0;
+  margin-inline: 0;
 }
 
 code,
@@ -215,11 +228,6 @@ pre {
   }
 }
 
-:where(figure) {
-  margin-block: 0;
-  margin-inline: 0;
-}
-
 button,
 input,
 label,
@@ -230,31 +238,15 @@ select {
   line-height: var(--wp--custom--line-height-2);
 }
 
-a:where(:not(.wp-element-button)) {
-  color: var(--wp--custom--blue);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.175rem;
-
-  &:is(:hover) {
-    color: rgb(from var(--wp--custom--blue) r g b / 90%);
-    text-decoration-thickness: 3px;
-  }
-
-  &:is(:focus, :focus-visible) {
-    background-color: var(--wp--custom--yellow);
-    box-shadow: 0 -2px var(--wp--custom--yellow), 0 4px var(--wp--custom--black);
-    color: var(--wp--custom--black);
-    outline: none;
-    text-decoration-line: none;
-  }
+abbr[title] {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-decoration-skip-ink: none;
 }
 
-p {
-  margin-block: 0;
-
-  img {
-    display: inline-block;
-  }
+address {
+  font-style: normal;
+  line-height: inherit;
 }
 
 /* Create a root stacking context */
