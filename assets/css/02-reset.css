@@ -15,6 +15,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
  * https://dylanatsmith.com/wrote/styling-the-kbd-element
  * https://grtcalculator.com/styles/
+ * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
  * https://www.youtube.com/watch?v=ru3U8MHbFFI
  * https://www.youtube.com/watch?v=345V2MU3E_w
  */
@@ -79,6 +80,9 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+
+  /* Animate to or from `height: auto` and other intrinsic sizes. */
+  interpolate-size: allow-keywords;
 }
 
 body {
@@ -94,12 +98,9 @@ body {
   text-wrap: pretty;
 
   /* Turn on kerning and ligature. */
+  font-feature-settings: "kern", "liga", "lnum", "pnum";
   font-kerning: normal;
   text-rendering: optimizelegibility;
-
-  /* Margin related. */
-  margin-inline: auto;
-  width: min(100% - 4rem, var(--wp--style--global--wide-size));
 }
 
 h1,
@@ -107,7 +108,6 @@ h2,
 h3,
 h4 {
   font-family: "Agisty Head", system-ui, -apple-system, sans-serif;
-  font-feature-settings: "lnum", "pnum";
   font-weight: 600;
   line-height: var(--wp--custom--line-height-2);
   margin-block: 0;
@@ -156,6 +156,12 @@ a:where(:not(.wp-element-button)) {
     outline: none;
     text-decoration-line: none;
   }
+}
+
+ul,
+ol {
+  margin-block: 0;
+  padding-inline: 0;
 }
 
 /* Make images and other replaced elements easier to work with. */
