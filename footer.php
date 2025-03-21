@@ -9,7 +9,7 @@
  */
 
 ?>
-<div itemscope itemtype="https://schema.org/WPFooter">
+<div class="agisty-wrapper__footer" itemscope itemtype="https://schema.org/WPFooter">
 	<footer id="footer" class="agisty-footer">
 		<div itemscope itemtype="https://schema.org/SiteNavigationElement">
 			<?php get_template_part( 'template-parts/footer/footer-menu' ) ?>
