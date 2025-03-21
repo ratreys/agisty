@@ -52,14 +52,15 @@
       "wideSize": "1200px"
     },
     "custom": {
-      "blue": "rgb(0 50 150)",
       "gray": "rgb(70 80 90)",
+      "link": "rgb(0 50 150)",
+      "brand": "rgb(100 50 100)",
       "black": "rgb(10 20 30)",
       "white": "rgb(250 250 250)",
-      "yellow": "rgb(250 190 70)",
+      "focus": "rgb(250 190 70)",
       "button": "rgb(130 30 30)",
-      "border": "rgb(from var(--wp--custom--gray) r g b / 29%)",
-      "guides": "rgb(from var(--wp--custom--gray) r g b / 11%)",
+      "border": "rgb(from gray r g b / 29%)",
+      "guides": "rgb(from gray r g b / 11%)",
       "line-height-2": "1.2",
       "line-height-5": "1.5",
       "line-height-c": "calc(1ex / 0.32)"
