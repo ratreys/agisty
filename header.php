@@ -15,8 +15,8 @@
 </head>
 <body <?php body_class() ?>>
 <?php wp_body_open() ?>
-<a id="skipnav" class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to main content', 'agisty' ) ?></a>
-<div itemscope itemtype="https://schema.org/WPHeader">
+<a class="skip-link visually-hidden" href="#main"><?php esc_html_e( 'Skip to main content', 'agisty' ) ?></a>
+<div class="agisty-wrapper__header" itemscope itemtype="https://schema.org/WPHeader">
 <header id="header" class="is-layout-constrained agisty-header">
 <nav class="is-layout-flex alignwide wp-block-navigation header-menu__nav">
 <?php 
