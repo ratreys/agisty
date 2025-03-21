@@ -7,7 +7,7 @@
 
 if ( has_nav_menu( 'menu-footer' ) ) : 
 	?>
-	<nav class="is-layout-flex wp-block-navigation footer-menu__nav" aria-label="<?php esc_attr_e( 'Footer menu', 'agisty' ) ?>">
+	<nav class="is-layout-flex wp-block-navigation" aria-label="<?php esc_attr_e( 'Footer menu', 'agisty' ) ?>">
 		<?php
 		wp_nav_menu( [
 			'theme_location'    => 'menu-footer',
