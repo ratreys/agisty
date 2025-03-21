@@ -11,7 +11,7 @@
 
 if ( has_nav_menu( 'menu-header' ) ) : 
 	?>
-	<div itemscope itemtype="https://schema.org/SiteNavigationElement">
+	<div class="wrapper-nav__header" itemscope itemtype="https://schema.org/SiteNavigationElement">
 		<?php
 		wp_nav_menu( [
 			'theme_location'    => 'menu-header',
