@@ -11,7 +11,7 @@
 ?>
 <div class="agisty-wrapper__footer" itemscope itemtype="https://schema.org/WPFooter">
 	<footer id="footer" class="agisty-footer">
-		<div itemscope itemtype="https://schema.org/SiteNavigationElement">
+		<div class="wrapper-nav__footer" itemscope itemtype="https://schema.org/SiteNavigationElement">
 			<?php get_template_part( 'template-parts/footer/footer-menu' ) ?>
 		</div>
 		<?php echo '<p>© ' . gmdate( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '</p>'; ?>
