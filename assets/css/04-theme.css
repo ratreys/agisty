@@ -110,18 +110,35 @@ footer {
   padding-block: 1rem;
 }
 
-.agisty-box-red,
-.agisty-box-blue {
+.agisty-box {
+  background-color: rgb(from var(--wp--custom--focus) r g b / 17%);
+  border: 1px solid var(--wp--custom--focus);
   padding-block: var(--wp--preset--spacing--50);
   padding-inline: var(--wp--preset--spacing--50);
 }
 
-.agisty-box-red {
-  background-color: rgb(from var(--wp--custom--red) r g b / 13%);
-  border: 1px solid var(--wp--custom--red);
+/**
+ * The anatomy of visually-hidden.
+ *
+ * https://www.tpgi.com/the-anatomy-of-visually-hidden/
+ * https://www.a11yproject.com/posts/how-to-hide-content/
+ */
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  clip-path: inset(50%);
+  overflow: clip;
+  white-space: preserve nowrap;
 }
 
-.agisty-box-blue {
-  background-color: rgb(from var(--wp--custom--link) r g b / 13%);
-  border: 1px solid var(--wp--custom--link);
+.skip-link:focus {
+  position: absolute;
+  height: auto;
+  width: auto;
+  top: 4px;
+  left: 4px;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  z-index: 100000;
 }
