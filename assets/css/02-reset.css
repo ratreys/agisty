@@ -10,14 +10,6 @@
  * https://www.joshwcomeau.com/css/custom-css-reset/
  * https://getbootstrap.com/docs/5.3/content/reboot/
  * https://tailwindcss.com/docs/preflight
- * https://web.dev/articles/prefers-reduced-motion
- * https://webkit.org/blog/7551/responsive-design-for-motion/
- * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
- * https://dylanatsmith.com/wrote/styling-the-kbd-element
- * https://grtcalculator.com/styles/
- * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
- * https://www.youtube.com/watch?v=ru3U8MHbFFI
- * https://www.youtube.com/watch?v=345V2MU3E_w
  */
 
 :root {
@@ -26,41 +18,52 @@
    *
    * Min values are based on 500px.
    * Max values are based on 750px.
-   *
+   * https://grtcalculator.com/styles/
    * https://utopia.fyi
    * https://clamp.font-size.app/
    */
 
-  /* 14px → 15px */
-  --agisty-font-size--small: clamp(0.875rem, 0.75rem + 0.4vw, 0.9375rem);
+  /* 26px → 34px. */
+  --agisty-font-size-xl: clamp(1.625rem, 0.625rem + 3.2vw, 2.125rem);
 
-  /* 17px → 19px */
-  --agisty-font-size-step-1: clamp(1.0625rem, 0.8125rem + 0.8vw, 1.1875rem);
+  /* 21px → 25px. */
+  --agisty-font-size-lg: clamp(1.3125rem, 0.8125rem + 1.6vw, 1.5625rem);
 
-  /* 21px → 25px */
-  --agisty-font-size-step-2: clamp(1.3125rem, 0.8125rem + 1.6vw, 1.5625rem);
+  /* 17px → 19px. */
+  --agisty-font-size-rg: clamp(1.0625rem, 0.8125rem + 0.8vw, 1.1875rem);
 
-  /* 26px → 34px */
-  --agisty-font-size-step-3: clamp(1.625rem, 0.625rem + 3.2vw, 2.125rem);
+  /* 15px → 16px. */
+  --agisty-font-size-sm: clamp(0.9375rem, 0.8125rem + 0.4vw, 1rem);
 
-  /* 19px → 23px */
-  --agisty-spacing--step--1: clamp(1.1875rem, 0.6875rem + 1.6vw, 1.4375rem);
+  /* 14px → 15px. */
+  --agisty-font-size-xm: clamp(0.875rem, 0.75rem + 0.4vw, 0.9375rem);
 
   /* 40px → 48px */
-  --agisty-spacing--step--2: clamp(2.5rem, 1.5rem + 3.2vw, 3rem);
+  --agisty-spacing-lg: clamp(2.5rem, 1.5rem + 3.2vw, 3rem);
+
+  /* 19px → 23px */
+  --agisty-spacing-rg: clamp(1.1875rem, 0.6875rem + 1.6vw, 1.4375rem);
 
   /** 
    * Spacing between main content and sidebar.
    * 32px @1196px → 100px @1264px
    */
-  --agisty-spacing-0: clamp(2rem, -72.75rem + 100vw, 6.25rem);
+  --agisty-spacing-sidebar: clamp(2rem, -72.75rem + 100vw, 6.25rem);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  outline: 1px dashed darkred;
 
+  /**
+   * Resources on doing `prefers-reduced-motion` correctly.
+   *
+   * https://web.dev/articles/prefers-reduced-motion
+   * https://webkit.org/blog/7551/responsive-design-for-motion/
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
+   */
   @media (prefers-reduced-motion: reduce) {
     animation-delay: -1ms !important;
     animation-duration: 1ms !important;
@@ -74,14 +77,18 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding: var(--agisty-spacing--step--1);
+  scroll-padding: var(--agisty-spacing-lg);
 
   /* Disables the browser's inflation algorithm. */
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 
-  /* Animate to or from `height: auto` and other intrinsic sizes. */
+  /** 
+   * Animate to or from `height: auto` and other intrinsic sizes.
+   * 
+   * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
+   */
   interpolate-size: allow-keywords;
 }
 
@@ -89,9 +96,10 @@ body {
   background-color: var(--wp--custom--white);
   color: var(--wp--custom--black);
   font-family: "Agisty Body", system-ui, -apple-system, sans-serif;
-  font-size: var(--wp--preset--font-size--normal);
+  font-size: 16px;
   font-weight: 400;
-  line-height: var(--wp--custom--line-height-5);
+  line-height: 1.5;
+  min-height: 100vh;
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
   overflow-x: clip;
@@ -109,27 +117,31 @@ h3,
 h4 {
   font-family: "Agisty Head", system-ui, -apple-system, sans-serif;
   font-weight: 600;
-  line-height: var(--wp--custom--line-height-2);
+  line-height: var(--wp--custom--line-height-head);
   margin-block: 0;
 }
 
 h1 {
-  font-size: var(--agisty-font-size-step-3);
+  font-size: var(--agisty-font-size-xl);
 }
 
 h2 {
-  font-size: var(--agisty-font-size-step-2);
+  font-size: var(--agisty-font-size-lg);
 }
 
 h3,
 h4 {
-  font-size: var(--agisty-font-size-step-1);
+  font-size: var(--agisty-font-size-rg);
 }
 
 p {
   margin-block: 0;
 
-  /* A better image reset for your CSS. */
+  /**
+   * A better image reset for your CSS.
+   *
+   * https://www.youtube.com/watch?v=345V2MU3E_w
+   */
   img {
     background-repeat: no-repeat;
     background-size: cover;
@@ -142,6 +154,8 @@ p {
 a:where(:not(.wp-element-button)) {
   color: var(--wp--custom--link);
   text-decoration-thickness: 2px;
+  text-decoration-style: solid;
+  text-decoration-color: currentcolor;
   text-underline-offset: 0.175rem;
 
   &:is(:hover) {
@@ -172,11 +186,6 @@ svg {
   vertical-align: middle;
 }
 
-:where(figure) {
-  margin-block: 0;
-  margin-inline: 0;
-}
-
 code,
 kbd,
 pre,
@@ -184,7 +193,7 @@ samp {
   background-color: white;
   border: 1px solid var(--wp--custom--border);
   font-family: "Agisty Mono", "SF Mono", "Fira Mono", Menlo, monospace;
-  font-size: var(--agisty-font-size--small);
+  font-size: var(--agisty-font-size-xm);
 }
 
 code,
@@ -193,7 +202,11 @@ kbd {
   padding-inline: 0.25rem;
 }
 
-/* Style the kbd element to look like a button. */
+/**
+ * Style the kbd element to look like a button.
+ *
+ * https://dylanatsmith.com/wrote/styling-the-kbd-element
+ */
 kbd {
   border-radius: 0.25rem;
   box-shadow: 0 2px 0 1px var(--wp--custom--border);
@@ -201,11 +214,11 @@ kbd {
 }
 
 pre {
-  line-height: var(--wp--custom--line-height-5);
+  line-height: 1.5;
   margin: 0;
   overflow: auto;
-  padding-block: var(--wp--preset--spacing--50);
-  padding-inline: var(--wp--preset--spacing--50);
+  padding-block: var(--agisty-spacing-rg);
+  padding-inline: var(--agisty-spacing-rg);
 
   code {
     border: none;
@@ -222,7 +235,7 @@ textarea,
 select {
   font-family: inherit;
   font-size: inherit;
-  line-height: var(--wp--custom--line-height-2);
+  line-height: var(--wp--custom--line-height-head);
 }
 
 abbr[title] {
