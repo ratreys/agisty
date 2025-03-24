@@ -39,23 +39,24 @@
   --agisty-font-size-xm: clamp(0.875rem, 0.75rem + 0.4vw, 0.9375rem);
 
   /* 40px → 48px */
-  --agisty-spacing-lg: clamp(2.5rem, 1.5rem + 3.2vw, 3rem);
+  --agisty-space-top-lg: clamp(2.5rem, 1.5rem + 3.2vw, 3rem);
 
   /* 19px → 23px */
-  --agisty-spacing-rg: clamp(1.1875rem, 0.6875rem + 1.6vw, 1.4375rem);
+  --agisty-space-top-rg: clamp(1.1875rem, 0.6875rem + 1.6vw, 1.4375rem);
 
   /** 
    * Spacing between main content and sidebar.
    * 32px @1196px → 100px @1264px
    */
-  --agisty-spacing-sidebar: clamp(2rem, -72.75rem + 100vw, 6.25rem);
+  --agisty-main-sidebar: clamp(2rem, -72.75rem + 100vw, 6.25rem);
+  --agisty-line-height-head: 1.2;
+  --agisty-line-height-body: calc(1ex / 0.32);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: 1px dashed darkred;
 
   /**
    * Resources on doing `prefers-reduced-motion` correctly.
@@ -77,7 +78,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding: var(--agisty-spacing-lg);
+  scroll-padding: var(--agisty-space-top-lg);
 
   /* Disables the browser's inflation algorithm. */
   -moz-text-size-adjust: none;
@@ -117,21 +118,21 @@ h3,
 h4 {
   font-family: "Agisty Head", system-ui, -apple-system, sans-serif;
   font-weight: 600;
-  line-height: var(--wp--custom--line-height-head);
+  line-height: var(--agisty-line-height-head, 1.2);
   margin-block: 0;
 }
 
 h1 {
-  font-size: var(--agisty-font-size-xl);
+  font-size: var(--agisty-font-size-xl, 2rem);
 }
 
 h2 {
-  font-size: var(--agisty-font-size-lg);
+  font-size: var(--agisty-font-size-lg, 1.5rem);
 }
 
 h3,
 h4 {
-  font-size: var(--agisty-font-size-rg);
+  font-size: var(--agisty-font-size-rg, 1.17rem);
 }
 
 p {
@@ -193,7 +194,7 @@ samp {
   background-color: white;
   border: 1px solid var(--wp--custom--border);
   font-family: "Agisty Mono", "SF Mono", "Fira Mono", Menlo, monospace;
-  font-size: var(--agisty-font-size-xm);
+  font-size: var(--agisty-font-size-xm, 1rem);
 }
 
 code,
@@ -217,8 +218,8 @@ pre {
   line-height: 1.5;
   margin: 0;
   overflow: auto;
-  padding-block: var(--agisty-spacing-rg);
-  padding-inline: var(--agisty-spacing-rg);
+  padding-block: var(--agisty-space-top-rg, 1rem);
+  padding-inline: var(--agisty-space-top-rg, 1rem);
 
   code {
     border: none;
@@ -235,7 +236,7 @@ textarea,
 select {
   font-family: inherit;
   font-size: inherit;
-  line-height: var(--wp--custom--line-height-head);
+  line-height: var(--agisty-line-height-head, 1.2);
 }
 
 abbr[title] {
