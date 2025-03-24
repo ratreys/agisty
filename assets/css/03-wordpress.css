@@ -73,8 +73,8 @@
 .wp-block-details {
   background-color: white;
   border: 1px solid var(--wp--custom--border);
-  padding-block: var(--agisty-spacing-rg, 1rem);
-  padding-inline: var(--agisty-spacing-rg, 1rem);
+  padding-block: var(--agisty-space-top-rg, 1rem);
+  padding-inline: var(--agisty-space-top-rg, 1rem);
   overflow: clip;
 
   &::details-content {
@@ -89,7 +89,7 @@
 
   summary {
     list-style-position: outside;
-    margin-inline-start: var(--agisty-spacing-rg, 1rem);
+    margin-inline-start: var(--agisty-space-top-rg, 1rem);
 
     &::marker {
       font-size: var(--agisty-font-size-xm);
@@ -100,9 +100,11 @@
 /* ------------------------------
  | Pullquote
  * --------------------------- */
-.wp-block-pullquote {
+:root :where(.wp-block-pullquote) {
   background-color: white;
   border-left: 4px solid var(--wp--custom--brand);
+  font-size: inherit;
+  line-height: var(--agisty-line-height-head);
   margin: 0;
   outline: 1px dashed var(--wp--custom--guides);
   padding: 1rem 1.5rem;
@@ -112,11 +114,6 @@
     color: var(--wp--custom--gray);
     font-size: var(--agisty-font-size-rg);
   }
-}
-
-:root :where(.wp-block-pullquote) {
-  font-size: inherit;
-  line-height: var(--wp--custom--line-height-body);
 }
 
 /* ------------------------------
