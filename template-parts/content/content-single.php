@@ -16,6 +16,3 @@
 		<?php the_content() ?>
 	</div>
 </article>
-<aside class="is-layout-flex agisty__sidebar">
-	<h2>Related Posts</h2>
-</aside>
