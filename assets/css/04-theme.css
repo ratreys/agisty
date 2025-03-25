@@ -1,25 +1,23 @@
-/**
+/* ------------------------------
  * Theme-specific styles.
  *
- * author:  Rey Sanchez (https://selftawt.com)
- * license: GPLv3.0
- */
+ * Header
+ * Main
+ * Footer
+ * Utilities
+ * --------------------------- */
 
-/**
- * Focus outlines.
- *
- * https://medienbaecker.com/articles/focus-outlines
- */
-*:focus-visible {
-  outline: 2px dashed var(--wp--custom--focus);
-  outline-offset: 3px;
+/* ------------------------------
+ | Header
+ * --------------------------- */
+.agisty-header {
+  border-bottom: 2px solid var(--wp--custom--black);
+  padding-block: var(--agisty-space-top-rg);
 }
 
-article,
-aside {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.header-menu__nav {
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 /* header,
@@ -30,23 +28,29 @@ footer {
   container-type: inline-size;
 } */
 
-.header-menu__nav {
-  flex-wrap: nowrap;
-  justify-content: space-between;
+/* ------------------------------
+ | Main
+ * --------------------------- */
+.type-post,
+.agisty-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.agisty__main {
+.agisty-main {
   --sidebar--width: 350px;
 
   align-items: stretch;
-  gap: 2rem var(--agisty-spacing-0);
+  gap: 2rem var(--agisty-main-sidebar);
+  padding-block: var(--agisty-space-top-lg);
 
   /**
    * https://every-layout.dev/layouts/sidebar/
    * https://www.youtube.com/watch?v=k_3pRxdv-cI 
    */
 
-  > article {
+  > .type-post {
     /* ↓ Grow from nothing */
     flex-grow: 999;
     flex-basis: 0;
@@ -55,7 +59,7 @@ footer {
     min-inline-size: min(550px, 100%);
   }
 
-  > aside {
+  > .agisty-sidebar {
     /* ↓ The width of the sidebar sidebar */
     flex-grow: 1;
     flex-basis: var(--sidebar--width);
@@ -65,57 +69,60 @@ footer {
 }
 
 .entry-content {
-  font-size: var(--agisty-font-size-step-1);
-  line-height: var(--wp--custom--line-height-c);
+  display: flow-root;
+  font-size: var(--agisty-font-size-rg);
+  line-height: var(--agisty-line-height-body);
 
   * + * {
-    margin-block-start: var(--agisty-spacing--step--1, 1rem);
+    margin-block-start: var(--agisty-space-top-rg, 1rem);
   }
 
-  h2 {
-    margin-block-start: var(--agisty-spacing--step--2);
+  h2,
+  h3 {
+    margin-block-start: var(--agisty-space-top-lg, 1rem);
+  }
+
+  h4 {
+    font-weight: 400;
   }
 }
 
-.header-menu__wrapper,
-.footer-menu__wrapper {
-  column-gap: 2rem;
+.entry-card {
+  background-color: white;
+  border: 1px solid var(--wp--custom--border);
+  display: grid;
+  gap: var(--agisty-space-top-rg, 1rem);
+  padding: var(--agisty-space-top-rg, 1rem);
+
+  a {
+    text-decoration: none;
+  }
+
+  :is(h2, h3) {
+    font-size: var(--agisty-font-size-rg, 1rem);
+  }
 }
 
-.agisty__sidebar {
-  align-items: flex-start;
-  max-width: var(--wp--style--global--content-size);
-}
+/* ------------------------------
+ | Footer
+ * --------------------------- */
 
-.agisty-wrapper-header {
-  border-bottom: 2px solid var(--wp--custom--black);
-  padding-block: 2rem;
-}
-
-.agisty-wrapper__main {
-  padding-block: 4rem;
-}
-
-.footer-menu__nav {
+.wrapper-nav__footer {
   padding-block-end: 1rem;
-}
-
-.agisty-footer__copyright,
-.agisty-footer__menu :where(a) {
-  font-size: 16px;
 }
 
 .agisty-footer {
   border-top: 4px solid var(--wp--custom--black);
   padding-block: 1rem;
+
+  p {
+    font-size: var(--agisty-font-size-sm);
+  }
 }
 
-.agisty-box {
-  background-color: rgb(from var(--wp--custom--focus) r g b / 17%);
-  border: 1px solid var(--wp--custom--focus);
-  padding-block: var(--wp--preset--spacing--50);
-  padding-inline: var(--wp--preset--spacing--50);
-}
+/* ------------------------------
+ | Utilities
+ * --------------------------- */
 
 /**
  * The anatomy of visually-hidden.
@@ -123,7 +130,7 @@ footer {
  * https://www.tpgi.com/the-anatomy-of-visually-hidden/
  * https://www.a11yproject.com/posts/how-to-hide-content/
  */
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden:not(:focus-visible):not(:active) {
   position: absolute;
   height: 1px;
   width: 1px;
@@ -132,7 +139,7 @@ footer {
   white-space: preserve nowrap;
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
   position: absolute;
   height: auto;
   width: auto;
@@ -141,4 +148,20 @@ footer {
   padding-block: 1rem;
   padding-inline: 1rem;
   z-index: 100000;
+}
+
+.agisty-box {
+  background-color: rgb(from var(--wp--custom--focus) r g b / 13%);
+  border: 1px solid var(--wp--custom--focus);
+  padding-block: var(--agisty-space-top-rg);
+  padding-inline: var(--agisty-space-top-rg);
+}
+
+.wrapper {
+  margin-inline: auto;
+  width: min(100% - 4rem, var(--wp--style--global--wide-size));
+}
+
+.wrapper-menu {
+  column-gap: 2rem;
 }
