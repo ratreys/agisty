@@ -12,7 +12,7 @@
 	<header class="entry-header">
 		<?php the_title( '<h1>', '</h1>' ) ?>
 	</header>
-	<div class="entry-content is-layout-flow wp-block-post-content">
+	<div class="entry-content is-layout-flow">
 		<?php the_content() ?>
 	</div>
 </article>
