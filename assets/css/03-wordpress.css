@@ -13,13 +13,13 @@
  *    7. Button
  * Theme
  *    8. Navigation
+ *    9. Others
  * --------------------------- */
 
 /* ------------------------------
  | List
  * --------------------------- */
 .wp-block-list {
-  margin-block: 0;
   padding-inline-start: 3ch;
 
   /**
@@ -48,7 +48,6 @@
 
 /* Footnotes. */
 .wp-block-footnotes {
-  margin-block: 0;
   padding-inline-start: 3ch;
 
   li {
@@ -103,8 +102,6 @@
 :root :where(.wp-block-pullquote) {
   background-color: white;
   border-left: 4px solid var(--wp--custom--brand);
-  font-size: inherit;
-  line-height: var(--agisty-line-height-head);
   margin: 0;
   outline: 1px dashed var(--wp--custom--guides);
   padding: 1rem 1.5rem;
@@ -122,6 +119,7 @@
 .wp-block-table {
   caption-side: bottom;
   font-size: var(--wp--preset--font-size--normal);
+  margin: 0;
 
   table {
     border-spacing: 0;
@@ -149,10 +147,8 @@
 /* ------------------------------
  | Image
  * --------------------------- */
-
 .wp-block-image {
-  margin-block: 0;
-  margin-inline: 0;
+  margin: 0;
 
   /** 
    * A better image reset for your CSS.
@@ -201,7 +197,7 @@
 
   &:is(:hover, :active) {
     color: var(--wp--custom--link);
-    text-decoration: solid underline currentcolor 3px;
+    text-decoration: underline 3px solid currentcolor;
   }
 
   &:is(:focus, :focus-visible) {
@@ -211,4 +207,11 @@
     outline: none;
     text-decoration-line: none;
   }
+}
+
+/* ------------------------------
+ | Others
+ * --------------------------- */
+.wp-block-embed {
+  margin: 0;
 }
