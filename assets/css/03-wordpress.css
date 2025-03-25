@@ -22,15 +22,6 @@
 .wp-block-list {
   padding-inline-start: 3ch;
 
-  /**
-   * Remove list styles on ul, ol elements with a list role,
-   * which suggests default styling will be removed.
-   */
-  &[role="list"] {
-    list-style: none;
-    padding-inline-start: 0;
-  }
-
   li {
     margin-block-start: 0.5rem;
 
@@ -194,6 +185,7 @@
  * --------------------------- */
 .wp-block-navigation :where(a) {
   color: var(--wp--custom--black);
+  font-size: var(--agisty-font-size-sm);
 
   &:is(:hover, :active) {
     color: var(--wp--custom--link);
@@ -214,4 +206,9 @@
  * --------------------------- */
 .wp-block-embed {
   margin: 0;
+}
+
+/* Create a root stacking context */
+.wp-site-blocks {
+  isolation: isolate;
 }
