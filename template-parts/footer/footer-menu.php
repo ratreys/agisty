@@ -11,7 +11,7 @@ if ( has_nav_menu( 'menu-footer' ) ) :
 		<?php
 		wp_nav_menu( [
 			'theme_location'    => 'menu-footer',
-			'menu_class'        => 'is-layout-flex wp-block-navigation__container footer-menu__wrapper',
+			'menu_class'        => 'is-layout-flex wp-block-navigation__container wrapper-menu',
 			'items_wrap'        => '<ul id="footer-menu-list" class="%2$s">%3$s</ul>',
 			'fallback_cb'       => false,
 			'container'         => false,
