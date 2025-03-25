@@ -59,14 +59,15 @@
       "white": "rgb(250 250 250)",
       "focus": "rgb(250 190 70)",
       "button": "rgb(130 30 30)",
-      "border": "rgb(from gray r g b / 29%)",
-      "guides": "rgb(from gray r g b / 11%)",
-      "line-height-2": "1.2",
-      "line-height-5": "1.5",
-      "line-height-c": "calc(1ex / 0.32)"
+      "border": "rgb(from var(--wp--custom--gray) r g b / 29%)",
+      "guides": "rgb(from var(--wp--custom--gray) r g b / 11%)"
     }
   },
   "styles": {
+    "color": {
+      "background": "var(--wp--custom--white)",
+      "text": "var(--wp--custom--black)"
+    },
     "elements": {
       "button": {
         "border": {
@@ -77,8 +78,16 @@
           "text": "var(--wp--custom--white)"
         },
         "typography": {
-          "fontSize": "var(--wp--preset--font-size--normal)",
-          "lineHeight": "var(--wp--custom--line-height-2)"
+          "fontSize": "var(--agisty-font-size-sm)",
+          "lineHeight": "var(--agisty-line-height-head)"
+        }
+      }
+    },
+    "blocks": {
+      "core/pullquote": {
+        "typography": {
+          "fontSize": "inherit",
+          "lineHeight": "var(--agisty-line-height-head)"
         }
       }
     }
