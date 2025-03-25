@@ -78,7 +78,19 @@
   }
 }
 
+/**
+ * Focus outlines.
+ *
+ * https://medienbaecker.com/articles/focus-outlines
+ */
+:focus-visible {
+  outline: currentcolor dashed 2px;
+  outline-offset: 3px;
+}
+
 html {
+  accent-color: var(--wp--custom--brand);
+
   /** 
    * Animate to or from `height: auto` and other intrinsic sizes.
    * 
@@ -86,7 +98,7 @@ html {
    */
   interpolate-size: allow-keywords;
   scroll-behavior: smooth;
-  scroll-padding: var(--agisty-space-top-lg);
+  scroll-padding-block-start: var(--agisty-space-top-lg, 3rem);
 
   /* Disables the browser's inflation algorithm. */
   -moz-text-size-adjust: none;
@@ -96,7 +108,8 @@ html {
 
 body {
   font-family: "Agisty Body", system-ui, -apple-system, sans-serif;
-  font-size: 16px;
+  font-size: var(--agisty-font-size-rg, 17px);
+  font-size-adjust: from-font;
   font-weight: 400;
   line-height: 1.5;
   min-height: 100vh;
@@ -122,16 +135,19 @@ h4 {
 }
 
 h1 {
-  font-size: var(--agisty-font-size-xl, 2rem);
+  font-size: var(--agisty-font-size-xl, 1.5em);
 }
 
 h2 {
-  font-size: var(--agisty-font-size-lg, 1.5rem);
+  font-size: var(--agisty-font-size-lg, 1.5em);
 }
 
-h3,
+h3 {
+  font-size: 1.17em;
+}
+
 h4 {
-  font-size: var(--agisty-font-size-rg, 1.17rem);
+  font-size: var(--agisty-font-size-rg, 1em);
 }
 
 p {
@@ -153,13 +169,11 @@ p {
 
 a:where(:not(.wp-element-button)) {
   color: var(--wp--custom--link);
-  text-decoration-thickness: 2px;
-  text-decoration-style: solid;
-  text-decoration-color: currentcolor;
-  text-underline-offset: 0.175rem;
+  text-decoration: underline 2px solid currentcolor;
+  text-underline-offset: 0.25em;
 
   &:is(:hover) {
-    color: rgb(from var(--wp--custom--link) r g b / 90%);
+    color: rgb(from var(--wp--custom--link) r g b / 95%);
     text-decoration-thickness: 3px;
   }
 
@@ -176,6 +190,15 @@ ul,
 ol {
   margin-block: 0;
   padding-inline: 0;
+
+  /**
+   * Remove list styles on ul, ol elements with a list role,
+   * which suggests default styling will be removed.
+   */
+  &[role="list"] {
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
 }
 
 /* Make images and other replaced elements easier to work with. */
@@ -190,12 +213,11 @@ svg {
 
 code,
 kbd,
-pre,
-samp {
+pre {
   background-color: white;
   border: 1px solid var(--wp--custom--border);
   font-family: "Agisty Mono", "SF Mono", "Fira Mono", Menlo, monospace;
-  font-size: var(--agisty-font-size-xm, 1rem);
+  font-size: var(--agisty-font-size-xm, 1em);
 }
 
 code,
@@ -254,9 +276,4 @@ address {
 blockquote {
   margin-block: 0;
   margin-inline: 0;
-}
-
-/* Create a root stacking context */
-.wp-site-blocks {
-  isolation: isolate;
 }
