@@ -51,6 +51,7 @@
    */
   --agisty-main-sidebar: clamp(2rem, -72.75rem + 100vw, 6.25rem);
   --agisty-line-height-head: 1.2;
+  --agisty-line-height-norm: 1.5;
   --agisty-line-height-body: calc(1ex / 0.32);
 }
 
@@ -94,8 +95,6 @@ html {
 }
 
 body {
-  background-color: var(--wp--custom--white);
-  color: var(--wp--custom--black);
   font-family: "Agisty Body", system-ui, -apple-system, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -184,9 +183,9 @@ figure,
 iframe,
 svg {
   display: block;
+  vertical-align: middle;
   margin-block: 0;
   margin-inline: 0;
-  vertical-align: middle;
 }
 
 code,
