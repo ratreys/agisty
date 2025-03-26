@@ -12,7 +12,7 @@ if ( has_nav_menu( 'menu-footer' ) ) :
 		wp_nav_menu( [
 			'theme_location'    => 'menu-footer',
 			'menu_class'        => 'is-layout-flex wp-block-navigation__container wrapper-menu',
-			'items_wrap'        => '<ul id="footer-menu-list" class="%2$s">%3$s</ul>',
+			'items_wrap'        => '<menu id="footer-menu-list" class="%2$s">%3$s</menu>',
 			'fallback_cb'       => false,
 			'container'         => false,
 		] );
