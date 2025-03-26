@@ -22,34 +22,24 @@
    * https://grtcalculator.com/styles/
    * https://utopia.fyi
    * https://clamp.font-size.app/
+   *
+   * 1. 26px → 34px.
+   * 2. 21px → 25px.
+   * 3. 17px → 19px.
+   * 4. 15px → 16px.
+   * 5. 14px → 15px.
+   * 6. 40px → 48px.
+   * 7. 19px → 23px.
+   * 8. 32px @1196px → 100px @1264px
    */
-
-  /* 26px → 34px. */
-  --agisty-font-size-xl: clamp(1.625rem, 0.625rem + 3.2vw, 2.125rem);
-
-  /* 21px → 25px. */
-  --agisty-font-size-lg: clamp(1.3125rem, 0.8125rem + 1.6vw, 1.5625rem);
-
-  /* 17px → 19px. */
-  --agisty-font-size-rg: clamp(1.0625rem, 0.8125rem + 0.8vw, 1.1875rem);
-
-  /* 15px → 16px. */
-  --agisty-font-size-sm: clamp(0.9375rem, 0.8125rem + 0.4vw, 1rem);
-
-  /* 14px → 15px. */
-  --agisty-font-size-xm: clamp(0.875rem, 0.75rem + 0.4vw, 0.9375rem);
-
-  /* 40px → 48px */
-  --agisty-space-top-lg: clamp(2.5rem, 1.5rem + 3.2vw, 3rem);
-
-  /* 19px → 23px */
-  --agisty-space-top-rg: clamp(1.1875rem, 0.6875rem + 1.6vw, 1.4375rem);
-
-  /** 
-   * Spacing between main content and sidebar.
-   * 32px @1196px → 100px @1264px
-   */
-  --agisty-main-sidebar: clamp(2rem, -72.75rem + 100vw, 6.25rem);
+  --agisty-font-size-xl: clamp(1.625rem, 0.625rem + 3.2vw, 2.125rem); /* 1 */
+  --agisty-font-size-lg: clamp(1.3125rem, 0.8125rem + 1.6vw, 1.5625rem); /* 2 */
+  --agisty-font-size-rg: clamp(1.0625rem, 0.8125rem + 0.8vw, 1.1875rem); /* 3 */
+  --agisty-font-size-sm: clamp(0.9375rem, 0.8125rem + 0.4vw, 1rem); /* 4 */
+  --agisty-font-size-xm: clamp(0.875rem, 0.75rem + 0.4vw, 0.9375rem); /* 5 */
+  --agisty-space-top-lg: clamp(2.5rem, 1.5rem + 3.2vw, 3rem); /* 6 */
+  --agisty-space-top-rg: clamp(1.1875rem, 0.6875rem + 1.6vw, 1.4375rem); /* 7 */
+  --agisty-main-sidebar: clamp(2rem, -72.75rem + 100vw, 6.25rem); /* 8 */
   --agisty-line-height-head: 1.2;
   --agisty-line-height-norm: 1.5;
   --agisty-line-height-body: calc(1ex / 0.32);
@@ -59,6 +49,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  padding: 0;
+  padding-block: 0;
+  padding-inline: 0;
+  /* outline: 1px solid lightslategray; */
 
   /**
    * Resources on doing `prefers-reduced-motion` correctly.
@@ -84,12 +81,15 @@
  * https://medienbaecker.com/articles/focus-outlines
  */
 :focus-visible {
-  outline: currentcolor dashed 2px;
-  outline-offset: 3px;
+  outline: currentcolor dashed 0.125rem;
+  outline-offset: 0.1875rem;
 }
 
 html {
   accent-color: var(--wp--custom--brand);
+  scroll-behavior: smooth;
+  scroll-padding-block-start: 16px;
+  tab-size: 4;
 
   /** 
    * Animate to or from `height: auto` and other intrinsic sizes.
@@ -97,8 +97,6 @@ html {
    * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
    */
   interpolate-size: allow-keywords;
-  scroll-behavior: smooth;
-  scroll-padding-block-start: var(--agisty-space-top-lg, 3rem);
 
   /* Disables the browser's inflation algorithm. */
   -moz-text-size-adjust: none;
@@ -108,10 +106,10 @@ html {
 
 body {
   font-family: "Agisty Body", system-ui, -apple-system, sans-serif;
-  font-size: var(--agisty-font-size-rg, 17px);
+  font-size: var(--agisty-font-size-rg, 1rem);
   font-size-adjust: from-font;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: var(--agisty-line-height-norm, 1.5);
   min-height: 100vh;
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
@@ -131,7 +129,6 @@ h4 {
   font-family: "Agisty Head", system-ui, -apple-system, sans-serif;
   font-weight: 600;
   line-height: var(--agisty-line-height-head, 1.2);
-  margin-block: 0;
 }
 
 h1 {
@@ -150,31 +147,26 @@ h4 {
   font-size: var(--agisty-font-size-rg, 1em);
 }
 
-p {
-  margin-block: 0;
-
-  /**
-   * A better image reset for your CSS.
-   *
-   * https://www.youtube.com/watch?v=345V2MU3E_w
-   */
-  img {
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: inline-block;
-    font-style: italic;
-    vertical-align: middle;
-  }
+/**
+ * A better image reset for your CSS.
+ *
+ * https://www.youtube.com/watch?v=345V2MU3E_w
+ */
+img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-style: italic;
+  vertical-align: middle;
 }
 
-a:where(:not(.wp-element-button)) {
+a {
   color: var(--wp--custom--link);
-  text-decoration: underline 2px solid currentcolor;
+  text-decoration: underline 0.125em solid currentcolor;
   text-underline-offset: 0.25em;
 
   &:is(:hover) {
     color: rgb(from var(--wp--custom--link) r g b / 95%);
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 0.1875em;
   }
 
   &:is(:focus, :focus-visible) {
@@ -186,19 +178,15 @@ a:where(:not(.wp-element-button)) {
   }
 }
 
-ul,
-ol {
-  margin-block: 0;
-  padding-inline: 0;
-
-  /**
-   * Remove list styles on ul, ol elements with a list role,
-   * which suggests default styling will be removed.
-   */
-  &[role="list"] {
-    list-style-type: none;
-    padding-inline-start: 0;
-  }
+/**
+ * Remove list styles on ul, ol elements with a list role,
+ * which suggests default styling will be removed.
+ */
+menu,
+ul[role="list"],
+ol[role="list"] {
+  list-style-type: none;
+  padding-inline-start: 0;
 }
 
 /* Make images and other replaced elements easier to work with. */
@@ -207,8 +195,6 @@ iframe,
 svg {
   display: block;
   vertical-align: middle;
-  margin-block: 0;
-  margin-inline: 0;
 }
 
 code,
@@ -222,8 +208,8 @@ pre {
 
 code,
 kbd {
-  padding-block: 0.125rem;
-  padding-inline: 0.25rem;
+  padding-block: 2px;
+  padding-inline: 4px;
 }
 
 /**
@@ -232,17 +218,16 @@ kbd {
  * https://dylanatsmith.com/wrote/styling-the-kbd-element
  */
 kbd {
-  border-radius: 0.25rem;
+  border-radius: 4px;
   box-shadow: 0 2px 0 1px var(--wp--custom--border);
   color: var(--wp--custom--gray);
 }
 
 pre {
   line-height: 1.5;
-  margin: 0;
   overflow: auto;
-  padding-block: var(--agisty-space-top-rg, 1rem);
-  padding-inline: var(--agisty-space-top-rg, 1rem);
+  padding-block: 24px;
+  padding-inline: 24px;
 
   code {
     border: none;
@@ -271,9 +256,4 @@ abbr[title] {
 address {
   font-style: normal;
   line-height: inherit;
-}
-
-blockquote {
-  margin-block: 0;
-  margin-inline: 0;
 }
