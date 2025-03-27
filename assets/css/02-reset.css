@@ -1,5 +1,5 @@
 /**
- * My CSS reset specific to WordPress themes.
+ * CSS reset specific to WordPress themes.
  *
  * This is to provide consistent, and simple baseline CSS
  * that works across many devices and browser versions.
@@ -19,9 +19,9 @@
    * Min values are based on 500px.
    * Max values are based on 750px.
    *
+   * https://clamp.font-size.app/
    * https://grtcalculator.com/styles/
    * https://utopia.fyi
-   * https://clamp.font-size.app/
    *
    * 1. 26px → 34px.
    * 2. 21px → 25px.
@@ -29,7 +29,7 @@
    * 4. 15px → 16px.
    * 5. 14px → 15px.
    * 6. 40px → 48px.
-   * 7. 19px → 23px.
+   * 7. 20px → 24px.
    * 8. 32px @1196px → 100px @1264px
    */
   --agisty-font-size-xl: clamp(1.625rem, 0.625rem + 3.2vw, 2.125rem); /* 1 */
@@ -38,7 +38,7 @@
   --agisty-font-size-sm: clamp(0.9375rem, 0.8125rem + 0.4vw, 1rem); /* 4 */
   --agisty-font-size-xm: clamp(0.875rem, 0.75rem + 0.4vw, 0.9375rem); /* 5 */
   --agisty-space-top-lg: clamp(2.5rem, 1.5rem + 3.2vw, 3rem); /* 6 */
-  --agisty-space-top-rg: clamp(1.1875rem, 0.6875rem + 1.6vw, 1.4375rem); /* 7 */
+  --agisty-space-top-rg: clamp(1.25rem, 0.75rem + 1.6vw, 1.5rem); /* 7 */
   --agisty-main-sidebar: clamp(2rem, -72.75rem + 100vw, 6.25rem); /* 8 */
   --agisty-line-height-head: 1.2;
   --agisty-line-height-norm: 1.5;
@@ -55,7 +55,6 @@
   padding: 0;
   padding-block: 0;
   padding-inline: 0;
-  /* outline: 1px solid lightslategray; */
 
   /**
    * Resources on doing `prefers-reduced-motion` correctly.
@@ -132,7 +131,7 @@ h4 {
 }
 
 h1 {
-  font-size: var(--agisty-font-size-xl, 1.5em);
+  font-size: var(--agisty-font-size-xl, 1.618em);
 }
 
 h2 {
@@ -147,54 +146,43 @@ h4 {
   font-size: var(--agisty-font-size-rg, 1em);
 }
 
-/**
- * A better image reset for your CSS.
- *
- * https://www.youtube.com/watch?v=345V2MU3E_w
- */
-img {
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-style: italic;
-  vertical-align: middle;
-}
-
-a {
+a:where(:not(.wp-element-button)) {
   color: var(--wp--custom--link);
   text-decoration: underline 0.125em solid currentcolor;
   text-underline-offset: 0.25em;
 
   &:is(:hover) {
-    color: rgb(from var(--wp--custom--link) r g b / 95%);
+    color: rgb(from var(--wp--custom--link) r g b / 90%);
     text-decoration-thickness: 0.1875em;
   }
 
   &:is(:focus, :focus-visible) {
     background-color: var(--wp--custom--focus);
     box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
-    color: var(--wp--custom--black);
     outline: none;
     text-decoration-line: none;
   }
 }
 
-/**
- * Remove list styles on ul, ol elements with a list role,
- * which suggests default styling will be removed.
- */
-menu,
-ul[role="list"],
-ol[role="list"] {
-  list-style-type: none;
-  padding-inline-start: 0;
+abbr[title] {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-decoration-skip-ink: none;
 }
 
-/* Make images and other replaced elements easier to work with. */
-figure,
-iframe,
-svg {
-  display: block;
-  vertical-align: middle;
+address {
+  font-style: normal;
+  line-height: inherit;
+}
+
+button,
+input,
+label,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: var(--agisty-line-height-head, 1.2);
 }
 
 code,
@@ -224,7 +212,7 @@ kbd {
 }
 
 pre {
-  line-height: 1.5;
+  line-height: var(--agisty-line-height-norm);
   overflow: auto;
   padding-block: 24px;
   padding-inline: 24px;
@@ -237,23 +225,35 @@ pre {
   }
 }
 
-button,
-input,
-label,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: var(--agisty-line-height-head, 1.2);
+/* Make images and other replaced elements easier to work with. */
+figure,
+iframe,
+svg {
+  display: block;
+  vertical-align: middle;
 }
 
-abbr[title] {
-  cursor: help;
-  text-decoration: underline dotted;
-  text-decoration-skip-ink: none;
+/**
+ * A better image reset for your CSS.
+ *
+ * https://www.youtube.com/watch?v=345V2MU3E_w
+ */
+img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-style: italic;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
-address {
-  font-style: normal;
-  line-height: inherit;
+/**
+ * Remove list styles on ul, ol elements with a list role,
+ * which suggests default styling will be removed.
+ */
+menu,
+ol[role="list"],
+ul[role="list"] {
+  list-style-type: none;
+  padding-inline-start: 0;
 }
