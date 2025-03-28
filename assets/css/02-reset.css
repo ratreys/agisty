@@ -49,12 +49,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  margin-block: 0;
-  margin-inline: 0;
-  padding: 0;
-  padding-block: 0;
-  padding-inline: 0;
 
   /**
    * Resources on doing `prefers-reduced-motion` correctly.
@@ -96,15 +90,10 @@ html {
    * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
    */
   interpolate-size: allow-keywords;
-
-  /* Disables the browser's inflation algorithm. */
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
 }
 
 body {
-  font-family: "Agisty Body", system-ui, -apple-system, sans-serif;
+  font-family: --agisty-font-body, system-ui, -apple-system, sans-serif;
   font-size: var(--agisty-font-size-rg, 1rem);
   font-size-adjust: from-font;
   font-weight: 400;
@@ -115,17 +104,51 @@ body {
   overflow-x: clip;
   text-wrap: pretty;
 
+  /* Disables the browser's inflation algorithm. */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+
   /* Turn on kerning and ligature. */
-  font-feature-settings: "kern", "liga", "lnum", "pnum";
   font-kerning: normal;
-  text-rendering: optimizelegibility;
+  font-variant-ligatures: common-ligatures;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+blockquote,
+figure,
+h1,
+h2,
+h3,
+h4,
+p,
+ol,
+ul {
+  margin-block: 0;
+}
+
+blockquote,
+figure {
+  margin-inline: 0;
+}
+
+/* Make images and other replaced elements easier to work with. */
+figure,
+iframe,
+svg {
+  display: block;
+  vertical-align: middle;
+}
+
+:where(figure) {
+  margin: 0;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Agisty Head", system-ui, -apple-system, sans-serif;
+  font-family: --agisty-font-head, system-ui, -apple-system, sans-serif;
   font-weight: 600;
   line-height: var(--agisty-line-height-head, 1.2);
 }
@@ -190,7 +213,7 @@ kbd,
 pre {
   background-color: white;
   border: 1px solid var(--wp--custom--border);
-  font-family: "Agisty Mono", "SF Mono", "Fira Mono", Menlo, monospace;
+  font-family: --agisty-font-mono, "SF Mono", "Fira Mono", Menlo, monospace;
   font-size: var(--agisty-font-size-xm, 1em);
 }
 
@@ -214,6 +237,7 @@ kbd {
 pre {
   line-height: var(--agisty-line-height-norm);
   overflow: auto;
+  margin: 0;
   padding-block: 24px;
   padding-inline: 24px;
 
@@ -223,14 +247,6 @@ pre {
     padding-block: 0;
     padding-inline: 0;
   }
-}
-
-/* Make images and other replaced elements easier to work with. */
-figure,
-iframe,
-svg {
-  display: block;
-  vertical-align: middle;
 }
 
 /**
@@ -252,8 +268,40 @@ img {
  * which suggests default styling will be removed.
  */
 menu,
-ol[role="list"],
-ul[role="list"] {
-  list-style-type: none;
+ol,
+ul {
   padding-inline-start: 0;
+
+  &[role="list"] {
+    list-style-type: none;
+  }
+}
+
+table {
+  border-spacing: 0;
+  border-color: var(--wp--custom--border);
+}
+
+/** 
+ * Typography and Opentype Default Stylesheet (TODS)
+ *
+ * https://github.com/clagnut/TODS
+ */
+
+sup,
+sub,
+.sup,
+.sub {
+  font-size: inherit;
+  vertical-align: baseline;
+}
+
+sup,
+.sup {
+  font-variant-position: super;
+}
+
+sub,
+.sub {
+  font-variant-position: sub;
 }
