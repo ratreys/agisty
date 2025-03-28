@@ -24,6 +24,7 @@
 
   li {
     margin-block-start: 0.5em;
+    padding-inline-start: 16px;
 
     &:where(:first-child) {
       margin-block-start: 0;
@@ -33,7 +34,7 @@
   ol,
   ul {
     margin-block-start: 0.5em;
-    padding-inline-start: var(--wp--preset--spacing--40);
+    padding-inline-start: 1em;
   }
 }
 
@@ -121,6 +122,7 @@
   th,
   td {
     border: 1px solid var(--wp--custom--border);
+    padding: 4px 8px;
   }
 }
 
@@ -131,7 +133,9 @@
   border-bottom: 1px dashed var(--wp--custom--border);
   color: var(--wp--custom--gray);
   font-size: var(--agisty-font-size-sm);
+  line-height: var(--agisty-line-height-head);
   margin-bottom: 0;
+  margin-top: 0;
   text-align: left;
 }
 
