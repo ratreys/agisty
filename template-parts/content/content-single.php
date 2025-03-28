@@ -10,7 +10,10 @@
 ?>
 <article <?php post_class() ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1>', '</h1>' ) ?>
+		<hgroup class="entry-header__group">
+			<?php the_title( '<h1 class="entry-header__title">', '</h1>' ) ?>
+			<?php the_excerpt() ?>
+		</hgroup>
 	</header>
 	<div class="entry-content is-layout-flow">
 		<?php the_content() ?>
