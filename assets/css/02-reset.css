@@ -180,6 +180,7 @@ a:where(:not(.wp-element-button)) {
   }
 
   &:is(:focus, :focus-visible) {
+    color: var(--wp--custom--black);
     background-color: var(--wp--custom--focus);
     box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
     outline: none;
@@ -189,13 +190,12 @@ a:where(:not(.wp-element-button)) {
 
 abbr[title] {
   cursor: help;
-  text-decoration: underline dotted;
+  text-decoration: underline 0.125rem dotted currentcolor;
   text-decoration-skip-ink: none;
 }
 
 address {
   font-style: normal;
-  line-height: inherit;
 }
 
 button,
@@ -275,6 +275,10 @@ ul {
   &[role="list"] {
     list-style-type: none;
   }
+}
+
+ol li::marker {
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 table {
