@@ -23,7 +23,7 @@
   padding-inline-start: 3ch;
 
   li {
-    margin-block-start: 0.5rem;
+    margin-block-start: 0.5em;
 
     &:where(:first-child) {
       margin-block-start: 0;
@@ -32,7 +32,7 @@
 
   ol,
   ul {
-    margin-block-start: 0.5rem;
+    margin-block-start: 0.5em;
     padding-inline-start: var(--wp--preset--spacing--40);
   }
 }
@@ -42,17 +42,13 @@
   padding-inline-start: 3ch;
 
   li {
-    margin-block-start: 0.5rem;
+    margin-block-start: 0.5em;
   }
 }
 
 /* ------------------------------
  | Quote
  * --------------------------- */
-.wp-block-quote {
-  margin-block: 0;
-  margin-inline: 0;
-}
 
 /* ------------------------------
  | Details
@@ -63,13 +59,13 @@
 .wp-block-details {
   background-color: white;
   border: 1px solid var(--wp--custom--border);
-  padding-block: var(--agisty-space-top-rg, 1rem);
-  padding-inline: var(--agisty-space-top-rg, 1rem);
+  padding-block: 24px;
+  padding-inline: 24px;
   overflow: clip;
 
   &::details-content {
     block-size: 0;
-    transition: block-size 500ms, content-visibility 500ms;
+    transition: block-size 200ms, content-visibility 200ms;
     transition-behavior: allow-discrete;
   }
 
@@ -92,15 +88,15 @@
  * --------------------------- */
 :root :where(.wp-block-pullquote) {
   background-color: white;
-  border-left: 4px solid var(--wp--custom--brand);
+  border-inline-start: 4px solid var(--wp--custom--brand);
+  outline: var(--wp--custom--brand) dashed 1px;
   margin: 0;
-  outline: 1px dashed var(--wp--custom--guides);
-  padding: 1rem 1.5rem;
+  padding: 24px 0;
+  padding-inline-start: 24px;
   text-align: left;
 
   cite {
     color: var(--wp--custom--gray);
-    font-size: var(--agisty-font-size-rg);
   }
 }
 
@@ -109,59 +105,34 @@
  * --------------------------- */
 .wp-block-table {
   caption-side: bottom;
-  font-size: var(--wp--preset--font-size--normal);
-  margin: 0;
-
-  table {
-    border-spacing: 0;
-    border-color: var(--wp--custom--border);
-  }
+  font-size: var(--agisty-font-size-sm);
 
   thead {
     background-color: rgb(from var(--wp--custom--gray) r g b / 17%);
+    border-bottom: 3px solid var(--wp--custom--black);
   }
 
   tfoot {
     border-top: 2px solid var(--wp--custom--black);
     color: var(--wp--custom--gray);
-    font-size: var(--agisty-font-size-xm);
   }
 
-  tbody,
   tr,
-  td,
-  th {
-    border-color: var(--wp--custom--border);
+  th,
+  td {
+    border: 1px solid var(--wp--custom--border);
   }
 }
 
 /* ------------------------------
  | Image
  * --------------------------- */
-.wp-block-image {
-  margin: 0;
-
-  /** 
-   * A better image reset for your CSS.
-   *
-   * https://www.youtube.com/watch?v=345V2MU3E_w
-   */
-  img {
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-style: italic;
-    vertical-align: middle;
-  }
-
-  :where(figcaption) {
-    border-bottom: 1px dashed var(--wp--custom--border);
-    color: var(--wp--custom--gray);
-    font-size: var(--agisty-font-size-sm);
-    line-height: 1.5;
-    margin-block-end: 0;
-    padding-block-end: 0.5rem;
-    text-align: left;
-  }
+.wp-block-image :where(figcaption) {
+  border-bottom: 1px dashed var(--wp--custom--border);
+  color: var(--wp--custom--gray);
+  font-size: var(--agisty-font-size-sm);
+  margin-bottom: 0;
+  text-align: left;
 }
 
 /* ------------------------------
@@ -184,18 +155,15 @@
  | Navigation
  * --------------------------- */
 .wp-block-navigation :where(a) {
-  color: var(--wp--custom--black);
   font-size: var(--agisty-font-size-sm);
 
   &:is(:hover, :active) {
-    color: var(--wp--custom--link);
-    text-decoration: underline 3px solid currentcolor;
+    text-decoration: underline 0.1875em solid currentcolor;
   }
 
   &:is(:focus, :focus-visible) {
     background-color: var(--wp--custom--focus);
     box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
-    color: var(--wp--custom--black);
     outline: none;
     text-decoration-line: none;
   }
@@ -204,9 +172,6 @@
 /* ------------------------------
  | Others
  * --------------------------- */
-.wp-block-embed {
-  margin: 0;
-}
 
 /* Create a root stacking context */
 .wp-site-blocks {
