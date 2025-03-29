@@ -1,3 +1,9 @@
+/** 
+ * Typography and Opentype Default Stylesheet (TODS)
+ *
+ * https://github.com/clagnut/TODS
+ */
+
 @font-face {
   font-family: --agisty-font-head;
   font-style: normal;
@@ -40,4 +46,43 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
+}
+
+html {
+  /* Disables the browser's inflation algorithm. */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  font-family: --agisty-font-body, system-ui, -apple-system, sans-serif;
+  font-size: var(--agisty-font-size-rg, 1rem);
+  font-size-adjust: from-font;
+  font-weight: 400;
+  line-height: var(--agisty-line-height-norm, 1.5);
+  text-wrap: pretty;
+
+  /* Turn on kerning and ligature. */
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+sup,
+sub,
+.sup,
+.sub {
+  font-size: inherit;
+  vertical-align: baseline;
+}
+
+sup,
+.sup {
+  font-variant-position: super;
+}
+
+sub,
+.sub {
+  font-variant-position: sub;
 }
