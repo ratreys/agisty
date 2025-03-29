@@ -93,26 +93,10 @@ html {
 }
 
 body {
-  font-family: --agisty-font-body, system-ui, -apple-system, sans-serif;
-  font-size: var(--agisty-font-size-rg, 1rem);
-  font-size-adjust: from-font;
-  font-weight: 400;
-  line-height: var(--agisty-line-height-norm, 1.5);
   min-height: 100vh;
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
   overflow-x: clip;
-  text-wrap: pretty;
-
-  /* Disables the browser's inflation algorithm. */
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-
-  /* Turn on kerning and ligature. */
-  font-kerning: normal;
-  font-variant-ligatures: common-ligatures;
-  font-variant-numeric: lining-nums proportional-nums;
 }
 
 blockquote,
@@ -163,10 +147,12 @@ h2 {
 
 h3 {
   font-size: 1.17em;
+  font-weight: 500;
 }
 
 h4 {
   font-size: var(--agisty-font-size-rg, 1em);
+  font-weight: 400;
 }
 
 a:where(:not(.wp-element-button)) {
@@ -205,7 +191,7 @@ select,
 textarea {
   font-family: inherit;
   font-size: inherit;
-  line-height: var(--agisty-line-height-head, 1.2);
+  line-height: var(--agisty-line-height-head, 1.1);
 }
 
 code,
@@ -214,7 +200,7 @@ pre {
   background-color: white;
   border: 1px solid var(--wp--custom--border);
   font-family: --agisty-font-mono, "SF Mono", "Fira Mono", Menlo, monospace;
-  font-size: var(--agisty-font-size-xm, 1em);
+  font-size: var(--agisty-font-size-xm, 0.875em);
 }
 
 code,
@@ -235,7 +221,7 @@ kbd {
 }
 
 pre {
-  line-height: var(--agisty-line-height-norm);
+  line-height: var(--agisty-line-height-norm, 1.5);
   overflow: auto;
   margin: 0;
   padding-block: 24px;
@@ -275,37 +261,13 @@ ul {
   &[role="list"] {
     list-style-type: none;
   }
-}
 
-ol li::marker {
-  font-variant-numeric: lining-nums tabular-nums;
+  li::marker {
+    font-variant-numeric: lining-nums tabular-nums;
+  }
 }
 
 table {
   border-spacing: 0;
   border-color: var(--wp--custom--border);
-}
-
-/** 
- * Typography and Opentype Default Stylesheet (TODS)
- *
- * https://github.com/clagnut/TODS
- */
-
-sup,
-sub,
-.sup,
-.sub {
-  font-size: inherit;
-  vertical-align: baseline;
-}
-
-sup,
-.sup {
-  font-variant-position: super;
-}
-
-sub,
-.sub {
-  font-variant-position: sub;
 }
