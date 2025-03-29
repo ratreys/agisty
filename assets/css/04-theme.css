@@ -175,7 +175,7 @@ footer {
   margin-block-start: var(--agisty-space-top-rg, 1em);
 }
 
-.padding-block__main {
+.pb-main {
   padding-block: 48px;
 }
 
