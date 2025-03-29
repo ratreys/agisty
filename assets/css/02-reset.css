@@ -90,13 +90,24 @@ html {
    * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
    */
   interpolate-size: allow-keywords;
+
+  /* Disables the browser's inflation algorithm. */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--agisty-font-size-rg, 1rem);
+  font-weight: 400;
+  line-height: var(--agisty-line-height-norm, 1.5);
   min-height: 100vh;
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
   overflow-x: clip;
+  text-wrap: pretty;
 }
 
 blockquote,
@@ -132,7 +143,6 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: --agisty-font-head, system-ui, -apple-system, sans-serif;
   font-weight: 600;
   line-height: var(--agisty-line-height-head, 1.2);
 }
@@ -170,7 +180,9 @@ a:where(:not(.wp-element-button)) {
     background-color: var(--wp--custom--focus);
     box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
     outline: none;
-    text-decoration-line: none;
+    outline-offset: 1px;
+    text-decoration: none;
+    text-underline-offset: auto;
   }
 }
 
