@@ -8,7 +8,7 @@
 get_header();
 ?>
 <div class="width-wide grow">
-<main class="is-layout-constrained agisty-main__archive padding-block__main" id="main" tabindex="-1">
+<main class="is-layout-constrained pb-main agisty-main__archive" id="main" tabindex="-1">
 	<section class="alignwide">
 		<ul class="is-layout-grid entry-card__wrapper" role="list">
 		<?php
