@@ -1,5 +1,6 @@
 .vscode/
-vendor/
+assets/css/fonts/
 node_modules/
+vendor/
 
 .cursorrules
