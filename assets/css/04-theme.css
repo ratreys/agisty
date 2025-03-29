@@ -2,8 +2,10 @@
  * Theme-specific styles.
  *
  * Header
- * Main
  * Footer
+ * Index
+ * Post
+ * Page
  * Utilities
  * --------------------------- */
 
@@ -12,12 +14,28 @@
  * --------------------------- */
 .agisty-header {
   border-bottom: 2px solid var(--wp--custom--black);
-  padding-block: var(--agisty-space-top-rg);
+  padding-block: 24px;
 }
 
 .header-menu__nav {
   flex-wrap: nowrap;
   justify-content: space-between;
+}
+
+/* ------------------------------
+ | Footer
+ * --------------------------- */
+.wrapper-nav__footer {
+  padding-block-end: 16px;
+}
+
+.agisty-footer {
+  border-top: 4px solid var(--wp--custom--black);
+  padding-block: 16px;
+
+  p {
+    font-size: var(--agisty-font-size-sm);
+  }
 }
 
 /* header,
@@ -29,7 +47,27 @@ footer {
 } */
 
 /* ------------------------------
- | Main
+ | Index
+ * --------------------------- */
+.entry-card__wrapper {
+  gap: 24px;
+}
+
+.entry-card {
+  background-color: white;
+  border: 1px solid var(--wp--custom--black);
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+
+  .entry-card__link {
+    font-size: var(--agisty-font-size-rg, 1em);
+    text-decoration: none;
+  }
+}
+
+/* ------------------------------
+ | Post
  * --------------------------- */
 .type-post,
 .agisty-sidebar {
@@ -38,25 +76,28 @@ footer {
   gap: 2rem;
 }
 
-.agisty-main {
+.entry-header {
+  border-bottom: 1px dashed var(--wp--custom--border);
+  padding-bottom: var(--agisty-space-top-rg);
+}
+
+.agisty-main__post {
   --sidebar--width: 350px;
 
   align-items: stretch;
   gap: 2rem var(--agisty-main-sidebar);
-  padding-block: var(--agisty-space-top-lg);
 
   /**
    * https://every-layout.dev/layouts/sidebar/
    * https://www.youtube.com/watch?v=k_3pRxdv-cI 
    */
-
   > .type-post {
     /* ↓ Grow from nothing */
     flex-grow: 999;
     flex-basis: 0;
 
     /* ↓ Wrap when main content is less than the specified width in px. */
-    min-inline-size: min(550px, 100%);
+    min-inline-size: min(500px, 100%);
   }
 
   > .agisty-sidebar {
@@ -70,54 +111,23 @@ footer {
 
 .entry-content {
   display: flow-root;
-  font-size: var(--agisty-font-size-rg);
   line-height: var(--agisty-line-height-body);
 
-  * + * {
-    margin-block-start: var(--agisty-space-top-rg, 1rem);
+  h2 {
+    margin-block-start: var(--agisty-space-top-lg, 1em);
   }
 
-  h2,
   h3 {
-    margin-block-start: var(--agisty-space-top-lg, 1rem);
-  }
-
-  h4 {
-    font-weight: 400;
-  }
-}
-
-.entry-card {
-  background-color: white;
-  border: 1px solid var(--wp--custom--border);
-  display: grid;
-  gap: var(--agisty-space-top-rg, 1rem);
-  padding: var(--agisty-space-top-rg, 1rem);
-
-  a {
-    text-decoration: none;
-  }
-
-  :is(h2, h3) {
-    font-size: var(--agisty-font-size-rg, 1rem);
+    margin-block-start: 1.17em;
   }
 }
 
 /* ------------------------------
- | Footer
+ | Page
  * --------------------------- */
-
-.wrapper-nav__footer {
-  padding-block-end: 1rem;
-}
-
-.agisty-footer {
-  border-top: 4px solid var(--wp--custom--black);
-  padding-block: 1rem;
-
-  p {
-    font-size: var(--agisty-font-size-sm);
-  }
+.type-page {
+  display: grid;
+  row-gap: 2rem;
 }
 
 /* ------------------------------
@@ -157,11 +167,19 @@ footer {
   padding-inline: var(--agisty-space-top-rg);
 }
 
-.wrapper {
+.flow-content * + * {
+  margin-block-start: var(--agisty-space-top-rg, 1em);
+}
+
+.padding-block__main {
+  padding-block: 48px;
+}
+
+.width-wide {
   margin-inline: auto;
-  width: min(100% - 4rem, var(--wp--style--global--wide-size));
+  width: min(100% - 32px, var(--wp--style--global--wide-size));
 }
 
 .wrapper-menu {
-  column-gap: 2rem;
+  column-gap: 32px;
 }
