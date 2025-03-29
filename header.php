@@ -16,7 +16,7 @@
 <body <?php body_class() ?>>
 <?php wp_body_open() ?>
 <a class="skip-link visually-hidden" href="#main"><?php esc_html_e( 'Skip to main content', 'agisty' ) ?></a>
-<div class="wrapper" itemscope itemtype="https://schema.org/WPHeader">
+<div class="width-wide" itemscope itemtype="https://schema.org/WPHeader">
 <header id="header" class="is-layout-constrained agisty-header">
 <nav class="is-layout-flex alignwide wp-block-navigation header-menu__nav">
 <?php 
