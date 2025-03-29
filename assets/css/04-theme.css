@@ -12,6 +12,33 @@
 /* ------------------------------
  | Header
  * --------------------------- */
+
+/**
+ * The anatomy of visually-hidden.
+ *
+ * https://www.tpgi.com/the-anatomy-of-visually-hidden/
+ * https://www.a11yproject.com/posts/how-to-hide-content/
+ */
+.visually-hidden:not(:focus-visible):not(:active) {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  clip-path: inset(50%);
+  overflow: clip;
+  white-space: preserve nowrap;
+}
+
+.skip-link:focus-visible {
+  position: absolute;
+  height: auto;
+  width: auto;
+  top: 4px;
+  left: 4px;
+  padding-block: 16px;
+  padding-inline: 16px;
+  z-index: 100000;
+}
+
 .agisty-header {
   border-bottom: 2px solid var(--wp--custom--black);
   padding-block: 24px;
@@ -120,6 +147,10 @@ footer {
   h3 {
     margin-block-start: 1.17em;
   }
+
+  .wp-block-image :where(figcaption) {
+    padding-block-end: 0.5rem;
+  }
 }
 
 /* ------------------------------
@@ -133,33 +164,6 @@ footer {
 /* ------------------------------
  | Utilities
  * --------------------------- */
-
-/**
- * The anatomy of visually-hidden.
- *
- * https://www.tpgi.com/the-anatomy-of-visually-hidden/
- * https://www.a11yproject.com/posts/how-to-hide-content/
- */
-.visually-hidden:not(:focus-visible):not(:active) {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  clip-path: inset(50%);
-  overflow: clip;
-  white-space: preserve nowrap;
-}
-
-.skip-link:focus-visible {
-  position: absolute;
-  height: auto;
-  width: auto;
-  top: 4px;
-  left: 4px;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  z-index: 100000;
-}
-
 .agisty-box {
   background-color: rgb(from var(--wp--custom--focus) r g b / 13%);
   border: 1px solid var(--wp--custom--focus);
@@ -167,12 +171,16 @@ footer {
   padding-inline: var(--agisty-space-top-rg);
 }
 
-.flow-content * + * {
+.flow-content > * + * {
   margin-block-start: var(--agisty-space-top-rg, 1em);
 }
 
 .padding-block__main {
   padding-block: 48px;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .width-wide {
