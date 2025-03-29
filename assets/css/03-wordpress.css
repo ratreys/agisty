@@ -76,10 +76,10 @@
 
   summary {
     list-style-position: outside;
-    margin-inline-start: var(--agisty-space-top-rg, 1rem);
+    margin-inline-start: var(--agisty-space-top-rg, 1em);
 
     &::marker {
-      font-size: var(--agisty-font-size-xm);
+      font-size: var(--agisty-font-size-xm, 0.875em);
     }
   }
 }
@@ -106,7 +106,7 @@
  * --------------------------- */
 .wp-block-table {
   caption-side: bottom;
-  font-size: var(--agisty-font-size-sm);
+  font-size: var(--agisty-font-size-sm, 1rem);
 
   thead {
     background-color: rgb(from var(--wp--custom--gray) r g b / 17%);
@@ -124,6 +124,10 @@
     border: 1px solid var(--wp--custom--border);
     padding: 4px 8px;
   }
+
+  th {
+    font-weight: 600;
+  }
 }
 
 /* ------------------------------
@@ -132,10 +136,10 @@
 .wp-block-image :where(figcaption) {
   border-bottom: 1px dashed var(--wp--custom--border);
   color: var(--wp--custom--gray);
-  font-size: var(--agisty-font-size-sm);
-  line-height: var(--agisty-line-height-head);
+  font-size: var(--agisty-font-size-sm, 0.875rem);
+  line-height: var(--agisty-line-height-head, 1.15);
   margin-bottom: 0;
-  margin-top: 0;
+  margin-top: 1rem;
   text-align: left;
 }
 
@@ -159,7 +163,7 @@
  | Navigation
  * --------------------------- */
 .wp-block-navigation :where(a) {
-  font-size: var(--agisty-font-size-sm);
+  font-size: var(--agisty-font-size-sm, 0.875rem);
 
   &:is(:hover, :active) {
     text-decoration: underline 0.1875em solid currentcolor;
