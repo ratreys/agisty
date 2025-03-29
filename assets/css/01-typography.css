@@ -48,25 +48,21 @@
     U+FEFF, U+FFFD;
 }
 
-html {
-  /* Disables the browser's inflation algorithm. */
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-}
-
 body {
-  font-family: --agisty-font-body, system-ui, -apple-system, sans-serif;
-  font-size: var(--agisty-font-size-rg, 1rem);
+  font-family: "--agisty-font-body", system-ui, -apple-system, sans-serif;
   font-size-adjust: from-font;
-  font-weight: 400;
-  line-height: var(--agisty-line-height-norm, 1.5);
-  text-wrap: pretty;
 
   /* Turn on kerning and ligature. */
   font-kerning: normal;
   font-variant-ligatures: common-ligatures;
   font-variant-numeric: lining-nums proportional-nums;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "--agisty-font-head", system-ui, -apple-system, sans-serif;
 }
 
 sup,
