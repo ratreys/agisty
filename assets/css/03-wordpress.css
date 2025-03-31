@@ -3,8 +3,8 @@
  *
  * Text
  *    1. List
- *    2. Quote
- *    3. Details
+ *    2. Details
+ *    3. Quote
  *    4. Pullquote
  *    5. Table
  * Media
@@ -43,13 +43,10 @@
   padding-inline-start: 3ch;
 
   li {
-    margin-block-start: 0.5em;
+    margin-block-start: 0;
+    padding-inline-start: 16px;
   }
 }
-
-/* ------------------------------
- | Quote
- * --------------------------- */
 
 /* ------------------------------
  | Details
@@ -82,22 +79,38 @@
       font-size: var(--agisty-font-size-xm, 0.875em);
     }
   }
+
+  p {
+    margin-block-start: var(--agisty-space-top-rg, 1em);
+  }
+}
+
+/* ------------------------------
+ | Quote
+ * --------------------------- */
+:root :where(.wp-block-pullquote),
+.wp-block-quote {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(from var(--wp--custom--brand) r g b / 7%) 25%,
+    var(--wp--custom--white) 100%
+  );
+  border-inline-start: 8px solid var(--wp--custom--brand);
+  border-radius: 8px;
+  padding: 24px;
 }
 
 /* ------------------------------
  | Pullquote
  * --------------------------- */
 :root :where(.wp-block-pullquote) {
-  background-color: white;
-  border-inline-start: 4px solid var(--wp--custom--brand);
-  outline: var(--wp--custom--brand) dashed 1px;
   margin: 0;
-  padding: 24px 0;
-  padding-inline-start: 24px;
   text-align: left;
 
   cite {
     color: var(--wp--custom--gray);
+    font-style: italic;
+    margin-block-start: var(--agisty-space-top-rg, 1em);
   }
 }
 
@@ -106,15 +119,15 @@
  * --------------------------- */
 .wp-block-table {
   caption-side: bottom;
-  font-size: var(--agisty-font-size-sm, 1rem);
+  font-size: 1.0625rem;
 
   thead {
     background-color: rgb(from var(--wp--custom--gray) r g b / 17%);
-    border-bottom: 3px solid var(--wp--custom--black);
+    border-block-end: 3px solid var(--wp--custom--black);
   }
 
   tfoot {
-    border-top: 2px solid var(--wp--custom--black);
+    border-block-start: 2px solid var(--wp--custom--black);
     color: var(--wp--custom--gray);
   }
 
@@ -122,7 +135,8 @@
   th,
   td {
     border: 1px solid var(--wp--custom--border);
-    padding: 4px 8px;
+    padding-block: 4px;
+    padding-inline: 8px;
   }
 
   th {
@@ -134,12 +148,13 @@
  | Image
  * --------------------------- */
 .wp-block-image :where(figcaption) {
-  border-bottom: 1px dashed var(--wp--custom--border);
+  border-block-end: 1px dashed var(--wp--custom--border);
   color: var(--wp--custom--gray);
-  font-size: var(--agisty-font-size-sm, 0.875rem);
+  font-style: italic;
   line-height: var(--agisty-line-height-head, 1.15);
   margin-bottom: 0;
   margin-top: 1rem;
+  padding-block-end: 0.5rem;
   text-align: left;
 }
 
@@ -165,7 +180,7 @@
 .wp-block-navigation :where(a) {
   font-size: var(--agisty-font-size-sm, 0.875rem);
 
-  &:is(:hover, :active) {
+  &:is(:hover, [aria-current="page"]) {
     text-decoration: underline 0.1875em solid currentcolor;
   }
 
