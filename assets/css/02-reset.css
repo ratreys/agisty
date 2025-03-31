@@ -50,6 +50,8 @@
 *::after {
   box-sizing: border-box;
 
+  /* outline: 1px dashed lightgray; */
+
   /**
    * Resources on doing `prefers-reduced-motion` correctly.
    *
@@ -74,7 +76,7 @@
  * https://medienbaecker.com/articles/focus-outlines
  */
 :focus-visible {
-  outline: currentcolor dashed 0.125rem;
+  outline: darkred dotted 0.1875rem;
   outline-offset: 0.1875rem;
 }
 
@@ -117,6 +119,7 @@ h2,
 h3,
 h4,
 p,
+menu,
 ol,
 ul {
   margin-block: 0;
