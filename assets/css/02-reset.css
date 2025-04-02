@@ -12,39 +12,6 @@
  * https://tailwindcss.com/docs/preflight
  */
 
-:root {
-  /**
-   * Calculated font sizes and spacing.
-   *
-   * Min values are based on 500px.
-   * Max values are based on 750px.
-   *
-   * https://clamp.font-size.app/
-   * https://grtcalculator.com/styles/
-   * https://utopia.fyi
-   *
-   * 1. 26px → 34px.
-   * 2. 21px → 25px.
-   * 3. 17px → 19px.
-   * 4. 15px → 16px.
-   * 5. 14px → 15px.
-   * 6. 40px → 48px.
-   * 7. 20px → 24px.
-   * 8. 32px @1196px → 100px @1264px
-   */
-  --agisty-font-size-xl: clamp(1.625rem, 0.625rem + 3.2vw, 2.125rem); /* 1 */
-  --agisty-font-size-lg: clamp(1.3125rem, 0.8125rem + 1.6vw, 1.5625rem); /* 2 */
-  --agisty-font-size-rg: clamp(1.0625rem, 0.8125rem + 0.8vw, 1.1875rem); /* 3 */
-  --agisty-font-size-sm: clamp(0.9375rem, 0.8125rem + 0.4vw, 1rem); /* 4 */
-  --agisty-font-size-xm: clamp(0.875rem, 0.75rem + 0.4vw, 0.9375rem); /* 5 */
-  --agisty-space-top-lg: clamp(2.5rem, 1.5rem + 3.2vw, 3rem); /* 6 */
-  --agisty-space-top-rg: clamp(1.25rem, 0.75rem + 1.6vw, 1.5rem); /* 7 */
-  --agisty-main-sidebar: clamp(2rem, -72.75rem + 100vw, 6.25rem); /* 8 */
-  --agisty-line-height-head: 1.2;
-  --agisty-line-height-norm: 1.5;
-  --agisty-line-height-body: calc(1ex / 0.32);
-}
-
 *,
 *::before,
 *::after {
@@ -68,18 +35,7 @@
   }
 }
 
-/**
- * Focus outlines.
- *
- * https://medienbaecker.com/articles/focus-outlines
- */
-:focus-visible {
-  outline: darkred dotted 0.1875rem;
-  outline-offset: 0.1875rem;
-}
-
 html {
-  accent-color: var(--wp--custom--brand);
   scroll-behavior: smooth;
   scroll-padding-block-start: 16px;
   tab-size: 4;
@@ -104,14 +60,12 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-size: var(--agisty-font-size-rg, 1rem);
   font-weight: 400;
-  line-height: var(--agisty-line-height-norm, 1.5);
+  line-height: 1.5;
   min-height: 100vh;
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-wrap: break-word;
   overflow-x: clip;
-  text-wrap: pretty;
 }
 
 blockquote,
@@ -144,53 +98,6 @@ svg {
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-weight: 600;
-  line-height: var(--agisty-line-height-head, 1.2);
-}
-
-h1 {
-  font-size: var(--agisty-font-size-xl, 1.618em);
-}
-
-h2 {
-  font-size: var(--agisty-font-size-lg, 1.5em);
-}
-
-h3 {
-  font-size: 1.17em;
-  font-weight: 500;
-}
-
-h4 {
-  font-size: var(--agisty-font-size-rg, 1em);
-  font-weight: 400;
-}
-
-a:where(:not(.wp-element-button)) {
-  color: var(--wp--custom--link);
-  text-decoration: underline 0.125em solid currentcolor;
-  text-underline-offset: 0.25em;
-
-  &:is(:hover) {
-    color: rgb(from var(--wp--custom--link) r g b / 90%);
-    text-decoration-thickness: 0.1875em;
-  }
-
-  &:is(:focus, :focus-visible) {
-    color: var(--wp--custom--black);
-    background-color: var(--wp--custom--focus);
-    box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
-    outline: none;
-    outline-offset: 1px;
-    text-decoration: none;
-    text-underline-offset: auto;
-  }
-}
-
 abbr[title] {
   cursor: help;
   text-decoration: underline 0.125rem dotted currentcolor;
@@ -208,16 +115,7 @@ select,
 textarea {
   font-family: inherit;
   font-size: inherit;
-  line-height: var(--agisty-line-height-head, 1.1);
-}
-
-code,
-kbd,
-pre {
-  background-color: white;
-  border: 1px solid var(--wp--custom--border);
-  font-family: --agisty-font-mono, "SF Mono", "Fira Mono", Menlo, monospace;
-  font-size: var(--agisty-font-size-xm, 0.875em);
+  line-height: 1.2;
 }
 
 code,
@@ -226,19 +124,7 @@ kbd {
   padding-inline: 4px;
 }
 
-/**
- * Style the kbd element to look like a button.
- *
- * https://dylanatsmith.com/wrote/styling-the-kbd-element
- */
-kbd {
-  border-radius: 4px;
-  box-shadow: 0 2px 0 1px var(--wp--custom--border);
-  color: var(--wp--custom--gray);
-}
-
 pre {
-  line-height: var(--agisty-line-height-norm, 1.5);
   overflow: auto;
   margin: 0;
   padding-block: 24px;
@@ -282,9 +168,4 @@ ul {
   li::marker {
     font-variant-numeric: lining-nums tabular-nums;
   }
-}
-
-table {
-  border-spacing: 0;
-  border-color: var(--wp--custom--border);
 }
