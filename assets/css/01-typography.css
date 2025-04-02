@@ -72,6 +72,10 @@ pre {
   font-family: "--agisty-font-mono", "SF Mono", Menlo, "Fira Mono", monospace;
 }
 
+ol li::marker {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
 sup,
 sub,
 .sup,
