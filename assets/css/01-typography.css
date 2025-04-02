@@ -51,6 +51,7 @@
 body {
   font-family: "--agisty-font-body", system-ui, -apple-system, sans-serif;
   font-size-adjust: from-font;
+  text-wrap: wrap pretty;
 
   /* Turn on kerning and ligature. */
   font-kerning: normal;
@@ -63,6 +64,12 @@ h2,
 h3,
 h4 {
   font-family: "--agisty-font-head", system-ui, -apple-system, sans-serif;
+}
+
+code,
+kbd,
+pre {
+  font-family: "--agisty-font-mono", "SF Mono", Menlo, "Fira Mono", monospace;
 }
 
 sup,
