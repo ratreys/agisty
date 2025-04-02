@@ -45,6 +45,10 @@
   li {
     margin-block-start: 0;
     padding-inline-start: 16px;
+
+    &::marker {
+      color: var(--wp--custom--black);
+    }
   }
 }
 
@@ -92,7 +96,7 @@
 .wp-block-quote {
   background-image: linear-gradient(
     to bottom right,
-    rgb(from var(--wp--custom--brand) r g b / 7%) 25%,
+    rgb(from var(--wp--custom--brand) r g b / 5%) 55%,
     var(--wp--custom--white) 100%
   );
   border-inline-start: 8px solid var(--wp--custom--brand);
@@ -150,7 +154,6 @@
 .wp-block-image :where(figcaption) {
   border-block-end: 1px dashed var(--wp--custom--border);
   color: var(--wp--custom--gray);
-  font-style: italic;
   line-height: var(--agisty-line-height-head, 1.15);
   margin-bottom: 0;
   margin-top: 1rem;
@@ -170,25 +173,35 @@
   text-underline-offset: auto;
 
   &:is(:hover) {
-    background-color: rgb(from var(--wp--custom--button) r g b / 90%);
+    background-color: rgb(from var(--wp--custom--button) r g b / 95%);
   }
 }
 
 /* ------------------------------
  | Navigation
  * --------------------------- */
-.wp-block-navigation :where(a) {
-  font-size: var(--agisty-font-size-sm, 0.875rem);
+.wp-block-navigation {
+  :where(a) {
+    color: var(--wp--custom--black);
+    font-size: var(--agisty-font-size-sm, 0.875rem);
 
-  &:is(:hover, [aria-current="page"]) {
-    text-decoration: underline 0.1875em solid currentcolor;
+    &:is(:hover) {
+      color: var(--wp--custom--black);
+      text-decoration: underline max(3px, 0.1875rem) solid currentcolor;
+    }
+
+    &:is(:focus, :focus-visible) {
+      background-color: var(--wp--custom--focus);
+      box-shadow: 0 -2px var(--wp--custom--focus),
+        0 4px var(--wp--custom--black);
+      outline: none;
+      text-decoration-line: none;
+    }
   }
 
-  &:is(:focus, :focus-visible) {
-    background-color: var(--wp--custom--focus);
-    box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
-    outline: none;
-    text-decoration-line: none;
+  .current-menu-item > a {
+    color: var(--wp--custom--black);
+    text-decoration: underline max(3px, 0.1875rem) solid currentcolor;
   }
 }
 
