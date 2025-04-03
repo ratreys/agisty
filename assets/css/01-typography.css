@@ -7,7 +7,7 @@
 @font-face {
   font-family: --agisty-font-head;
   font-style: normal;
-  font-weight: 300 900;
+  font-weight: 1 900;
   font-display: swap;
   src: url("../fonts/agisty-body-rg.woff2") format("woff2");
 }
@@ -15,7 +15,7 @@
 @font-face {
   font-family: --agisty-font-body;
   font-style: normal;
-  font-weight: 300 900;
+  font-weight: 1 900;
   font-display: swap;
   src: url("../fonts/agisty-body-rg.woff2") format("woff2");
 }
@@ -23,7 +23,7 @@
 @font-face {
   font-family: --agisty-font-body;
   font-style: italic;
-  font-weight: 300 900;
+  font-weight: 1 900;
   font-display: swap;
   src: url("../fonts/agisty-body-it.woff2") format("woff2");
 }
