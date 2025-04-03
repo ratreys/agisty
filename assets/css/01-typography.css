@@ -5,7 +5,7 @@
  */
 
 @font-face {
-  font-family: --agisty-font-head;
+  font-family: "--agisty-font-head";
   font-style: normal;
   font-weight: 1 900;
   font-display: swap;
@@ -13,7 +13,7 @@
 }
 
 @font-face {
-  font-family: --agisty-font-body;
+  font-family: "--agisty-font-body";
   font-style: normal;
   font-weight: 1 900;
   font-display: swap;
@@ -21,7 +21,7 @@
 }
 
 @font-face {
-  font-family: --agisty-font-body;
+  font-family: "--agisty-font-body";
   font-style: italic;
   font-weight: 1 900;
   font-display: swap;
@@ -29,10 +29,11 @@
 }
 
 @font-face {
-  font-family: --agisty-font-mono;
+  font-family: "--agisty-font-mono";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
+  size-adjust: 105%;
   src: url("../fonts/agisty-mono-rg.woff2") format("woff2");
 }
 
@@ -43,7 +44,7 @@ body {
 
   /* Turn on kerning and ligature. */
   font-kerning: normal;
-  font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures contextual;
   font-variant-numeric: lining-nums proportional-nums;
 }
 
@@ -54,8 +55,6 @@ h4 {
   font-family: "--agisty-font-head", system-ui, -apple-system, sans-serif;
 }
 
-code,
-kbd,
 pre {
   font-family: "--agisty-font-mono", "SF Mono", Menlo, "Fira Mono", monospace;
 }
