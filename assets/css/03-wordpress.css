@@ -45,10 +45,6 @@
   li {
     margin-block-start: 0;
     padding-inline-start: 16px;
-
-    &::marker {
-      color: var(--wp--custom--black);
-    }
   }
 }
 
@@ -123,7 +119,7 @@
  * --------------------------- */
 .wp-block-table {
   caption-side: bottom;
-  font-size: 1.0625rem;
+  font-size: var(--agisty-font-size-sm);
 
   thead {
     background-color: rgb(from var(--wp--custom--gray) r g b / 17%);
