@@ -116,24 +116,9 @@ textarea {
   line-height: 1.2;
 }
 
-code,
-kbd {
-  padding-block: 2px;
-  padding-inline: 4px;
-}
-
 pre {
   overflow: auto;
   margin: 0;
-  padding-block: 24px;
-  padding-inline: 24px;
-
-  code {
-    border: none;
-    color: inherit;
-    padding-block: 0;
-    padding-inline: 0;
-  }
 }
 
 /**
@@ -161,9 +146,5 @@ ul {
 
   &[role="list"] {
     list-style-type: none;
-  }
-
-  ul {
-    list-style-type: square;
   }
 }
