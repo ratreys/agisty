@@ -40,21 +40,10 @@ html {
   scroll-padding-block-start: 16px;
   tab-size: 4;
 
-  /** 
-   * Animate to or from `height: auto` and other intrinsic sizes.
-   * 
-   * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
-   */
-  interpolate-size: allow-keywords;
-
   /* Disables the browser's inflation algorithm. */
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-
-  /* Font smoothing. */
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 body {
