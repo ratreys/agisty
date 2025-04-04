@@ -73,7 +73,7 @@
 
   summary {
     list-style-position: outside;
-    margin-inline-start: var(--agisty-space-top-rg, 1em);
+    margin-inline-start: var(--agisty-space-block-rg, 1em);
 
     &::marker {
       font-size: var(--agisty-font-size-xm, 0.875em);
@@ -81,7 +81,7 @@
   }
 
   p {
-    margin-block-start: var(--agisty-space-top-rg, 1em);
+    margin-block-start: var(--agisty-space-block-rg, 1em);
   }
 }
 
@@ -110,7 +110,7 @@
   cite {
     color: var(--wp--custom--gray);
     font-style: italic;
-    margin-block-start: var(--agisty-space-top-rg, 1em);
+    margin-block-start: var(--agisty-space-block-rg, 1em);
   }
 }
 
