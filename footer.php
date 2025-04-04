@@ -14,7 +14,12 @@
 	<div class="wrapper-nav__footer" itemscope itemtype="https://schema.org/SiteNavigationElement">
 		<?php get_template_part( 'template-parts/footer/footer-menu' ) ?>
 	</div>
-	<?php echo '<p>© ' . gmdate( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '</p>'; ?>
+	<?php 
+	printf(
+		'<p>© %1$s</p>',
+		esc_html( gmdate( 'Y' ) . ' ' . get_bloginfo( 'name' ) ),
+	);
+	?>
 </footer>
 </div>
 <?php wp_footer() ?>
