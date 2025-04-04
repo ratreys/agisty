@@ -33,7 +33,6 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  size-adjust: 105%;
   src: url("../fonts/agisty-mono-rg.woff2") format("woff2");
 }
 
@@ -59,6 +58,11 @@ code,
 kbd,
 pre {
   font-family: "--agisty-font-mono", "SF Mono", Menlo, "Fira Mono", monospace;
+}
+
+math,
+time {
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 ol li::marker {
