@@ -300,10 +300,25 @@ footer {
   gap: var(--agisty-space-block-lg);
 }
 
-.entry-header__excerpt {
-  color: var(--wp--custom--gray);
-  font-size: 1.17em;
-  font-weight: 310;
+.entry-header {
+  border-block-end: 1px dashed var(--wp--custom--brand);
+  padding-block-end: var(--agisty-space-block-rg);
+  line-height: var(--agisty-line-height-head);
+
+  .entry-header__title {
+    font-stretch: 90%;
+    font-weight: 800;
+  }
+
+  .entry-header__excerpt {
+    color: var(--wp--custom--gray);
+    font-size: 1.17em;
+    font-weight: 310;
+  }
+
+  .entry-header__meta {
+    font-size: var(--agisty-font-size-xm);
+  }
 }
 
 .entry-content {
@@ -315,7 +330,7 @@ footer {
   }
 
   h3 {
-    margin-block-start: 1.17em;
+    margin-block-start: 1.618em;
   }
 }
 
@@ -359,17 +374,6 @@ footer {
 .agisty-main__post,
 .agisty-main__page {
   border-inline: 1px dashed var(--wp--custom--guides);
-}
-
-.entry-header {
-  border-block-end: 1px dashed var(--wp--custom--brand);
-  padding-block-end: var(--agisty-space-block-rg);
-  line-height: var(--agisty-line-height-head);
-
-  .entry-header__title {
-    font-stretch: 90%;
-    font-weight: 800;
-  }
 }
 
 .flow-content > * + * {
