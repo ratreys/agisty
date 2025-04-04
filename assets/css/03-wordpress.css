@@ -142,6 +142,10 @@
   th {
     font-weight: 600;
   }
+
+  td {
+    font-variant-numeric: lining-nums tabular-nums;
+  }
 }
 
 /* ------------------------------
