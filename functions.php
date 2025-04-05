@@ -10,7 +10,4 @@
 
 namespace Agisty;
 
-define( 'AGISTYINC', get_template_directory() . '/includes' );
-
-require_once AGISTYINC . '/agisty-core.php';
-require_once AGISTYINC . '/agisty-overrides.php';
+require get_template_directory() . '/agisty-core.php';
