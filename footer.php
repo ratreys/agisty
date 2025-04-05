@@ -17,7 +17,7 @@
 	<?php 
 	printf(
 		'<p>© %1$s</p>',
-		esc_html( gmdate( 'Y' ) . ' ' . get_bloginfo( 'name' ) ),
+		esc_html( gmdate( 'Y' ) . ' ' . get_bloginfo( 'name' ) )
 	);
 	?>
 </footer>
