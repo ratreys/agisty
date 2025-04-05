@@ -52,16 +52,15 @@
       "wideSize": "1200px"
     },
     "custom": {
-      "red": "rgb(87 3 12)",
-      "blue": "rgb(3 12 87)",
-      "gray": "rgb(77 77 77)",
+      "blue": "rgb(12 3 87)",
       "link": "var(--wp--custom--blue)",
-      "brand": "var(--wp--custom--red)",
-      "black": "rgb(38 44 51)",
-      "white": "rgb(250 250 250)",
+      "brand": "rgb(87 12 3)",
+      "black": "rgb(12 14 21)",
+      "smoke": "rgb(87 87 87)",
       "focus": "rgb(250 200 100)",
-      "green": "rgb(3 87 12)",
-      "button": "var(--wp--custom--green)",
+      "white": "rgb(250 250 250)",
+      "forest": "rgb(3 87 12)",
+      "button": "var(--wp--custom--forest)",
       "border": "rgb(from gray r g b / 30%)",
       "guides": "rgb(from gray r g b / 10%)"
     }
