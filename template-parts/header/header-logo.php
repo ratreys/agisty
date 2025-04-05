@@ -6,15 +6,12 @@
  * @package agisty
  */
 
-namespace Agisty;
-
-$site_title = get_bloginfo( 'name' );
-$site_url   = home_url( '/' );
-
 if ( has_custom_logo() ) :
 	the_custom_logo();
 else : 
-	?>
-	<a href="<?php echo esc_url( $site_url ) ?>" rel="home"><?php esc_html_e( $site_title ) ?></a>
-	<?php 
+	printf(
+		'<a href="%1$s" rel="home">%2$s</a>',
+		esc_url( home_url( '/' ) ),
+		esc_html( get_bloginfo( 'name' ) )
+	);
 endif;
