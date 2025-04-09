@@ -5,7 +5,7 @@
  */
 
 @font-face {
-  font-family: "--agisty-font-head";
+  font-family: "--agisty-ff-body";
   font-style: normal;
   font-weight: 1 900;
   font-display: swap;
@@ -13,15 +13,7 @@
 }
 
 @font-face {
-  font-family: "--agisty-font-body";
-  font-style: normal;
-  font-weight: 1 900;
-  font-display: swap;
-  src: url("../fonts/agisty-body-rg.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "--agisty-font-body";
+  font-family: "--agisty-ff-body";
   font-style: italic;
   font-weight: 1 900;
   font-display: swap;
@@ -29,15 +21,26 @@
 }
 
 @font-face {
-  font-family: "--agisty-font-mono";
+  font-family: "--agisty-ff-mono";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 1 900;
   font-display: swap;
-  src: url("../fonts/agisty-mono-rg.woff2") format("woff2");
+  src: url("../fonts/agisty-mono.woff2") format("woff2");
+}
+
+html {
+  /* Font smoothing. */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialias;
+
+  /* Disables the browser's inflation algorithm. */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body {
-  font-family: "--agisty-font-body", system-ui, -apple-system, sans-serif;
+  font-family: "--agisty-ff-body", ui-sans-serif, system-ui, sans-serif;
   font-size-adjust: from-font;
   text-wrap: wrap pretty;
 
@@ -47,21 +50,15 @@ body {
   font-variant-numeric: lining-nums proportional-nums;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "--agisty-font-head", system-ui, -apple-system, sans-serif;
-}
-
 code,
 kbd,
 pre {
-  font-family: "--agisty-font-mono", "SF Mono", Menlo, "Fira Mono", monospace;
+  font-family: "--agisty-ff-mono", ui-monospace, monospace;
 }
 
 math,
-time {
+time,
+td {
   font-variant-numeric: lining-nums tabular-nums;
 }
 
@@ -73,7 +70,7 @@ sup,
 sub,
 .sup,
 .sub {
-  font-size: var(--agisty-font-size-rg, 1em);
+  font-size: 1em;
   vertical-align: baseline;
 }
 
