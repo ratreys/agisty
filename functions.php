@@ -10,4 +10,4 @@
 
 namespace Agisty;
 
-require get_template_directory() . '/agisty-core.php';
+require get_template_directory() . '/includes/agisty-core.php';
