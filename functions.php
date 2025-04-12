@@ -11,3 +11,4 @@
 namespace Agisty;
 
 require get_template_directory() . '/includes/agisty-core.php';
+require get_template_directory() . '/includes/agisty-overrides.php';
