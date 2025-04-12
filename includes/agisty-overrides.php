@@ -8,24 +8,14 @@
 namespace Agisty;
 
 /**
- * Remove emoji-related styles and scripts.
+ * Remove emoji-related styles and scripts (frontend only).
  *
  * @link https://selftawt.com/disable-wpemoji-correctly/
  * @link https://wordpress.org/plugins/remove-wp-emoji-correctly/
  */
-
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_emoji_styles' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); /** Retained for backwards compatibility */
-
-/** Prevent conversion of emoji to a static img element. */
-remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-
-/** Embeds. */
-remove_action( 'embed_head', 'print_emoji_detection_script' );
-remove_action( 'enqueue_embed_scripts', 'wp_enqueue_emoji_styles' );
 
 /** Remove the link to the Really Simple Discovery service endpoint from the frontend. */
 remove_action( 'wp_head', 'rsd_link' );
@@ -52,6 +42,7 @@ remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
  * Clean the class names for the body element.
  *
  * @link https://github.com/billerickson/BE-Starter/blob/master/inc/wordpress-cleanup.php
+ * @link https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-includes/post-template.php
  */
 add_filter( 'body_class', function ( $classes ) {
 
@@ -62,13 +53,24 @@ add_filter( 'body_class', function ( $classes ) {
 	$allowed_classes = [
 		'admin-bar',
 		'archive',
+		'attachment',
+		'author',
+		'blog',
+		'category',
+		'date',
+		'error404',
 		'home',
+		'logged-in',
+		'no-customize-support',
 		'page',
+		'paged',
+		'privacy-policy',
 		'search',
 		'single',
-		'logged-in',
+		'wp-custom-logo',
 		'wp-embed-responsive',
 		'wp-singular',
+		'wp-theme-' . sanitize_html_class( get_template() ),
 	];
 
 	return array_intersect( $classes, $allowed_classes );
@@ -78,6 +80,7 @@ add_filter( 'body_class', function ( $classes ) {
  * Clean the list of CSS class names for the current article element.
  *
  * @link https://github.com/billerickson/BE-Starter/blob/master/inc/wordpress-cleanup.php
+ * @link https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-includes/post-template.php
  */
 add_filter( 'post_class', function ( $classes ) {
 
@@ -86,8 +89,12 @@ add_filter( 'post_class', function ( $classes ) {
 	}
 
 	$allowed_classes = [
-		'entry',
-		'type-' . get_post_type(),
+		'has-post-thumbnail',
+		'post-password-protected',
+		'post-password-required',
+		'status-sticky',
+		'sticky',
+        'type-' . sanitize_html_class( get_post_type() ),
 	];
 
 	return array_intersect( $classes, $allowed_classes );
