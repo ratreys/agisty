@@ -94,7 +94,7 @@ add_filter( 'post_class', function ( $classes ) {
 		'post-password-required',
 		'status-sticky',
 		'sticky',
-        'type-' . sanitize_html_class( get_post_type() ),
+		'type-' . sanitize_html_class( get_post_type() ),
 	];
 
 	return array_intersect( $classes, $allowed_classes );
