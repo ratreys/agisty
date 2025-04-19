@@ -5,26 +5,6 @@
  */
 
 /* ---------------------------
- | Body
- * --------------------------- */
-
-@font-face {
-  font-family: --agisty-ff-body;
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("../fonts/InterVariable.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: --agisty-ff-body;
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("../fonts/InterVariable-Italic.woff2") format("woff2");
-}
-
-/* ---------------------------
  | CSS Variables
  * --------------------------- */
 
@@ -33,31 +13,31 @@
    * Calculated font sizes and spacing.
    *
    * Min values are based on 500px.
-   * Max values are based on 736px.
+   * Max values are based on 768px.
    *
    * https://clamp.font-size.app/
    * https://grtcalculator.com/styles/
    * https://utopia.fyi
    *
-   * 1. 24px → 34px
-   * 2. 20px → 26px
-   * 3. 16px → 18px
-   * 4. 14px → 17px
-   * 5. 13px → 15px
-   * 6. 40px → 48px
-   * 7. 20px → 24px
+   * 1. 24px → 32px (fs-xl)
+   * 2. 20px → 24px (fs-lg)
+   * 3. 16px → 18px (fs-rg)
+   * 4. 15px → 16px (fs-sm)
+   * 5. 14px → 15px (fs-xm)
+   * 6. 40px → 48px (sb-lg)
+   * 7. 20px → 24px (sb-rg)
    */
 
   /* fs for `font-size`  */
-  --agisty-fs-xl: clamp(1.5rem, 0.1758rem + 4.2373vw, 2.125rem); /* 1 */
-  --agisty-fs-lg: clamp(1.25rem, 0.4555rem + 2.5424vw, 1.625rem); /* 2 */
-  --agisty-fs-rg: clamp(1rem, 0.7352rem + 0.8475vw, 1.125rem); /* 3 */
-  --agisty-fs-sm: clamp(0.875rem, 0.4778rem + 1.2712vw, 1.0625rem);
-  --agisty-fs-xm: clamp(0.8125rem, 0.5477rem + 0.8475vw, 0.9375rem);
+  --agisty-fs-xl: clamp(1.5rem, 0.5672rem + 2.9851vw, 2rem); /* 1 */
+  --agisty-fs-lg: clamp(1.25rem, 0.7836rem + 1.4925vw, 1.5rem); /* 2 */
+  --agisty-fs-rg: clamp(1rem, 0.7668rem + 0.7463vw, 1.125rem); /* 3 */
+  --agisty-fs-sm: clamp(0.9375rem, 0.8209rem + 0.3731vw, 1rem); /* 4 */
+  --agisty-fs-xm: clamp(0.875rem, 0.7584rem + 0.3731vw, 0.9375rem); /* 5 */
 
   /* sb for `spacing-block` */
-  --agisty-sb-lg: clamp(2.5rem, 1.4407rem + 3.3898vw, 3rem); /* 6 */
-  --agisty-sb-rg: clamp(1.25rem, 0.7203rem + 1.6949vw, 1.5rem); /* 7 */
+  --agisty-sb-lg: clamp(2.5rem, 1.5672rem + 2.9851vw, 3rem); /* 6 */
+  --agisty-sb-rg: clamp(1.25rem, 0.7836rem + 1.4925vw, 1.5rem); /* 7 */
 
   /* lh for `line-height` */
   --agisty-lh-lg: calc(1ex / 0.32);
@@ -69,24 +49,13 @@
  | Start of styles
  * --------------------------- */
 
-html {
-  /* Font smoothing. */
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-
-  /* Disables the browser's inflation algorithm. */
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-}
-
 :where(body) {
-  font-family: --agisty-ff-body, system-ui, ui-sans-serif, sans-serif;
-  font-size: var(--agisty-fs-rg, 1em);
-  font-weight: 400;
-  letter-spacing: -0.011em;
-  text-wrap: pretty;
+  font-family: system-ui, ui-sans-serif, sans-serif;
+  font-size: var(--agisty-fs-rg, 1rem);
   font-size-adjust: from-font;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
 
   /* Turn on kerning and ligature. */
   font-kerning: normal;
@@ -94,23 +63,28 @@ html {
   font-variant-numeric: lining-nums proportional-nums;
 }
 
+:where(h1, h2, h3, h4, h5, h6) {
+  font-weight: 600;
+}
+
 :where(h1) {
   font-size: var(--agisty-fs-xl, 1.618em);
-  font-weight: 600;
 }
 
 :where(h2) {
   font-size: var(--agisty-fs-lg, 1.5em);
-  font-weight: 600;
 }
 
 :where(h3) {
   font-size: 1.17em;
-  font-weight: 500;
+}
+
+:where(h4, h5, h6) {
+  font-size: 1em;
 }
 
 :where(code, kbd, pre) {
-  font-family: Menlo, Consolas, Monaco, ui-monospace, monospace;
+  font-family: "SF Mono", Menlo, "Fira Mono", ui-monospace, monospace;
 }
 
 :where(math, time, td) {
