@@ -41,14 +41,14 @@
  */
 :focus-visible {
   outline: var(--wp--custom--brand) dotted 0.1875rem;
-  outline-offset: 0.1875rem;
+  outline-offset: 0.25rem;
 }
 
 /* 
  * Sectioning root
  * --------------- */
 
-:where(body) {
+:where(.wp-theme-agisty) {
   accent-color: var(--wp--custom--brand);
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@
 a:where(:not(.wp-element-button)) {
   color: var(--wp--custom--link);
   text-decoration: underline 1px solid currentcolor;
-  text-underline-offset: 0.25em;
+  text-underline-offset: 0.15em;
 
   &:is(:hover) {
     color: rgb(from var(--wp--custom--link) r g b / 90%);
@@ -80,6 +80,7 @@ ul > li::marker {
 }
 
 table {
+  background-color: white;
   border-color: var(--wp--custom--border);
 }
 
@@ -102,22 +103,19 @@ table {
   white-space: preserve nowrap;
 }
 
-.skip-link {
+.skip-link:focus-visible {
   border-radius: 8px;
   border: 1px solid var(--wp--custom--black);
+  box-shadow: var(--agisty-shadow);
   font-size: var(--agisty-fs-xm);
-
-  &:focus-visible {
-    box-shadow: var(--agisty-shadow);
-    position: absolute;
-    height: auto;
-    width: auto;
-    top: 4px;
-    left: 4px;
-    padding-block: 16px;
-    padding-inline: 16px;
-    z-index: 100000;
-  }
+  position: absolute;
+  height: auto;
+  width: auto;
+  padding-block: 16px;
+  padding-inline: 16px;
+  top: 4px;
+  left: 4px;
+  z-index: 100000;
 }
 
 .wrapper-site__header {
@@ -127,7 +125,11 @@ table {
 .agisty-header {
   border-block-end: 2px solid var(--wp--custom--black);
   border-inline: 1px dashed var(--wp--custom--guide);
-  padding-block: 24px;
+  padding-block: var(--agisty-sb-rg);
+
+  .wrapper-menu {
+    height: 3rem;
+  }
 }
 
 .header-menu__nav {
@@ -189,13 +191,27 @@ table {
 
   .entry-card__excerpt {
     color: var(--wp--custom--smoke);
+    font-size: 0.975em;
   }
+}
+
+/* ---------------------------
+ | Archive
+ * --------------------------- */
+.type-archive {
+  display: grid;
+  gap: var(--agisty-sb-lg);
+}
+
+.archive-header__description {
+  color: var(--wp--custom--smoke);
+  font-size: 1.1em;
 }
 
 /* ---------------------------
  | 404 Page
  * --------------------------- */
-.type-404 {
+.type-error404 {
   display: grid;
   gap: var(--agisty-sb-lg);
 }
