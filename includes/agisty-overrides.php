@@ -99,3 +99,29 @@ add_filter( 'post_class', function ( $classes ) {
 
 	return array_intersect( $classes, $allowed_classes );
 } );
+
+/**
+ * Disable the Openverse media category in the inserter.
+ * 
+ * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#settings_defaults
+ * @link https://github.com/WordPress/gutenberg/pull/47404
+ * 
+ */
+add_filter( 'block_editor_settings_all', function( $settings ) {
+    
+	$settings['enableOpenverseMediaCategory'] = false;
+    
+	return $settings;
+}, 10 );
+
+/**
+ * Enable auto anchor generation for Heading blocks.
+ * 
+ * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#settings_defaults
+ */
+add_filter( 'block_editor_settings_all', function( $settings ) {
+    
+	$settings['generateAnchors'] = true;
+    
+	return $settings;
+}, 10 );
