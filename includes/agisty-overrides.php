@@ -105,12 +105,11 @@ add_filter( 'post_class', function ( $classes ) {
  * 
  * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#settings_defaults
  * @link https://github.com/WordPress/gutenberg/pull/47404
- * 
  */
-add_filter( 'block_editor_settings_all', function( $settings ) {
-    
+add_filter( 'block_editor_settings_all', function ( $settings ) {
+	
 	$settings['enableOpenverseMediaCategory'] = false;
-    
+	
 	return $settings;
 }, 10 );
 
@@ -119,9 +118,9 @@ add_filter( 'block_editor_settings_all', function( $settings ) {
  * 
  * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#settings_defaults
  */
-add_filter( 'block_editor_settings_all', function( $settings ) {
-    
+add_filter( 'block_editor_settings_all', function ( $settings ) {
+	
 	$settings['generateAnchors'] = true;
-    
+	
 	return $settings;
 }, 10 );
