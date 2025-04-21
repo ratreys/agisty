@@ -33,11 +33,11 @@ remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
 /** Remove shortlink from the <head> element.  */
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 
-/** Remove WordPress meta generator. */
-add_filter( 'the_generator', '__return_empty_string' );
-
 /** Remove oEmbed discovery links in the <head> element. */
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+
+/** Remove WordPress meta generator. */
+add_filter( 'the_generator', '__return_empty_string' );
 
 /**
  * Clean the class names for the <body> element.
