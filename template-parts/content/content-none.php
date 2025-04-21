@@ -8,7 +8,7 @@
  */
 
 ?>
-<article class="type404">
+<article class="type-error404">
 	<header class="entry-header header-not__found">
 		<h1><?php esc_html_e( 'Page not found', 'agisty' ) ?> </h1>
 	</header>
