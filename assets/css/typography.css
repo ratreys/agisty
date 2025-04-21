@@ -54,7 +54,6 @@
   font-size: var(--agisty-fs-rg, 1rem);
   font-size-adjust: from-font;
   font-weight: 400;
-  letter-spacing: -0.01em;
   text-wrap: pretty;
 
   /* Turn on kerning and ligature. */
@@ -63,7 +62,7 @@
   font-variant-numeric: lining-nums proportional-nums;
 }
 
-:where(h1, h2, h3, h4, h5, h6, th) {
+:where(h2, h3, h4, h5, h6, th) {
   font-weight: 600;
 }
 
