@@ -8,7 +8,7 @@
 namespace Agisty;
 
 /**
- * Remove emoji-related styles and scripts (frontend only).
+ * Remove emoji-related styles and scripts from the head element.
  *
  * @link https://selftawt.com/disable-wpemoji-correctly/
  * @link https://wordpress.org/plugins/remove-wp-emoji-correctly/
@@ -21,7 +21,7 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' ); /** Retained for backw
 remove_action( 'wp_head', 'rsd_link' );
 
 /**
- * Remove REST API link tag from <head> element.
+ * Remove REST API link tag from the head element.
  *
  * @link https://developer.wordpress.org/reference/functions/rest_output_link_wp_head/
  * @link https://github.com/WordPress/WordPress/blob/master/wp-includes/default-filters.php
@@ -30,17 +30,17 @@ remove_action( 'wp_head', 'rest_output_link_wp_head', 10, );
 remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
 
-/** Remove shortlink from the <head> element.  */
+/** Remove rel=shortlink from the head element.  */
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 
-/** Remove oEmbed discovery links in the <head> element. */
+/** Remove oEmbed discovery links from the head element. */
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 
 /** Remove WordPress meta generator. */
 add_filter( 'the_generator', '__return_empty_string' );
 
 /**
- * Clean the class names for the <body> element.
+ * Clean the class names for the body element.
  *
  * @link https://github.com/billerickson/BE-Starter/blob/master/inc/wordpress-cleanup.php
  * @link https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-includes/post-template.php
@@ -78,7 +78,7 @@ add_filter( 'body_class', function ( $classes ) {
 }, 20 );
 
 /**
- * Clean the list of CSS class names for the current <article> element.
+ * Clean the class names for the post container element.
  *
  * @link https://github.com/billerickson/BE-Starter/blob/master/inc/wordpress-cleanup.php
  * @link https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-includes/post-template.php
