@@ -54,8 +54,9 @@
     "custom": {
       "blue": "oklch(0.35 0.09 250)",
       "link": "var(--wp--custom--blue)",
+      "text": "oklch(0.32 0 0)",
       "brand": "oklch(0.4 0.15 25)",
-      "black": "oklch(0.25 0.01 250)",
+      "black": "oklch(0.12 0.014 21)",
       "smoke": "oklch(0.4 0.015 245)",
       "focus": "oklch(0.9 0.17 99)",
       "white": "oklch(0.98 0 0)",
@@ -68,7 +69,7 @@
   "styles": {
     "color": {
       "background": "var(--wp--custom--white)",
-      "text": "var(--wp--custom--black)"
+      "text": "var(--wp--custom--text)"
     },
     "elements": {
       "button": {
