@@ -145,9 +145,10 @@ ul ul {
 /* ------------------------------
  | Image
  * --------------------------- */
-.wp-block-image :where(figcaption) {
+.entry-content :where(figcaption) {
   border-block-end: 1px dashed var(--wp--custom--border);
   color: var(--wp--custom--smoke);
+  font-size: var(--agisty-fs-sm);
   line-height: var(--agisty-lh-sm);
   margin-bottom: 0;
   margin-top: 1rem;
@@ -175,7 +176,7 @@ ul ul {
  | Navigation
  * --------------------------- */
 .wp-block-navigation :where(a) {
-  color: var(--wp--custom--black);
+  color: var(--wp--custom--text);
   font-size: var(--agisty-fs-sm);
 
   &:is(:hover) {
