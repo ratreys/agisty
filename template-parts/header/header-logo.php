@@ -10,7 +10,7 @@ if ( has_custom_logo() ) :
 	the_custom_logo();
 else : 
 	printf(
-		'<a href="%1$s" rel="home">%2$s</a>',
+		'<a class="agisty-site-title" href="%1$s" rel="home">%2$s</a>',
 		esc_url( home_url( '/' ) ),
 		esc_html( get_bloginfo( 'name' ) )
 	);
