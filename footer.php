@@ -16,8 +16,10 @@
 	</div>
 	<?php 
 	printf(
-		'<p>© %1$s</p>',
-		esc_html( gmdate( 'Y' ) . ' ' . get_bloginfo( 'name' ) )
+		'<p class="agisty-copyright">© <time datetime="%1$s">%2$s</time> %3$s</p>',
+		esc_attr( gmdate( 'Y' ) ),
+		esc_html( gmdate( 'Y' ) ),
+		esc_html( get_bloginfo( 'name' ) )
 	);
 	?>
 </footer>
