@@ -8,7 +8,7 @@
 get_header();
 ?>
 <div class="wrapper-site__main grow">
-<main id="main" class="is-layout-constrained pb-main width-wide agisty-main__page" tabindex="-1">
+<main id="main" class="is-layout-constrained pb-48px width-wide agisty-main__page" tabindex="-1">
 	<?php
 	while ( have_posts() ) : 
 		the_post();
