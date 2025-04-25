@@ -32,6 +32,7 @@ remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
 
 /** Remove rel=shortlink from the head element.  */
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+remove_action( 'template_redirect', 'wp_shortlink_header', 11 );
 
 /** Remove oEmbed discovery links from the head element. */
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
