@@ -10,10 +10,10 @@
 
 get_header();
 ?>
-<div class="width-wide grow">
-<main class="is-layout-constrained pb-main agisty-main__index" id="main" tabindex="-1">
-	<section class="alignwide">
-		<ul class="is-layout-grid entry-card__wrapper" role="list">
+<div class="wrapper-site__main grow">
+<main id="main" class="width-wide agisty-main__index" tabindex="-1">
+	<section aria-label="article list" class="pb-48px" data-layout="sidebar">
+		<ul class="is-layout-grid entry-card__wrapper list-role" data-column="content">
 		<?php
 		while ( have_posts() ) :
 			the_post()
@@ -22,13 +22,18 @@ get_header();
 				<?php
 				// Display post content.
 				the_title( '<h2 class="entry-card__heading"><a class="entry-card__link" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				the_excerpt();
 				?>
+				<section aria-label="article snippet" class="entry-card__excerpt">
+					<?php the_excerpt() ?>
+				</section>
 			</li>
 			<?php 
 		endwhile;
 		?>
 		</ul>
+		<aside class="post-sidebar" data-column="sidebar">
+			<h2>Related Articles</h2>
+		</aside>
 	</section>
 </main>
 </div>
