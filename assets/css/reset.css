@@ -73,6 +73,7 @@ html {
 
 :where(body) {
   line-height: 1.5;
+  min-height: 100vh;
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-x: clip;
 }
@@ -111,7 +112,7 @@ html {
   margin-block: 0;
 
   /* Remove styles with a `list` role. */
-  &:is(.list-role) {
+  &[data-role="list"] {
     list-style-type: none;
     padding-inline: 0;
   }
