@@ -8,6 +8,12 @@ importers:
 
   .:
     devDependencies:
+      '@wordpress/prettier-config':
+        specifier: ^4.22.0
+        version: 4.22.0(prettier@3.5.3)
+      '@wordpress/stylelint-config':
+        specifier: ^23.14.0
+        version: 23.14.0(postcss@8.4.49)(stylelint-scss@6.11.1(stylelint@16.12.0))(stylelint@16.12.0)
       stylelint:
         specifier: ^16.12.0
         version: 16.12.0
@@ -34,6 +40,13 @@ packages:
   '@csstools/css-tokenizer@3.0.3':
     resolution: {integrity: sha512-UJnjoFsmxfKUdNYdWgOB0mWUypuLvAfQPH1+pyvRJs6euowbFkFC6P13w1l8mJyi3vxYMxc9kld5jZEGRQs6bw==}
     engines: {node: '>=18'}
+
+  '@csstools/media-query-list-parser@3.0.1':
+    resolution: {integrity: sha512-HNo8gGD02kHmcbX6PvCoUuOQvn4szyB9ca63vZHKX5A81QytgDG4oxG4IaEfHTlEZSZ6MjPEMWIVU+zF2PZcgw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@csstools/css-parser-algorithms': ^3.0.1
+      '@csstools/css-tokenizer': ^3.0.1
 
   '@csstools/media-query-list-parser@4.0.2':
     resolution: {integrity: sha512-EUos465uvVvMJehckATTlNqGj4UJWkTmdWuDMjqvSUkjGpmOyFZBVwb4knxCm/k2GMTXY+c/5RkdndzFYWeX5A==}
@@ -62,6 +75,25 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@stylistic/stylelint-plugin@3.1.2':
+    resolution: {integrity: sha512-tylFJGMQo62alGazK74MNxFjMagYOHmBZiePZFOJK2n13JZta0uVkB3Bh5qodUmOLtRH+uxH297EibK14UKm8g==}
+    engines: {node: ^18.12 || >=20.9}
+    peerDependencies:
+      stylelint: ^16.8.0
+
+  '@wordpress/prettier-config@4.22.0':
+    resolution: {integrity: sha512-+XsgTyVSrPd7m+s4G/fNBuyzvkE/Dgx3syUn5G5KLhnb5atRb4r1hWrLBg/oC8vsU5kGEyO+p6LEDRjcZtl0nQ==}
+    engines: {node: '>=18.12.0', npm: '>=8.19.2'}
+    peerDependencies:
+      prettier: '>=3'
+
+  '@wordpress/stylelint-config@23.14.0':
+    resolution: {integrity: sha512-SxrPIiR7LE8DMQblsPkiE81VY/JQAaU5SGmphDG+Bc2DnxfOdkt1oMsSUfsSEVwHuRlgh4ZD42CLlIV+Y0AexQ==}
+    engines: {node: '>=18.12.0', npm: '>=8.19.2'}
+    peerDependencies:
+      stylelint: ^16.8.2
+      stylelint-scss: ^6.4.0
 
   ajv@8.17.1:
     resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
@@ -293,6 +325,9 @@ packages:
   mdn-data@2.12.2:
     resolution: {integrity: sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==}
 
+  mdn-data@2.21.0:
+    resolution: {integrity: sha512-+ZKPQezM5vYJIkCxaC+4DTnRrVZR1CgsKLu5zsQERQx6Tea8Y+wMx5A24rq8A8NepCeatIQufVAekKNgiBMsGQ==}
+
   meow@13.2.0:
     resolution: {integrity: sha512-pxQJQzB6djGPXh08dacEloMFopsOqGVRKFPYvPOt9XDZ1HasbgDZA74CJGreSU4G3Ak7EFJGoiH2auq+yXISgA==}
     engines: {node: '>=18'}
@@ -336,6 +371,9 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
+  postcss-media-query-parser@0.2.3:
+    resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
+
   postcss-resolve-nested-selector@0.1.6:
     resolution: {integrity: sha512-0sglIs9Wmkzbr8lQwEyIzlDOOC9bGmfVKcJTaxv3vMmd3uo4o4DerC3En0bnmgceeql9BfC8hRkp7cg0fjdVqw==}
 
@@ -345,8 +383,22 @@ packages:
     peerDependencies:
       postcss: ^8.4.31
 
+  postcss-scss@4.0.9:
+    resolution: {integrity: sha512-AjKOeiwAitL/MXxQW2DliT28EKukvvbEWx3LBmJIRN8KfBGZbRTxNYW0kSqi1COiTZ57nZ9NW06S6ux//N1c9A==}
+    engines: {node: '>=12.0'}
+    peerDependencies:
+      postcss: ^8.4.29
+
+  postcss-selector-parser@6.1.2:
+    resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
+    engines: {node: '>=4'}
+
   postcss-selector-parser@7.0.0:
     resolution: {integrity: sha512-9RbEr1Y7FFfptd/1eEdntyjMwLeghW1bHX9GWjXo19vx4ytPQhANltvVxDggzJl7mnWM+dX28kb6cyS/4iQjlQ==}
+    engines: {node: '>=4'}
+
+  postcss-selector-parser@7.1.0:
+    resolution: {integrity: sha512-8sLjZwK0R+JlxlYcTuVnyT2v+htpdrjDOKuMcOVdYjt52Lh8hWRYpxBPoKx/Zg+bcjc3wx6fmQevMmUztS/ccA==}
     engines: {node: '>=4'}
 
   postcss-value-parser@4.2.0:
@@ -355,6 +407,11 @@ packages:
   postcss@8.4.49:
     resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
     engines: {node: ^10 || ^12 || >=14}
+
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -402,6 +459,19 @@ packages:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
     engines: {node: '>=8'}
 
+  style-search@0.1.0:
+    resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
+
+  stylelint-config-recommended-scss@14.1.0:
+    resolution: {integrity: sha512-bhaMhh1u5dQqSsf6ri2GVWWQW5iUjBYgcHkh7SgDDn92ijoItC/cfO/W+fpXshgTQWhwFkP1rVcewcv4jaftRg==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      postcss: ^8.3.3
+      stylelint: ^16.6.1
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+
   stylelint-config-recommended@14.0.1:
     resolution: {integrity: sha512-bLvc1WOz/14aPImu/cufKAZYfXs/A/owZfSMZ4N+16WGXLoX5lOir53M6odBxvhgmgdxCVnNySJmZKx73T93cg==}
     engines: {node: '>=18.12.0'}
@@ -413,6 +483,12 @@ packages:
     engines: {node: '>=18.12.0'}
     peerDependencies:
       stylelint: ^16.1.0
+
+  stylelint-scss@6.11.1:
+    resolution: {integrity: sha512-e4rYo0UY+BIMtGeGanghrvHTjcryxgZbyFxUedp8dLFqC4P70aawNdYjRrQxbnKhu3BNr4+lt5e/53tcKXiwFA==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      stylelint: ^16.0.2
 
   stylelint@16.12.0:
     resolution: {integrity: sha512-F8zZ3L/rBpuoBZRvI4JVT20ZanPLXfQLzMOZg1tzPflRVh9mKpOZ8qcSIhh1my3FjAjZWG4T2POwGnmn6a6hbg==}
@@ -465,6 +541,11 @@ snapshots:
 
   '@csstools/css-tokenizer@3.0.3': {}
 
+  '@csstools/media-query-list-parser@3.0.1(@csstools/css-parser-algorithms@3.0.4(@csstools/css-tokenizer@3.0.3))(@csstools/css-tokenizer@3.0.3)':
+    dependencies:
+      '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-tokenizer@3.0.3)
+      '@csstools/css-tokenizer': 3.0.3
+
   '@csstools/media-query-list-parser@4.0.2(@csstools/css-parser-algorithms@3.0.4(@csstools/css-tokenizer@3.0.3))(@csstools/css-tokenizer@3.0.3)':
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-tokenizer@3.0.3)
@@ -487,6 +568,31 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.18.0
+
+  '@stylistic/stylelint-plugin@3.1.2(stylelint@16.12.0)':
+    dependencies:
+      '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-tokenizer@3.0.3)
+      '@csstools/css-tokenizer': 3.0.3
+      '@csstools/media-query-list-parser': 3.0.1(@csstools/css-parser-algorithms@3.0.4(@csstools/css-tokenizer@3.0.3))(@csstools/css-tokenizer@3.0.3)
+      is-plain-object: 5.0.0
+      postcss-selector-parser: 6.1.2
+      postcss-value-parser: 4.2.0
+      style-search: 0.1.0
+      stylelint: 16.12.0
+
+  '@wordpress/prettier-config@4.22.0(prettier@3.5.3)':
+    dependencies:
+      prettier: 3.5.3
+
+  '@wordpress/stylelint-config@23.14.0(postcss@8.4.49)(stylelint-scss@6.11.1(stylelint@16.12.0))(stylelint@16.12.0)':
+    dependencies:
+      '@stylistic/stylelint-plugin': 3.1.2(stylelint@16.12.0)
+      stylelint: 16.12.0
+      stylelint-config-recommended: 14.0.1(stylelint@16.12.0)
+      stylelint-config-recommended-scss: 14.1.0(postcss@8.4.49)(stylelint@16.12.0)
+      stylelint-scss: 6.11.1(stylelint@16.12.0)
+    transitivePeerDependencies:
+      - postcss
 
   ajv@8.17.1:
     dependencies:
@@ -674,6 +780,8 @@ snapshots:
 
   mdn-data@2.12.2: {}
 
+  mdn-data@2.21.0: {}
+
   meow@13.2.0: {}
 
   merge2@1.4.1: {}
@@ -706,13 +814,29 @@ snapshots:
 
   picomatch@2.3.1: {}
 
+  postcss-media-query-parser@0.2.3: {}
+
   postcss-resolve-nested-selector@0.1.6: {}
 
   postcss-safe-parser@7.0.1(postcss@8.4.49):
     dependencies:
       postcss: 8.4.49
 
+  postcss-scss@4.0.9(postcss@8.4.49):
+    dependencies:
+      postcss: 8.4.49
+
+  postcss-selector-parser@6.1.2:
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
+
   postcss-selector-parser@7.0.0:
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
+
+  postcss-selector-parser@7.1.0:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -724,6 +848,8 @@ snapshots:
       nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
+
+  prettier@3.5.3: {}
 
   queue-microtask@1.2.3: {}
 
@@ -761,6 +887,17 @@ snapshots:
     dependencies:
       ansi-regex: 5.0.1
 
+  style-search@0.1.0: {}
+
+  stylelint-config-recommended-scss@14.1.0(postcss@8.4.49)(stylelint@16.12.0):
+    dependencies:
+      postcss-scss: 4.0.9(postcss@8.4.49)
+      stylelint: 16.12.0
+      stylelint-config-recommended: 14.0.1(stylelint@16.12.0)
+      stylelint-scss: 6.11.1(stylelint@16.12.0)
+    optionalDependencies:
+      postcss: 8.4.49
+
   stylelint-config-recommended@14.0.1(stylelint@16.12.0):
     dependencies:
       stylelint: 16.12.0
@@ -769,6 +906,18 @@ snapshots:
     dependencies:
       stylelint: 16.12.0
       stylelint-config-recommended: 14.0.1(stylelint@16.12.0)
+
+  stylelint-scss@6.11.1(stylelint@16.12.0):
+    dependencies:
+      css-tree: 3.1.0
+      is-plain-object: 5.0.0
+      known-css-properties: 0.35.0
+      mdn-data: 2.21.0
+      postcss-media-query-parser: 0.2.3
+      postcss-resolve-nested-selector: 0.1.6
+      postcss-selector-parser: 7.1.0
+      postcss-value-parser: 4.2.0
+      stylelint: 16.12.0
 
   stylelint@16.12.0:
     dependencies:
