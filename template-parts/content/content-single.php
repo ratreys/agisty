@@ -8,9 +8,9 @@
  */
 
 ?>
-<article <?php post_class() ?> data-column="content">
+<article <?php post_class() ?>>
 	<header class="entry-header post-header">
-		<hgroup class="flow-content post-header__group">
+		<hgroup class="flow-content">
 			<?php the_title( '<h1 class="entry-header__title">', '</h1>' ) ?>
 			<section aria-label="article snippet" class="entry-header__excerpt">
 				<?php the_excerpt() ?>
