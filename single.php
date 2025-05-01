@@ -7,9 +7,9 @@
 
 get_header();
 ?>
-<div class="wrapper-site__main grow">
-<main id="main" class="width-wide agisty-main__post" tabindex="-1">
-	<div class="pb-48px" data-layout="sidebar">
+<div class="is-layout-constrained wrapper-site__main grow">
+<main id="main" class="alignwide width-wide agisty-main__post" tabindex="-1">
+	<div class="is-layout-constrained is-layout-flex pb-48px" data-layout="with-sidebar">
 		<?php
 		while ( have_posts() ) : 
 			the_post();
@@ -17,9 +17,9 @@ get_header();
 			get_template_part( 'template-parts/content/content-single' );
 		endwhile;
 		?>
-		<aside class="post-sidebar" data-column="sidebar">
+		<section class="wrapper-section__sidebar">
 			<h2>Related Articles</h2>
-		</aside>
+		</section>
 	</div>
 </main>
 </div>
