@@ -32,7 +32,7 @@
     margin-block-start: 0;
   }
 
-  :is(.wp-block-list) {
+  :where(.wp-block-list) {
     list-style-type: square;
     margin-block-start: 0.5em;
     padding-inline-start: 1em;
@@ -57,11 +57,11 @@
  * --------------------------- */
 .wp-block-details {
   --_duration: 200ms;
-  --_border-radius: 8px;
+  --_radius: 8px;
   --_padding: 24px;
 
   background-color: oklch(1 0 0);
-  border-radius: var(--_border-radius);
+  border-radius: var(--_radius);
 
   > * + * {
     margin-block-start: var(--agisty-sb-rg, 1em);
@@ -155,6 +155,7 @@
 
   cite::before {
     content: "~ ";
+    font-style: normal;
   }
 }
 
@@ -203,11 +204,11 @@
 
   text-underline-offset: auto;
 
-  &:is(:hover) {
+  &:where(:hover) {
     background-color: var(--_btn-hover);
   }
 
-  &:is(:focus, :focus-visible) {
+  &:where(:focus, :focus-visible) {
     border-color: var(--wp--custom--focus);
     box-shadow: inset 0 0 0 2px var(--wp--custom--focus);
     outline: transparent solid 2px;
@@ -221,29 +222,15 @@
   color: var(--wp--custom--text);
   font-size: var(--agisty-fs-sm);
 
-  &:is(:hover) {
+  &:where(:hover) {
     color: var(--wp--custom--black);
     text-decoration: underline 3px solid currentcolor;
-  }
-
-  &:is(:focus, :focus-visible) {
-    background-color: var(--wp--custom--focus);
-    box-shadow:
-      0 -2px var(--wp--custom--focus),
-      0 4px var(--wp--custom--black);
-    outline: none;
-    text-decoration-line: none;
   }
 }
 
 .wp-block-navigation .current-menu-item > a {
   color: var(--wp--custom--brand);
   text-decoration: underline 3px solid currentcolor;
-
-  &:is(:focus, :focus-visible) {
-    color: var(--wp--custom--black);
-    text-decoration: none;
-  }
 }
 
 /* ------------------------------
@@ -256,7 +243,7 @@
 }
 
 :not(pre) > code,
-kbd {
+:where(kbd) {
   font-size: var(--agisty-fs-sm);
   font-style: normal;
 }
@@ -272,14 +259,14 @@ kbd {
  *
  * https://dylanatsmith.com/wrote/styling-the-kbd-element
  */
-kbd {
+:where(kbd) {
   border: solid var(--wp--custom--smoke);
   border-radius: 4px;
   border-width: 1px 2px 2px 1px;
   padding: 4px;
 }
 
-pre {
+:where(pre) {
   background-color: oklch(1 0 0);
   border: 1px solid var(--wp--custom--border);
   font-size: var(--agisty-fs-xm);
