@@ -12,25 +12,6 @@
  * --------------------------- */
 
 /* ---------------------------
- | CSS Variables
- * --------------------------- */
-
-:root {
-  /**
-   * Shadows
-   */
-  --_shadow-color: 0.79 0 0;
-  --agisty-shadow: 0.3px 0.5px 0.7px oklch(var(--_shadow-color) / 16%),
-    0.8px 1.7px 2.1px -0.4px oklch(var(--_shadow-color) / 16%),
-    1.5px 2.9px 3.7px -0.7px oklch(var(--_shadow-color) / 16%),
-    2.3px 4.7px 5.9px -1.1px oklch(var(--_shadow-color) / 16%),
-    3.7px 7.3px 9.2px -1.4px oklch(var(--_shadow-color) / 16%),
-    5.7px 11.3px 14.2px -1.8px oklch(var(--_shadow-color) / 16%),
-    8.5px 17.1px 21.5px -2.1px oklch(var(--_shadow-color) / 16%),
-    12.5px 25px 31.4px -2.5px oklch(var(--_shadow-color) / 16%);
-}
-
-/* ---------------------------
  | Global defaults.
  * --------------------------- */
 
@@ -52,9 +33,6 @@
   accent-color: var(--wp--custom--brand);
   display: flex;
   flex-direction: column;
-  font-family: --agisty-ff-body, system-ui, ui-sans-serif, sans-serif;
-  font-size: clamp(1rem, 0.8834rem + 0.3731vw, 1.0625rem); /* 16px → 17px */
-  letter-spacing: -0.01em;
 }
 
 a:where(:not(.wp-element-button)) {
@@ -63,14 +41,16 @@ a:where(:not(.wp-element-button)) {
   text-underline-offset: 0.15em;
 
   &:is(:hover) {
-    filter: brightness(0.9); /* 10% darker */
+    color: oklch(from var(--wp--custom--link) l c h / 90%);
     text-decoration-thickness: 3px;
   }
 
   &:is(:focus, :focus-visible) {
     color: var(--wp--custom--black);
     background-color: var(--wp--custom--focus);
-    box-shadow: 0 -2px var(--wp--custom--focus), 0 4px var(--wp--custom--black);
+    box-shadow:
+      0 -2px var(--wp--custom--focus),
+      0 4px var(--wp--custom--black);
     outline: none;
     outline-offset: 1px;
     text-decoration: none;
@@ -78,12 +58,8 @@ a:where(:not(.wp-element-button)) {
   }
 }
 
-ul > li::marker {
-  color: var(--wp--custom--brand);
-}
-
 table {
-  background-color: white;
+  background-color: oklch(1 0 0);
   border-color: var(--wp--custom--border);
 }
 
@@ -97,42 +73,33 @@ table {
  * https://www.tpgi.com/the-anatomy-of-visually-hidden/
  * https://www.a11yproject.com/posts/how-to-hide-content/
  */
-.visually-hidden:not(:focus-visible):not(:active) {
+.visually-hidden:not(:is(:active, :focus, :focus-visible)) {
   position: absolute;
   height: 1px;
   width: 1px;
   clip-path: inset(50%);
   overflow: clip;
-  white-space: preserve nowrap;
+  white-space: pre;
 }
 
-.skip-link:focus-visible {
-  border-radius: 8px;
-  border: 1px solid var(--wp--custom--black);
-  box-shadow: var(--agisty-shadow);
-  font-size: var(--agisty-fs-xm);
+.skip-link:is(:focus, :focus-visible) {
   position: absolute;
   height: auto;
   width: auto;
-  padding-block: 16px;
-  padding-inline: 16px;
+  clip-path: none;
   top: 4px;
   left: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--wp--custom--black);
+  box-shadow: none;
+  font-size: var(--agisty-fs-xm);
+  padding: 16px;
   z-index: 100000;
-}
-
-.wrapper-site__header {
-  border-block-end: 1px dashed var(--wp--custom--guide);
 }
 
 .agisty-header {
   border-block-end: 2px solid var(--wp--custom--black);
-  border-inline: 1px dashed var(--wp--custom--guide);
   padding-block: var(--agisty-sb-rg);
-
-  .wrapper-menu {
-    height: 3rem;
-  }
 }
 
 .header-menu__nav {
@@ -143,13 +110,8 @@ table {
 /* ---------------------------
  | Footer
  * --------------------------- */
-.wrapper-site__footer {
-  border-block-start: 1px dashed var(--wp--custom--guide);
-}
-
 .agisty-footer {
   border-block-start: 4px solid var(--wp--custom--black);
-  border-inline: 1px dashed var(--wp--custom--guide);
   padding-block: 16px;
 
   :where(a, p) {
@@ -165,23 +127,14 @@ table {
  | Index
  * --------------------------- */
 .entry-card__wrapper {
-  --pattern-bg: color-mix(in oklab, var(--wp--custom--black) 7%, transparent);
-
-  background-image: repeating-linear-gradient(
-    315deg,
-    var(--pattern-bg) 0,
-    var(--pattern-bg) 1px,
-    transparent 0,
-    transparent 50%
-  );
-  background-attachment: fixed;
-  background-size: 8px 8px;
-  gap: 24px;
+  display: grid;
+  gap: 32px;
+  margin-inline: auto;
 }
 
 .entry-card {
-  background-color: white;
-  border: 1px solid var(--wp--custom--black);
+  background-color: oklch(1 0 0);
+  border: 1px solid var(--wp--custom--smoke);
   display: grid;
   gap: 16px;
   padding: 24px;
@@ -191,25 +144,11 @@ table {
     font-size: var(--agisty-fs-rg, 1em);
     text-decoration: none;
   }
-
-  .entry-card__excerpt {
-    color: var(--wp--custom--smoke);
-    font-size: 0.975em;
-  }
 }
 
 /* ---------------------------
  | Archive
  * --------------------------- */
-.type-archive {
-  display: grid;
-  gap: var(--agisty-sb-lg);
-}
-
-.archive-header__description {
-  color: var(--wp--custom--smoke);
-  font-size: 1.1em;
-}
 
 /* ---------------------------
  | 404 Page
@@ -226,35 +165,13 @@ table {
   display: grid;
   gap: var(--agisty-sb-lg);
   margin-inline: auto;
-  max-width: var(--wp--custom--layout--content-size);
-}
-
-.post-sidebar {
-  border-inline-start: 1px solid var(--wp--custom--border);
-  margin-inline: auto;
-  max-width: var(--wp--custom--layout--content-size);
-
-  :where(h2, h3, h4, h5, h6) {
-    background-color: var(--wp--custom--black);
-    color: var(--wp--custom--white);
-    font-size: 1em;
-    font-weight: 400;
-    padding: 8px;
-  }
 }
 
 .entry-header {
-  border-block-end: 1px dashed var(--wp--custom--brand);
+  border-block-end: 1px solid var(--wp--custom--border);
   padding-block-end: var(--agisty-sb-rg);
-  line-height: var(--agisty-lh-sm, 1.2);
-
-  .entry-header__excerpt {
-    font-size: 1.17em;
-    font-weight: 300;
-  }
 
   .entry-header__meta {
-    color: var(--wp--custom--smoke);
     font-size: 1rem;
   }
 }
@@ -264,9 +181,17 @@ table {
   display: flow-root;
   line-height: var(--agisty-lh-lg, 1.618);
 
+  h2 {
+    margin-block-start: var(--agisty-sb-lg, 1em);
+  }
+
+  h3 {
+    margin-block-start: 1.618em;
+  }
+
   :where(h2, h3, h4, h5, h6)::after {
-    color: var(--wp--custom--border);
     content: "#";
+    color: var(--wp--custom--border);
     display: inline-block;
     font-weight: 400;
     margin-inline-start: 4px;
@@ -275,14 +200,6 @@ table {
 
   :where(h2, h3, h4, h5, h6):hover::after {
     visibility: visible;
-  }
-
-  h2 {
-    margin-block-start: var(--agisty-sb-lg, 1em);
-  }
-
-  h3 {
-    margin-block-start: 1.618em;
   }
 }
 
@@ -297,59 +214,27 @@ table {
 /* ---------------------------
  | Utilities
  * --------------------------- */
-.box {
-  --_box-color: var(--wp--custom--smoke);
-
-  background-color: oklch(from var(--_box-color) l c h / 13%);
-  border: 1px solid var(--_box-color);
-  border-inline-start: 4px solid var(--_box-color);
-  border-radius: 4px;
-  box-shadow: var(--agisty-shadow);
-  padding-block: 24px;
-  padding-inline: 32px;
-
-  > * + * {
-    margin-block-start: var(--agisty-sb-rg, 1em);
-  }
-
-  &:is(.red) {
-    --_box-color: var(--wp--custom--brand);
-  }
-
-  &:is(.green) {
-    --_box-color: var(--wp--custom--forest);
-  }
-
-  &:is(.blue) {
-    --_box-color: var(--wp--custom--blue);
-  }
-}
-
-.agisty-main__404,
-.agisty-main__archive,
-.agisty-main__index,
-.agisty-main__page,
-.agisty-main__post {
-  outline: 1px dashed var(--wp--custom--guide);
-}
-
-[data-layout="sidebar"] {
+[data-layout="with-sidebar"] {
   display: flex;
-  flex-wrap: wrap;
   gap: var(--agisty-sb-lg);
 
-  > [data-column="content"] {
+  > :first-child {
     flex: 999 1 0;
     min-inline-size: min(500px, 100%);
   }
 
-  > [data-column="sidebar"] {
+  > :last-child {
     flex: 1 1 var(--wp--custom--layout--sidebar-size);
   }
 }
 
 .flow-content > * + * {
   margin-block-start: var(--agisty-sb-rg, 1em);
+  margin-block-start: 1lh;
+}
+
+.gap-32px {
+  gap: 32px;
 }
 
 .grow {
@@ -371,4 +256,19 @@ table {
 
 .wrapper-menu {
   gap: 32px;
+}
+
+.wrapper-section__sidebar {
+  align-self: self-start;
+  display: grid;
+  gap: var(--agisty-sb-lg);
+  margin-inline: auto;
+
+  :where(h2, h3, h4, h5, h6) {
+    background-color: var(--wp--custom--black);
+    color: var(--wp--custom--white);
+    font-size: 1em;
+    font-weight: 400;
+    padding: 8px;
+  }
 }
