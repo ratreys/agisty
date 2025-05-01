@@ -9,8 +9,8 @@
  */
 
 ?>
-<div class="wrapper-site__footer" itemscope itemtype="https://schema.org/WPFooter">
-<footer id="footer" class="width-wide agisty-footer">
+<div class="is-layout-constrained wrapper-site__footer" itemscope itemtype="https://schema.org/WPFooter">
+<footer id="footer" class="alignwide width-wide agisty-footer">
 	<div class="wrapper-nav__footer" itemscope itemtype="https://schema.org/SiteNavigationElement">
 		<?php get_template_part( 'template-parts/footer/footer-menu' ) ?>
 	</div>
