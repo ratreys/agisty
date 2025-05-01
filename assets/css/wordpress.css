@@ -32,13 +32,10 @@
     margin-block-start: 0;
   }
 
-  :where(ol, ul) {
-    margin-block-start: 0.5em;
-    padding-inline-start: 1em;
-  }
-
   :is(.wp-block-list) {
     list-style-type: square;
+    margin-block-start: 0.5em;
+    padding-inline-start: 1em;
   }
 }
 
@@ -67,7 +64,8 @@
   border-radius: var(--_border-radius);
 
   > * + * {
-    margin-block-start: 1em;
+    margin-block-start: var(--agisty-sb-rg, 1em);
+    margin-block-start: 1lh;
   }
 
   > summary {
@@ -136,6 +134,7 @@
  * Quote
  * --------------------------- */
 .wp-block-quote {
+  background-color: oklch(1 0 0);
   border-block: 1px solid var(--wp--custom--smoke);
   padding: 24px;
 }
@@ -144,6 +143,7 @@
  * Pullquote
  * --------------------------- */
 :root :where(.wp-block-pullquote) {
+  background-color: oklch(1 0 0);
   border-block: 1px solid var(--wp--custom--smoke);
   margin: 0;
   padding: 24px;
@@ -186,8 +186,7 @@
  * Image
  * --------------------------- */
 .entry-content :where(figcaption) {
-  border-block-end: 1px dashed var(--wp--custom--border);
-  color: var(--wp--custom--smoke);
+  border-block-end: 1px solid var(--wp--custom--border);
   font-size: var(--agisty-fs-sm);
   line-height: var(--agisty-lh-sm);
   margin-bottom: 0;
