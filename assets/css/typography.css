@@ -4,9 +4,9 @@
  * https://github.com/clagnut/TODS
  */
 
-/* ---------------------------
- | CSS Variables
- * --------------------------- */
+/* ==============================
+   CSS variables
+   ============================== */
 
 /**
  * Calculated font sizes and spacing.
@@ -45,9 +45,9 @@
   --agisty-lh-sm: 1.2;
 }
 
-/* ---------------------------
- | Start of styles
- * --------------------------- */
+/* ==============================
+   Start of styles
+   ============================== */
 
 :where(body) {
   font-family: "__agisty-body__", system-ui, ui-sans-serif, sans-serif;
@@ -62,27 +62,53 @@
   font-variant-numeric: lining-nums proportional-nums;
 }
 
-:where(h2, h3, h4, h5, h6, th) {
+/* 
+   Remove unwanted margins
+   ============================== */
+
+:where(blockquote, dd, dl, figure, menu, ol, ul, p) {
+  margin-block: 0;
+}
+
+/* ==============================
+   Content sectioning
+   ============================== */
+
+:where(h1, h2, h3, h4, h5, h6, th) {
   font-weight: 600;
+  margin-block: 0;
 }
 
-:where(h1) {
+:is(h1) {
   font-size: var(--agisty-fs-xl, 1.618em);
+  font-weight: 700;
 }
 
-:where(h2) {
+:is(h2) {
   font-size: var(--agisty-fs-lg, 1.5em);
+
+  &:is(.wp-block-heading) {
+    margin-block-start: var(--agisty-sb-lg);
+  }
 }
 
-:where(h3) {
+:is(h3) {
   font-size: 1.17em;
+
+  &:is(.wp-block-heading) {
+    margin-block-start: 1.618em;
+  }
 }
 
 :where(h4, h5, h6) {
   font-size: 1em;
 }
 
-:where(code, kbd, pre) {
+/* ==============================
+   Inline text semantics
+   ============================== */
+
+:where(code, pre) {
   font-family: "__agisty-mono__", Menlo, ui-monospace, monospace;
   font-size: var(--agisty-fs-sm);
   font-style: normal;
@@ -107,4 +133,17 @@ ol li::marker {
 
 :where(sub, .sub) {
   font-variant-position: sub;
+}
+
+/* 
+   Utilities
+   ============================== */
+
+.entry-content {
+  line-height: var(--agisty-lh-lg, 1.618);
+}
+
+.flow-content > * + * {
+  margin-block-start: var(--agisty-sb-rg, 1em);
+  margin-block-start: 1lh;
 }
