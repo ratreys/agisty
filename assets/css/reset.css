@@ -19,9 +19,9 @@
   box-sizing: inherit;
 }
 
-/* ------------------------------
- | Main root
- * ------------------------------ */
+/* ==============================
+   Main root
+   ============================== */
 
 html {
   box-sizing: border-box;
@@ -30,7 +30,7 @@ html {
 
   /** 
    * Animate to or from `height: auto` and other intrinsic sizes.
-   * This has Limited Availability status.
+   * (Limited Availability)
    * 
    * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
    */
@@ -71,9 +71,9 @@ html {
   }
 }
 
-/* ------------------------------
- | Sectioning root
- * ------------------------------ */
+/* ==============================
+   Sectioning root
+   ============================== */
 
 :where(body) {
   line-height: 1.5;
@@ -82,9 +82,9 @@ html {
   overflow-x: clip;
 }
 
-/* ------------------------------
- | Content sectioning
- * ------------------------------ */
+/* ==============================
+   Content sectioning
+   ============================== */
 
 :where(address) {
   font-style: normal;
@@ -96,9 +96,9 @@ html {
   overflow-wrap: break-word;
 }
 
-/* ------------------------------
- | Text content
- * ------------------------------ */
+/* ==============================
+   Text content
+   ============================== */
 
 :where(blockquote, dd, dl) {
   margin-block: 0;
@@ -132,9 +132,9 @@ html {
   overflow: auto;
 }
 
-/* ------------------------------
- | Inline text semantics
- * ------------------------------ */
+/* ==============================
+   Inline text semantics
+   ============================== */
 
 :where(abbr[title]) {
   cursor: help;
@@ -142,9 +142,9 @@ html {
   text-decoration-skip-ink: none;
 }
 
-/* ------------------------------
- | Image and multimedia
- * ------------------------------ */
+/* ==============================
+   Image and multimedia
+   ============================== */
 
 /**
  * A better CSS reset for images.
@@ -160,9 +160,9 @@ html {
   vertical-align: middle;
 }
 
-/* ------------------------------
- | Embedded content
- * ------------------------------ */
+/* ==============================
+   Embedded content
+   ============================== */
 
 /* Make images and other replaced elements easier to work with. */
 :where(iframe, svg) {
@@ -170,9 +170,9 @@ html {
   vertical-align: middle;
 }
 
-/* ------------------------------
- | Forms
- * ------------------------------ */
+/* ==============================
+   Forms
+   ============================== */
 
 :where(button, input, label, select, textarea) {
   font-family: inherit;
