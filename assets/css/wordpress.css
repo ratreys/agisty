@@ -51,7 +51,6 @@
  *
  * https://www.youtube.com/watch?v=Vzj3jSUbMtI
  * https://nerdy.dev/nice-details
- *
  * --------------------------- */
 
 :where(.wp-block-details) {
@@ -208,14 +207,14 @@
 
   text-underline-offset: auto;
 
-  &:where(:hover) {
-    background-color: var(--_btn-hover);
-  }
-
   &:is(:focus, :focus-visible) {
     border-color: var(--wp--custom--focus);
     box-shadow: inset 0 0 0 2px var(--wp--custom--focus);
     outline: transparent solid 2px;
+  }
+
+  &:where(:hover) {
+    background-color: var(--_btn-hover);
   }
 }
 
@@ -253,12 +252,19 @@
  * https://dylanatsmith.com/wrote/styling-the-kbd-element
  */
 :where(kbd) {
+  display: inline-block;
+  font-family: inherit;
+  font-size: var(--agisty-fs-sm);
+  line-height: 1;
+  min-width: 1rem;
+  text-align: center;
   background-color: oklch(0.95 0 0);
   border: solid var(--wp--custom--smoke);
   border-radius: 4px;
   border-width: 1px 2px 2px 1px;
-  display: inline-block;
-  padding-inline: 4px;
+  padding: 4px;
+  position: relative;
+  top: -1px;
 }
 
 :where(pre) {
