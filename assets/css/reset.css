@@ -17,23 +17,6 @@
 *::before,
 *::after {
   box-sizing: inherit;
-
-  /**
-   * Resources on doing `prefers-reduced-motion` correctly.
-   *
-   * https://web.dev/articles/prefers-reduced-motion
-   * https://webkit.org/blog/7551/responsive-design-for-motion/
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
-   */
-  @media (prefers-reduced-motion: reduce) {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 1ms !important;
-    transition-delay: -1ms !important;
-  }
 }
 
 /* ------------------------------
@@ -55,15 +38,36 @@ html {
 
   /**
    * Disables the browser's inflation algorithm.
-   * This has Limited Availability status.
+   * (Limited Availability)
    */
-  -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
   text-size-adjust: none;
+}
 
-  @media (prefers-reduced-motion: reduce) {
-    scroll-behavior: auto;
+@media (prefers-reduced-motion: reduce) {
+  
+  /**
+   * Resources on doing `prefers-reduced-motion` correctly.
+   *
+   * https://web.dev/articles/prefers-reduced-motion
+   * https://webkit.org/blog/7551/responsive-design-for-motion/
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
+   */
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    transition-delay: -1ms !important;
+    transition-duration: 1ms !important;
+  }
+
+  html {
     interpolate-size: numeric-only;
+    scroll-behavior: auto;
   }
 }
 
@@ -73,7 +77,7 @@ html {
 
 :where(body) {
   line-height: 1.5;
-  min-height: 100vh;
+  min-height: 100vh; /* Fallback */
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
   overflow-x: clip;
 }
@@ -124,8 +128,8 @@ html {
 }
 
 :where(pre) {
-  overflow: auto;
   margin: 0;
+  overflow: auto;
 }
 
 /* ------------------------------
@@ -151,8 +155,8 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   font-style: italic;
-  height: auto;
   max-width: 100%;
+  height: auto;
   vertical-align: middle;
 }
 
