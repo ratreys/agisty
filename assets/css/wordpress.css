@@ -1,4 +1,4 @@
-/* ---------------------------
+/**
  * Override default styling of some of the WordPress blocks.
  *
  * Text
@@ -14,11 +14,71 @@
  * Theme
  *    8. Navigation
  *    9. Others
- * --------------------------- */
+ */
 
-/* ---------------------------
- * List
- * --------------------------- */
+/* ==============================
+   Text content
+   ============================== */
+
+a:where(:not(.wp-element-button)) {
+  color: var(--wp--custom--link);
+  text-decoration: underline 1px solid currentcolor;
+  text-underline-offset: 0.15em;
+
+  &:is(:hover) {
+    color: oklch(from var(--wp--custom--link) l c h / 90%);
+    text-decoration-thickness: 3px;
+  }
+
+  &:is(:focus, :focus-visible) {
+    background-color: var(--wp--custom--focus);
+    box-shadow:
+      0 -2px var(--wp--custom--focus),
+      0 4px var(--wp--custom--black);
+    color: var(--wp--custom--black);
+    outline: none;
+    outline-offset: 1px;
+    text-decoration: none;
+    text-underline-offset: auto;
+  }
+}
+
+:not(pre) > code {
+  background-color: oklch(0.95 0 0);
+  border: 1px solid oklch(0.89 0 0);
+}
+
+/**
+ * Style the kbd element to look like a button.
+ *
+ * https://dylanatsmith.com/wrote/styling-the-kbd-element
+ */
+:where(kbd) {
+  display: inline-block;
+  font-family: inherit;
+  font-size: var(--agisty-fs-sm);
+  line-height: 1;
+  min-width: 1rem;
+  text-align: center;
+  background-color: oklch(0.95 0 0);
+  border: solid var(--wp--custom--smoke);
+  border-radius: 4px;
+  border-width: 1px 2px 2px 1px;
+  padding: 4px;
+  position: relative;
+  top: -1px;
+}
+
+:where(pre) {
+  background-color: oklch(1 0 0);
+  border: 1px solid var(--wp--custom--border);
+  line-height: var(--agisty-lh-rg);
+  padding: 24px;
+}
+
+/* ==============================
+   List and Footnotes
+   ============================== */
 
 :where(.wp-block-list, .wp-block-footnotes) {
   padding-inline-start: 3ch;
@@ -30,8 +90,8 @@
 
   /* Footnotes */
   li[id] {
-    margin-block-start: 0;
     font-size: var(--agisty-fs-sm);
+    margin-block-start: 0;
   }
 
   li:first-child {
@@ -46,13 +106,16 @@
   }
 }
 
-/* ---------------------------
+/* ==============================
+   Details
+   ============================== */
+
+/**
  * Animate details & summary with a few lines of CSS.
  *
  * https://www.youtube.com/watch?v=Vzj3jSUbMtI
  * https://nerdy.dev/nice-details
- * --------------------------- */
-
+ */
 :where(.wp-block-details) {
   --_duration: 200ms;
   --_padding: 24px;
@@ -130,9 +193,10 @@
   }
 }
 
-/* ------------------------------
- * Quote
- * --------------------------- */
+/* ==============================
+   Quote
+   ============================== */
+
 :is(blockquote, .wp-block-quote) {
   background-color: oklch(1 0 0);
   border-inline-start: 2px solid var(--wp--custom--smoke);
@@ -148,9 +212,9 @@
   }
 }
 
-/* ------------------------------
- * Pullquote
- * --------------------------- */
+/* ==============================
+   Pullquote
+   ============================== */
 
 :root :where(.wp-block-pullquote) {
   margin: 0;
@@ -158,9 +222,9 @@
   text-align: left;
 }
 
-/* ------------------------------
- * Table
- * --------------------------- */
+/* ==============================
+   Table
+   ============================== */
 
 .wp-block-table {
   caption-side: bottom;
@@ -184,9 +248,9 @@
   }
 }
 
-/* ------------------------------
- * Image
- * --------------------------- */
+/* ==============================
+   6. Image
+   ============================== */
 
 :is(figcaption) {
   border-block-end: 1px solid var(--wp--custom--border);
@@ -198,16 +262,14 @@
   text-align: left;
 }
 
-/* ------------------------------
- * Buttons
- * --------------------------- */
+/* ==============================
+   Buttons
+   ============================== */
 
-:root :where(.wp-element-button, .wp-block-button__link) {
+:is(.wp-element-button, .wp-block-button__link) {
   --_btn-hover: oklch(from var(--wp--custom--button) l c h / 95%);
 
-  text-underline-offset: auto;
-
-  &:is(:focus, :focus-visible) {
+  &:where(:focus, :focus-visible) {
     border-color: var(--wp--custom--focus);
     box-shadow: inset 0 0 0 2px var(--wp--custom--focus);
     outline: transparent solid 2px;
@@ -218,9 +280,9 @@
   }
 }
 
-/* ------------------------------
- * Navigation
- * --------------------------- */
+/* ==============================
+   Navigation
+   ============================== */
 
 .wp-block-navigation :where(a) {
   color: var(--wp--custom--text);
@@ -237,42 +299,9 @@
   text-decoration: underline 3px solid currentcolor;
 }
 
-/* ------------------------------
- * Others
- * --------------------------- */
-
-:not(pre) > code {
-  background-color: oklch(0.95 0 0);
-  border: 1px solid oklch(0.89 0 0);
-}
-
-/**
- * Style the kbd element to look like a button.
- *
- * https://dylanatsmith.com/wrote/styling-the-kbd-element
- */
-:where(kbd) {
-  display: inline-block;
-  font-family: inherit;
-  font-size: var(--agisty-fs-sm);
-  line-height: 1;
-  min-width: 1rem;
-  text-align: center;
-  background-color: oklch(0.95 0 0);
-  border: solid var(--wp--custom--smoke);
-  border-radius: 4px;
-  border-width: 1px 2px 2px 1px;
-  padding: 4px;
-  position: relative;
-  top: -1px;
-}
-
-:where(pre) {
-  background-color: oklch(1 0 0);
-  border: 1px solid var(--wp--custom--border);
-  line-height: var(--agisty-lh-rg);
-  padding: 24px;
-}
+/* ==============================
+   Others
+   ============================== */
 
 /* Create a root stacking context */
 .wp-site-blocks {
