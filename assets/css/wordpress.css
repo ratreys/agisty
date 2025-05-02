@@ -20,7 +20,7 @@
  * List
  * --------------------------- */
 
-.wp-block-list {
+:where(.wp-block-list, .wp-block-footnotes) {
   padding-inline-start: 3ch;
 
   li {
@@ -28,23 +28,21 @@
     padding-inline-start: 16px;
   }
 
+  /* Footnotes */
+  li[id] {
+    margin-block-start: 0;
+    font-size: var(--agisty-fs-sm);
+  }
+
   li:first-child {
     margin-block-start: 0;
   }
 
-  :where(.wp-block-list) {
+  /* For nested lists */
+  :where(ol, ul) {
     list-style-type: square;
     margin-block-start: 0.5em;
     padding-inline-start: 1em;
-  }
-}
-
-.wp-block-footnotes {
-  padding-inline-start: 3ch;
-
-  li[id] {
-    margin-block-start: 0;
-    padding-inline-start: 16px;
   }
 }
 
@@ -55,35 +53,38 @@
  * https://nerdy.dev/nice-details
  *
  * --------------------------- */
-.wp-block-details {
+
+:where(.wp-block-details) {
   --_duration: 200ms;
-  --_radius: 8px;
   --_padding: 24px;
+  --_radius: 8px;
 
   background-color: oklch(1 0 0);
   border-radius: var(--_radius);
 
   > * + * {
-    margin-block-start: var(--agisty-sb-rg, 1em);
+    margin-block-start: var(--agisty-sb-rg, 1em); /* Fallback. */
     margin-block-start: 1lh;
   }
 
   > summary {
-    list-style-type: none;
     display: flex;
     justify-content: space-between;
     font-weight: 600;
+    list-style-type: none;
     border: 1px solid var(--wp--custom--border);
-    border-radius: 8px;
+    border-radius: var(--_radius);
     padding: var(--_padding);
     transition: border-radius var(--_duration);
   }
 
   > summary::after {
     content: "";
-    align-self: center;
+
+    /* chevron-down from Lucide */
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tZG93bi1pY29uIGx1Y2lkZS1jaGV2cm9uLWRvd24iPjxwYXRoIGQ9Im02IDkgNiA2IDYtNiIvPjwvc3ZnPg==);
     background-size: cover;
+    align-self: center;
     min-width: 24px;
     min-height: 24px;
     transition-duration: var(--_duration);
@@ -133,21 +134,10 @@
 /* ------------------------------
  * Quote
  * --------------------------- */
-.wp-block-quote {
+:is(blockquote, .wp-block-quote) {
   background-color: oklch(1 0 0);
-  border-block: 1px solid var(--wp--custom--smoke);
+  border-inline-start: 2px solid var(--wp--custom--smoke);
   padding: 24px;
-}
-
-/* ------------------------------
- * Pullquote
- * --------------------------- */
-:root :where(.wp-block-pullquote) {
-  background-color: oklch(1 0 0);
-  border-block: 1px solid var(--wp--custom--smoke);
-  margin: 0;
-  padding: 24px;
-  text-align: left;
 
   cite {
     margin-block-start: 1em;
@@ -160,8 +150,19 @@
 }
 
 /* ------------------------------
+ * Pullquote
+ * --------------------------- */
+
+:root :where(.wp-block-pullquote) {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* ------------------------------
  * Table
  * --------------------------- */
+
 .wp-block-table {
   caption-side: bottom;
   font-size: var(--agisty-fs-sm);
@@ -176,6 +177,7 @@
     color: var(--wp--custom--smoke);
   }
 
+  /* Needs higher specificity to override default styling. */
   :is(tr, th, td) {
     border: 1px solid var(--wp--custom--border);
     padding-block: 4px;
@@ -186,7 +188,8 @@
 /* ------------------------------
  * Image
  * --------------------------- */
-.entry-content :where(figcaption) {
+
+:is(figcaption) {
   border-block-end: 1px solid var(--wp--custom--border);
   font-size: var(--agisty-fs-sm);
   line-height: var(--agisty-lh-sm);
@@ -199,6 +202,7 @@
 /* ------------------------------
  * Buttons
  * --------------------------- */
+
 :root :where(.wp-element-button, .wp-block-button__link) {
   --_btn-hover: oklch(from var(--wp--custom--button) l c h / 95%);
 
@@ -208,7 +212,7 @@
     background-color: var(--_btn-hover);
   }
 
-  &:where(:focus, :focus-visible) {
+  &:is(:focus, :focus-visible) {
     border-color: var(--wp--custom--focus);
     box-shadow: inset 0 0 0 2px var(--wp--custom--focus);
     outline: transparent solid 2px;
@@ -218,6 +222,7 @@
 /* ------------------------------
  * Navigation
  * --------------------------- */
+
 .wp-block-navigation :where(a) {
   color: var(--wp--custom--text);
   font-size: var(--agisty-fs-sm);
@@ -237,21 +242,9 @@
  * Others
  * --------------------------- */
 
-/* Create a root stacking context */
-.wp-site-blocks {
-  isolation: isolate;
-}
-
-:not(pre) > code,
-:where(kbd) {
-  font-size: var(--agisty-fs-sm);
-  font-style: normal;
-}
-
 :not(pre) > code {
   background-color: oklch(0.95 0 0);
   border: 1px solid oklch(0.89 0 0);
-  padding: 2px;
 }
 
 /**
@@ -260,17 +253,22 @@
  * https://dylanatsmith.com/wrote/styling-the-kbd-element
  */
 :where(kbd) {
+  background-color: oklch(0.95 0 0);
   border: solid var(--wp--custom--smoke);
   border-radius: 4px;
   border-width: 1px 2px 2px 1px;
-  padding: 4px;
+  display: inline-block;
+  padding-inline: 4px;
 }
 
 :where(pre) {
   background-color: oklch(1 0 0);
   border: 1px solid var(--wp--custom--border);
-  font-size: var(--agisty-fs-xm);
   line-height: var(--agisty-lh-rg);
-  padding-block: 24px;
-  padding-inline: 24px;
+  padding: 24px;
+}
+
+/* Create a root stacking context */
+.wp-site-blocks {
+  isolation: isolate;
 }
