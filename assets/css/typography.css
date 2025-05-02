@@ -8,25 +8,25 @@
  | CSS Variables
  * --------------------------- */
 
+/**
+ * Calculated font sizes and spacing.
+ *
+ * Min values are based on 500px.
+ * Max values are based on 768px.
+ *
+ * https://clamp.font-size.app/
+ * https://grtcalculator.com/styles/
+ * https://utopia.fyi
+ *
+ * 1. 24px → 32px (fs-xl)
+ * 2. 20px → 24px (fs-lg)
+ * 3. 16px → 18px (fs-rg)
+ * 4. 15px → 16px (fs-sm)
+ * 5. 14px → 15px (fs-xm)
+ * 6. 48px → 64px (sb-lg)
+ * 7. 20px → 24px (sb-rg)
+ */ 
 :root {
-  /**
-   * Calculated font sizes and spacing.
-   *
-   * Min values are based on 500px.
-   * Max values are based on 768px.
-   *
-   * https://clamp.font-size.app/
-   * https://grtcalculator.com/styles/
-   * https://utopia.fyi
-   *
-   * 1. 24px → 32px (fs-xl)
-   * 2. 20px → 24px (fs-lg)
-   * 3. 16px → 18px (fs-rg)
-   * 4. 15px → 16px (fs-sm)
-   * 5. 14px → 15px (fs-xm)
-   * 6. 40px → 48px (sb-lg)
-   * 7. 20px → 24px (sb-rg)
-   */
 
   /* fs for `font-size`  */
   --agisty-fs-xl: clamp(1.5rem, 0.5672rem + 2.9851vw, 2rem); /* 1 */
@@ -36,7 +36,7 @@
   --agisty-fs-xm: clamp(0.875rem, 0.7584rem + 0.3731vw, 0.9375rem); /* 5 */
 
   /* sb for `spacing-block` */
-  --agisty-sb-lg: clamp(2.5rem, 1.5672rem + 2.9851vw, 3rem); /* 6 */
+  --agisty-sb-lg: clamp(3rem, 2.2857rem + 3.5714vw, 4rem); /* 6 */
   --agisty-sb-rg: clamp(1.25rem, 0.7836rem + 1.4925vw, 1.5rem); /* 7 */
 
   /* lh for `line-height` */
@@ -50,7 +50,7 @@
  * --------------------------- */
 
 :where(body) {
-  font-family: system-ui, ui-sans-serif, sans-serif;
+  font-family: "__agisty-body__", system-ui, ui-sans-serif, sans-serif;
   font-size: var(--agisty-fs-rg, 1rem);
   font-size-adjust: from-font;
   font-weight: 400;
@@ -83,7 +83,9 @@
 }
 
 :where(code, kbd, pre) {
-  font-family: "SF Mono", Menlo, "Fira Mono", ui-monospace, monospace;
+  font-family: "__agisty-mono__", Menlo, ui-monospace, monospace;
+  font-size: var(--agisty-fs-sm);
+  font-style: normal;
 }
 
 :where(math, time, td) {
