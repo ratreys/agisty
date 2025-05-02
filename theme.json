@@ -23,6 +23,10 @@
       "defaultAspectRatios": false,
       "aspectRatios": null
     },
+    "layout": {
+      "contentSize": "var(--wp--custom--layout--content-size)",
+      "wideSize": "var(--wp--custom--layout--wide-size)"
+    },
     "shadow": {
       "defaultPresets": false,
       "presets": null
@@ -30,7 +34,7 @@
     "spacing": {
       "customSpacingSize": false,
       "defaultSpacingSizes": false,
-      "units": ["rem", "vh", "vw", "%"],
+      "units": ["px", "em", "rem"],
       "spacingScale": null
     },
     "typography": {
@@ -46,10 +50,6 @@
       "textTransform": false,
       "writingMode": false,
       "fontSizes": null
-    },
-    "layout": {
-      "contentSize": "var(--wp--custom--layout--content-size)",
-      "wideSize": "var(--wp--custom--layout--wide-size)"
     },
     "custom": {
       "blue": "oklch(0.4 0.18 262)",
