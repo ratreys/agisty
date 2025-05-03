@@ -128,7 +128,7 @@ html {
 }
 
 :where(pre) {
-  margin: 0;
+  margin-bottom: 0;
   overflow: auto;
 }
 
@@ -140,6 +140,10 @@ html {
   cursor: help;
   text-decoration: underline 0.125rem dotted currentcolor;
   text-decoration-skip-ink: none;
+}
+
+:not(blockquote) > cite {
+  font-style: normal;
 }
 
 /* ==============================
