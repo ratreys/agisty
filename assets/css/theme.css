@@ -1,7 +1,6 @@
-/* ---------------------------
+/**
  * Theme-specific styles.
  *
- * CSS Variables
  * Global defaults
  * Header
  * Footer
@@ -9,11 +8,11 @@
  * Post
  * Page
  * Utilities
- * --------------------------- */
+ */
 
-/* ---------------------------
- | Global defaults.
- * --------------------------- */
+/* ==============================
+   Global defaults
+   ============================== */
 
 /**
  * Focus outlines.
@@ -21,51 +20,174 @@
  * https://medienbaecker.com/articles/focus-outlines
  */
 :focus-visible {
-  outline: var(--wp--custom--brand) dotted 0.1875rem;
+  outline: var(--wp--custom--brand) dotted 2px;
   outline-offset: 0.25rem;
 }
 
-/* 
- * Sectioning root
- * --------------- */
-
+/* Body */
 :where(.wp-theme-agisty) {
   accent-color: var(--wp--custom--brand);
   display: flex;
   flex-direction: column;
 }
 
-a:where(:not(.wp-element-button)) {
-  color: var(--wp--custom--link);
-  text-decoration: underline 1px solid currentcolor;
-  text-underline-offset: 0.15em;
+/* ==============================
+   Header
+   ============================== */
 
-  &:is(:hover) {
-    color: oklch(from var(--wp--custom--link) l c h / 90%);
-    text-decoration-thickness: 3px;
-  }
+/**
+ * These are all CSS classes found in the ff file: 
+ *
+ *    1. header.php
+ *    2. template-parts/header/header-logo.php
+ *    3. template-parts/header/header-menu.php
+ */
 
-  &:is(:focus, :focus-visible) {
-    color: var(--wp--custom--black);
-    background-color: var(--wp--custom--focus);
-    box-shadow:
-      0 -2px var(--wp--custom--focus),
-      0 4px var(--wp--custom--black);
-    outline: none;
-    outline-offset: 1px;
-    text-decoration: none;
-    text-underline-offset: auto;
-  }
+.agisty-header {
+  border-block-end: 2px solid var(--wp--custom--black);
+  padding-block: var(--agisty-sb-rg);
 }
 
-table {
+.header-menu__wrapper {
+  gap: 32px;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+
+/**
+ * These are all CSS classes found in the ff file: 
+ *
+ *    1. footer.php
+ *    2. template-parts/footer/footer-menu.php
+ */
+
+.agisty-footer {
+  border-block-start: 4px solid var(--wp--custom--black);
+  padding-block: 16px;
+}
+
+.wrapper-nav__footer {
+  padding-block-end: 16px;
+}
+
+.footer-menu__wrapper {
+  gap: 32px;
+}
+
+/* ==============================
+   Index
+   ============================== */
+
+/**
+ * These are all CSS classes found in the ff file: 
+ *
+ *    1. index.php
+ */
+
+.entry-card__wrapper {
+  display: grid;
+  gap: 32px;
+  margin-inline: auto;
+}
+
+.entry-card {
   background-color: oklch(1 0 0);
-  border-color: var(--wp--custom--border);
+  border: 1px solid var(--wp--custom--smoke);
+  display: grid;
+  gap: 16px;
+  padding: 24px;
 }
 
-/* ---------------------------
- | Header
- * --------------------------- */
+.entry-card__link {
+  color: var(--wp--custom--black);
+  text-decoration: none;
+}
+
+/* ==============================
+   Archive
+   ============================== */
+
+/**
+ * These are all CSS classes found in the ff file not found in index.php.
+ *
+ *    1. archive.php
+ */
+
+/* ==============================
+   404
+   ============================== */
+
+/**
+ * These are all CSS classes found in the ff file:
+ *
+ *    1. 404.php
+ */
+
+.type-error404 {
+  display: grid;
+  gap: var(--agisty-sb-lg);
+}
+
+/* ==============================
+   Post
+   ============================== */
+
+/**
+ * These are all CSS classes found in the ff file:
+ *
+ *    1. single.php
+ *    2. template-parts/content/content-single.php
+ *    3. template-parts/content/content-page.php
+ *    4. template-parts/content/content-none.php
+ */
+
+/* 
+   Post
+   ============================== */
+
+.type-post {
+  display: grid;
+  gap: var(--agisty-sb-lg);
+  margin-inline: auto;
+}
+
+.entry-header {
+  border-block-end: 1px solid var(--wp--custom--border);
+  padding-block-end: var(--agisty-sb-rg);
+}
+
+.entry-content {
+  container-type: inline-size;
+  display: flow-root;
+
+  :where(h2, h3, h4, h5, h6)::after {
+    content: "#";
+    color: var(--wp--custom--border);
+    display: inline-block;
+    font-weight: 400;
+    margin-inline-start: 4px;
+    visibility: hidden;
+  }
+
+  :where(h2, h3, h4, h5, h6):hover::after {
+    visibility: visible;
+  }
+}
+
+/* 
+   Page
+   ============================== */
+
+.type-page {
+  display: grid;
+  gap: var(--agisty-sb-lg);
+}
+
+/* ==============================
+   Utilities
+   ============================== */
 
 /**
  * The anatomy of visually-hidden.
@@ -82,138 +204,6 @@ table {
   white-space: pre;
 }
 
-.skip-link:is(:focus, :focus-visible) {
-  position: absolute;
-  height: auto;
-  width: auto;
-  clip-path: none;
-  top: 4px;
-  left: 4px;
-  border-radius: 8px;
-  border: 1px solid var(--wp--custom--black);
-  box-shadow: none;
-  font-size: var(--agisty-fs-xm);
-  padding: 16px;
-  z-index: 100000;
-}
-
-.agisty-header {
-  border-block-end: 2px solid var(--wp--custom--black);
-  padding-block: var(--agisty-sb-rg);
-}
-
-.header-menu__nav {
-  flex-wrap: nowrap;
-  justify-content: space-between;
-}
-
-/* ---------------------------
- | Footer
- * --------------------------- */
-.agisty-footer {
-  border-block-start: 4px solid var(--wp--custom--black);
-  padding-block: 16px;
-
-  :where(a, p) {
-    font-size: var(--agisty-fs-xm);
-  }
-}
-
-.wrapper-nav__footer {
-  padding-block-end: 16px;
-}
-
-/* ---------------------------
- | Index
- * --------------------------- */
-.entry-card__wrapper {
-  display: grid;
-  gap: 32px;
-  margin-inline: auto;
-}
-
-.entry-card {
-  background-color: oklch(1 0 0);
-  border: 1px solid var(--wp--custom--smoke);
-  display: grid;
-  gap: 16px;
-  padding: 24px;
-
-  .entry-card__link {
-    color: var(--wp--custom--black);
-    font-size: var(--agisty-fs-rg, 1em);
-    text-decoration: none;
-  }
-}
-
-/* ---------------------------
- | Archive
- * --------------------------- */
-
-/* ---------------------------
- | 404 Page
- * --------------------------- */
-.type-error404 {
-  display: grid;
-  gap: var(--agisty-sb-lg);
-}
-
-/* ---------------------------
- | Post
- * --------------------------- */
-.type-post {
-  display: grid;
-  gap: var(--agisty-sb-lg);
-  margin-inline: auto;
-}
-
-.entry-header {
-  border-block-end: 1px solid var(--wp--custom--border);
-  padding-block-end: var(--agisty-sb-rg);
-
-  .entry-header__meta {
-    font-size: 1rem;
-  }
-}
-
-.entry-content {
-  container-type: inline-size;
-  display: flow-root;
-  line-height: var(--agisty-lh-lg, 1.618);
-
-  h2 {
-    margin-block-start: var(--agisty-sb-lg, 1em);
-  }
-
-  h3 {
-    margin-block-start: 1.618em;
-  }
-
-  :where(h2, h3, h4, h5, h6)::after {
-    content: "#";
-    color: var(--wp--custom--border);
-    display: inline-block;
-    font-weight: 400;
-    margin-inline-start: 4px;
-    visibility: hidden;
-  }
-
-  :where(h2, h3, h4, h5, h6):hover::after {
-    visibility: visible;
-  }
-}
-
-/* ---------------------------
- | Page
- * --------------------------- */
-.type-page {
-  display: grid;
-  gap: var(--agisty-sb-lg);
-}
-
-/* ---------------------------
- | Utilities
- * --------------------------- */
 [data-layout="with-sidebar"] {
   display: flex;
   gap: var(--agisty-sb-lg);
@@ -228,12 +218,21 @@ table {
   }
 }
 
-.flow-content > * + * {
-  margin-block-start: var(--agisty-sb-rg, 1em);
-  margin-block-start: 1lh;
+[data-sidebar="main-sidebar"] {
+  align-self: self-start;
+  display: grid;
+  gap: var(--agisty-sb-lg);
+  margin-inline: auto;
+
+  :where(h2, h3, h4, h5, h6) {
+    background-color: var(--wp--custom--black);
+    color: var(--wp--custom--white);
+    font-weight: 400;
+    padding: 8px;
+  }
 }
 
-.gap-32px {
+.gap-2 {
   gap: 32px;
 }
 
@@ -245,30 +244,11 @@ table {
   visibility: hidden;
 }
 
-.pb-48px {
+.pb-3 {
   padding-block: 48px;
 }
 
 .width-wide {
   margin-inline: auto;
   width: min(100% - 32px, var(--wp--style--global--wide-size));
-}
-
-.wrapper-menu {
-  gap: 32px;
-}
-
-.wrapper-section__sidebar {
-  align-self: self-start;
-  display: grid;
-  gap: var(--agisty-sb-lg);
-  margin-inline: auto;
-
-  :where(h2, h3, h4, h5, h6) {
-    background-color: var(--wp--custom--black);
-    color: var(--wp--custom--white);
-    font-size: 1em;
-    font-weight: 400;
-    padding: 8px;
-  }
 }

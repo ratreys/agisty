@@ -20,67 +20,203 @@ body {
   max-width: none;
 }
 
-code,
-kbd,
-pre {
-  background-color: white;
-  border: 1px solid var(--wp--custom--border);
+:where(code, kbd, pre) {
   font-size: 14px;
 }
 
-code,
-kbd {
-  padding-block: 2px;
-  padding-inline: 4px;
+:not(pre) > code {
+  background-color: oklch(0.95 0 0);
+  border: 1px solid oklch(0.89 0 0);
+  padding: 2px;
 }
 
-kbd {
+/**
+ * Style the kbd element to look like a button.
+ *
+ * https://dylanatsmith.com/wrote/styling-the-kbd-element
+ */
+:where(kbd) {
+  background-color: oklch(0.95 0 0);
+  border: solid var(--wp--custom--smoke);
   border-radius: 4px;
-  box-shadow: 0 2px 0 1px var(--wp--custom--border);
-  color: var(--wp--custom--gray);
+  border-width: 1px 2px 2px 1px;
+  padding: 4px;
 }
 
-pre {
-  line-height: var(--agisty-line-height-norm);
-  overflow: auto;
-  margin: 0;
-  padding-block: 24px;
-  padding-inline: 24px;
+:where(pre) {
+  background-color: oklch(1 0 0);
+  border: 1px solid var(--wp--custom--border);
+  line-height: var(--agisty-lh-rg);
+  padding: 24px;
+}
 
-  code {
-    border: none;
-    color: inherit;
-    padding-block: 0;
-    padding-inline: 0;
+/* ---------------------------
+ * List
+ * --------------------------- */
+
+:where(.wp-block-list, .wp-block-footnotes) {
+  padding-inline-start: 3ch;
+
+  li {
+    margin-block-start: 0.5em;
+    padding-inline-start: 16px;
+  }
+
+  li[id] {
+    margin-block-start: 0;
+    font-size: var(--agisty-fs-sm);
+  }
+
+  li:first-child {
+    margin-block-start: 0;
+  }
+
+  :where(ol, ul) {
+    list-style-type: square;
+    margin-block-start: 0.5em;
+    padding-inline-start: 1em;
   }
 }
 
-img {
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-style: italic;
-  height: auto;
-  max-width: 100%;
-  vertical-align: middle;
+/* ---------------------------
+ * Details
+ * --------------------------- */
+:where(.wp-block-details) {
+  --_duration: 200ms;
+  --_padding: 24px;
+  --_radius: 8px;
+
+  background-color: oklch(1 0 0);
+  border-radius: var(--_radius);
+
+  > * + * {
+    margin-block-start: var(--agisty-sb-rg, 1em); /* Fallback. */
+    margin-block-start: 1lh;
+  }
+
+  > summary {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    font-weight: 600;
+    border: 1px solid var(--wp--custom--border);
+    border-radius: var(--_radius);
+    padding: var(--_padding);
+    transition: border-radius var(--_duration);
+  }
+
+  > summary::after {
+    content: "";
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tZG93bi1pY29uIGx1Y2lkZS1jaGV2cm9uLWRvd24iPjxwYXRoIGQ9Im02IDkgNiA2IDYtNiIvPjwvc3ZnPg==);
+    background-size: cover;
+    align-self: center;
+    min-width: 24px;
+    min-height: 24px;
+    transition-duration: var(--_duration);
+  }
+
+  > summary:hover {
+    background-color: var(--wp--custom--guide);
+  }
+
+  > p {
+    block-size: 0;
+    opacity: 0;
+    overflow-y: clip;
+    padding-inline: var(--_padding);
+    transition:
+      opacity var(--_duration),
+      block-size var(--_duration),
+      content-visibility var(--_duration) allow-discrete;
+  }
+
+  &[open] {
+    border: 1px solid var(--wp--custom--border);
+
+    > summary {
+      background-color: var(--wp--custom--guide);
+      border: none;
+      border-block-end: 1px solid var(--wp--custom--border);
+      border-end-start-radius: 0;
+      border-end-end-radius: 0;
+    }
+
+    > summary::after {
+      transform: rotate(180deg);
+    }
+
+    > p {
+      block-size: auto;
+      opacity: 1;
+    }
+
+    > p:last-child {
+      padding-block-end: var(--_padding);
+    }
+  }
 }
 
+/* ------------------------------
+ * Quote
+ * --------------------------- */
+:is(blockquote, .wp-block-quote) {
+  background-color: oklch(1 0 0);
+  border-block: 1px solid var(--wp--custom--smoke);
+  padding: 24px;
+
+  cite {
+    margin-block-start: 1em;
+  }
+
+  cite::before {
+    content: "~ ";
+    font-style: normal;
+  }
+}
+
+/* ------------------------------
+ * Pullquote
+ * --------------------------- */
 :root :where(.wp-block-pullquote) {
-  background-color: white;
-  border-inline-start: 4px solid var(--wp--custom--brand);
-  outline: var(--wp--custom--brand) dashed 1px;
   margin: 0;
-  padding: 24px 0;
-  padding-inline-start: 24px;
+  padding: 0;
   text-align: left;
-
-  .wp-block-pullquote__citation {
-    color: var(--wp--custom--gray);
-  }
 }
 
-.wp-block-image :where(figcaption) {
-  border-bottom: 1px dashed var(--wp--custom--border);
-  color: var(--wp--custom--gray);
+/* ------------------------------
+ * Image
+ * --------------------------- */
+:is(figcaption) {
+  border-block-end: 1px solid var(--wp--custom--border);
+  font-size: var(--agisty-fs-sm);
+  line-height: var(--agisty-lh-sm);
   margin-bottom: 0;
+  margin-top: 1rem;
+  padding-block-end: 0.5rem;
   text-align: left;
+}
+
+/* ------------------------------
+ * Table
+ * --------------------------- */
+.wp-block-table {
+  caption-side: bottom;
+  font-size: var(--agisty-fs-sm);
+
+  thead {
+    background-color: var(--wp--custom--guide);
+    border-block-end: 3px solid var(--wp--custom--black);
+  }
+
+  tfoot {
+    border-block-start: 2px solid var(--wp--custom--black);
+    color: var(--wp--custom--smoke);
+  }
+
+  /* Needs higher specificity to override default styling. */
+  :is(tr, th, td) {
+    border: 1px solid var(--wp--custom--border);
+    padding-block: 4px;
+    padding-inline: 8px;
+  }
 }

@@ -4,6 +4,26 @@
  * https://github.com/clagnut/TODS
  */
 
+@font-face {
+  font-family: "__agisty-body__";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100 900;
+  src:
+    url(../fonts/MonaSansVF.woff2) format(woff2) tech(variations),
+    url(../fonts/MonaSansVF.woff2) format("woff2-variations");
+}
+
+@font-face {
+  font-family: "__agisty-mono__";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100 900;
+  src:
+    url(../fonts/GeistMonoVF.woff2) format(woff2) tech(variations),
+    url(../fonts/GeistMonoVF.woff2) format("woff2-variations");
+}
+
 /* ==============================
    CSS variables
    ============================== */
@@ -66,7 +86,7 @@
    Remove unwanted margins
    ============================== */
 
-:where(blockquote, dd, dl, figure, menu, ol, ul, p) {
+:where(blockquote, dd, dl, menu, ol, ul, p) {
   margin-block: 0;
 }
 
@@ -74,34 +94,41 @@
    Content sectioning
    ============================== */
 
-:where(h1, h2, h3, h4, h5, h6, th) {
+:where(h2, h3, h4, h5, h6, th) {
   font-weight: 600;
   margin-block: 0;
 }
 
-:is(h1) {
+:where(h2, h3, h4, h5, h6):not(.wp-block-heading) {
+  font-size: 1em;
+}
+
+:where(h1) {
   font-size: var(--agisty-fs-xl, 1.618em);
   font-weight: 700;
+  margin-block: 0;
 }
 
-:is(h2) {
+:where(h2):is(.wp-block-heading) {
   font-size: var(--agisty-fs-lg, 1.5em);
-
-  &:is(.wp-block-heading) {
-    margin-block-start: var(--agisty-sb-lg);
-  }
+  margin-block-start: var(--agisty-sb-lg);
 }
 
-:is(h3) {
+:where(h3):is(.wp-block-heading) {
   font-size: 1.17em;
-
-  &:is(.wp-block-heading) {
-    margin-block-start: 1.618em;
-  }
+  margin-block-start: 1.618em;
 }
 
-:where(h4, h5, h6) {
+:where(h4, h5, h6):is(.wp-block-heading) {
   font-size: 1em;
+}
+
+/* ==============================
+   Text content
+   ============================== */
+
+.entry-content :is(figcaption) {
+  font-size: var(--agisty-fs-sm);
 }
 
 /* ==============================
@@ -112,6 +139,10 @@
   font-family: "__agisty-mono__", Menlo, ui-monospace, monospace;
   font-size: var(--agisty-fs-sm);
   font-style: normal;
+}
+
+:where(kbd) {
+  font-size: var(--agisty-fs-sm);
 }
 
 :where(math, time, td) {
@@ -135,15 +166,40 @@ ol li::marker {
   font-variant-position: sub;
 }
 
-/* 
-   Utilities
+/* ==============================
+   Table
    ============================== */
+
+.wp-block-table {
+  font-size: var(--agisty-fs-sm, 0.95em);
+}
+
+
+/* 
+   Others
+   ============================== */
+
+.flow-content > * + * {
+  margin-block-start: var(--agisty-sb-rg, 1em);
+  margin-block-start: 1lh;
+}
 
 .entry-content {
   line-height: var(--agisty-lh-lg, 1.618);
 }
 
-.flow-content > * + * {
-  margin-block-start: var(--agisty-sb-rg, 1em);
-  margin-block-start: 1lh;
+.entry-header__meta {
+  font-size: 1rem;
+}
+
+.wp-block-footnotes {
+  font-size: var(--agisty-fs-sm);
+}
+
+.wp-block-navigation :where(a) {
+  font-size: var(--agisty-fs-sm, 0.95em);
+}
+
+.agisty-copyright {
+  font-size: var(--agisty-fs-xm);
 }
