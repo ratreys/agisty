@@ -107,22 +107,32 @@ add_filter( 'post_class', function ( $classes ) {
  * 
  * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#settings_defaults
  * @link https://github.com/WordPress/gutenberg/pull/47404
+ * @link https://developer.wordpress.org/news/2024/07/15-ways-to-curate-the-wordpress-editing-experience/
  */
 add_filter( 'block_editor_settings_all', function ( $settings ) {
-	
+
 	$settings['enableOpenverseMediaCategory'] = false;
-	
+
 	return $settings;
 }, 10 );
 
 /**
  * Enable auto anchor generation for Heading blocks.
  * 
- * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#settings_defaults
+ * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/
  */
 add_filter( 'block_editor_settings_all', function ( $settings ) {
-	
+
 	$settings['generateAnchors'] = true;
-	
+
 	return $settings;
 }, 10 );
+
+/**
+ * Globally disable the Block Directory.
+ * 
+ * Prevent third-party blocks from appearing in the block inspector when performing search.
+ * 
+ * @link https://developer.wordpress.org/news/2024/07/15-ways-to-curate-the-wordpress-editing-experience/
+ */
+remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
