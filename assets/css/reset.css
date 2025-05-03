@@ -16,7 +16,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 /* ==============================
@@ -24,7 +24,6 @@
    ============================== */
 
 html {
-  box-sizing: border-box;
   scroll-behavior: smooth;
   scroll-padding-block-start: 24px;
 
@@ -75,7 +74,7 @@ html {
    Sectioning root
    ============================== */
 
-:where(body) {
+body {
   line-height: 1.5;
   min-height: 100vh; /* Fallback */
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
@@ -86,7 +85,7 @@ html {
    Content sectioning
    ============================== */
 
-:where(address) {
+address {
   font-style: normal;
 }
 
@@ -105,7 +104,7 @@ html {
   margin-inline: 0;
 }
 
-:where(figure) {
+figure {
   margin: 0;
   margin-block: 0;
   margin-inline: 0;
@@ -122,12 +121,12 @@ html {
   }
 }
 
-:where(p) {
+p {
   margin-block-end: 0;
   overflow-wrap: break-word;
 }
 
-:where(pre) {
+pre {
   margin-bottom: 0;
   overflow: auto;
 }
@@ -136,7 +135,7 @@ html {
    Inline text semantics
    ============================== */
 
-:where(abbr[title]) {
+abbr[title] {
   cursor: help;
   text-decoration: underline 0.125rem dotted currentcolor;
   text-decoration-skip-ink: none;
@@ -155,7 +154,7 @@ html {
  *
  * https://www.youtube.com/watch?v=345V2MU3E_w
  */
-:where(img) {
+img {
   background-repeat: no-repeat;
   background-size: cover;
   font-style: italic;
