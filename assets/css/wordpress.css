@@ -132,12 +132,12 @@ kbd {
   }
 
   > summary {
-    border: 1px solid var(--wp--custom--border);
-    border-radius: var(--_radius);
     display: flex;
-    font-weight: 600;
     justify-content: space-between;
     list-style-type: none;
+    font-weight: 600;
+    border: 1px solid var(--wp--custom--border);
+    border-radius: var(--_radius);
     padding: var(--_padding);
     transition: border-radius var(--_duration);
   }
@@ -173,8 +173,8 @@ kbd {
     border: 1px solid var(--wp--custom--border);
 
     > summary {
-      background-color: var(--wp--custom--guide);
       border: none;
+      background-color: var(--wp--custom--guide);
       border-block-end: 1px solid var(--wp--custom--border);
       border-end-start-radius: 0;
       border-end-end-radius: 0;
@@ -265,8 +265,8 @@ tfoot {
    ============================== */
 
 .entry-content :is(figcaption) {
-  border-block-end: 1px solid var(--wp--custom--border);
   line-height: var(--agisty-lh-sm, 1.2);
+  border-block-end: 1px solid var(--wp--custom--border);
   margin-bottom: 0;
   margin-top: 1rem;
   padding-block-end: 0.5rem;
@@ -282,6 +282,7 @@ tfoot {
 
   &:is(:hover) {
     background-color: var(--_btn-hover);
+    text-decoration: none;
   }
 
   &:is(:focus, :focus-visible) {
@@ -329,11 +330,6 @@ tfoot {
   top: 5px;
   width: auto;
   z-index: 100000;
-}
-
-.is-layout-flow > * + * {
-  margin-block-start: var(--agisty-sb-rg, 1em); /* Fallback. */
-  margin-block-start: 1lh;
 }
 
 /* Create a root stacking context */
