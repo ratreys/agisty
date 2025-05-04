@@ -21,7 +21,7 @@
    ============================== */
 
 a:where(:not(.wp-element-button)) {
-  color: var(--wp--custom--link);
+  color: var(--wp--custom--link, inherit);
   text-decoration: underline 1px solid currentcolor;
   text-underline-offset: 0.15em;
 
@@ -48,7 +48,7 @@ a:where(:not(.wp-element-button)) {
   border: 1px solid oklch(0.89 0 0);
 }
 
-:where(.wp-block-code) {
+.wp-block-code {
   background-color: oklch(1 0 0);
   border: 1px solid var(--wp--custom--border);
   line-height: inherit;
@@ -64,7 +64,7 @@ a:where(:not(.wp-element-button)) {
  *
  * https://dylanatsmith.com/wrote/styling-the-kbd-element
  */
-:where(kbd) {
+kbd {
   background-color: oklch(0.95 0 0);
   border: solid var(--wp--custom--smoke);
   border-radius: 4px;
@@ -118,7 +118,7 @@ a:where(:not(.wp-element-button)) {
  * https://www.youtube.com/watch?v=Vzj3jSUbMtI
  * https://nerdy.dev/nice-details
  */
-:where(.wp-block-details) {
+.wp-block-details {
   --_duration: 200ms;
   --_padding: 24px;
   --_radius: 8px;
@@ -199,7 +199,7 @@ a:where(:not(.wp-element-button)) {
    Quote
    ============================== */
 
-:not(.wp-block-pullquote) > blockquote {
+:is(blockquote, .wp-block-quote) {
   background-color: oklch(1 0 0);
   border-inline-start: 2px solid var(--wp--custom--smoke);
   line-height: inherit;
@@ -219,11 +219,9 @@ blockquote > cite {
    ============================== */
 
 :root :where(.wp-block-pullquote) {
-  background-color: oklch(1 0 0);
-  border-inline-start: 2px solid var(--wp--custom--smoke);
   line-height: inherit;
   margin-bottom: 0;
-  padding: 24px;
+  padding-block: 0;
   text-align: left;
 }
 
@@ -233,24 +231,29 @@ blockquote > cite {
    ============================== */
 
 table {
+  border-color: var(--wp--custom--border);
+  border-spacing: 0;
+}
+
+thead {
+  background-color: var(--wp--custom--guide);
+  border-block-end: 3px solid var(--wp--custom--black);
+}
+
+tbody {
   background-color: oklch(1 0 0);
+}
+
+tfoot {
+  background-color: var(--wp--custom--white);
+  border-block-start: 2px solid var(--wp--custom--black);
 }
 
 .wp-block-table {
   caption-side: bottom;
 
-  thead {
-    background-color: var(--wp--custom--guide);
-    border-block-end: 3px solid var(--wp--custom--black);
-  }
-
-  tfoot {
-    border-block-start: 2px solid var(--wp--custom--black);
-    color: var(--wp--custom--smoke);
-  }
-
   /* Needs higher specificity to override default styling. */
-  :is(tr, th, td) {
+  :is(th, td) {
     border: 1px solid var(--wp--custom--border);
     padding-block: 4px;
     padding-inline: 8px;
