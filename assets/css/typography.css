@@ -116,7 +116,6 @@ body {
   font-size: var(--agisty-fs-sm, 0.95em);
 }
 
-:where(kbd) {
 kbd {
   font-family: inherit;
   font-size: var(--agisty-fs-sm, 0.95em);
