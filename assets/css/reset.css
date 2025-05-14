@@ -19,7 +19,7 @@
   box-sizing: border-box;
 
   /**
-   * Resources on doing `prefers-reduced-motion` correctly.
+   * Resources on doing prefers-reduced-motion correctly:
    *
    * https://web.dev/articles/prefers-reduced-motion
    * https://webkit.org/blog/7551/responsive-design-for-motion/
@@ -70,7 +70,6 @@ body {
   line-height: 1.5;
   min-height: 100vh; /* Fallback */
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
-  overflow-x: clip;
 }
 
 /* ==============================
@@ -159,7 +158,7 @@ img {
    Embedded content
    ============================== */
 
-/* Make images and other replaced elements easier to work with. */
+/* Make other replaced elements easier to work with. */
 :where(iframe, svg) {
   display: block;
   vertical-align: middle;
