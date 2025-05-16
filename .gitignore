@@ -1,6 +1,5 @@
+.github/
 .vscode/
 assets/fonts/
 node_modules/
 vendor/
-
-.cursorrules
