@@ -5,7 +5,7 @@
  * that works across many devices and browser versions.
  *
  * Resources:
- * 
+ *
  * https://piccalil.li/blog/a-modern-css-reset
  * https://www.joshwcomeau.com/css/custom-css-reset/
  * https://getbootstrap.com/docs/5.3/content/reboot/
@@ -23,7 +23,7 @@
    *
    * https://web.dev/articles/prefers-reduced-motion
    * https://webkit.org/blog/7551/responsive-design-for-motion/
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion 
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
    */
   @media (prefers-reduced-motion: reduce) {
     animation-delay: -1ms !important;
@@ -45,10 +45,10 @@ html {
   scroll-behavior: smooth;
   scroll-padding-block-start: 24px;
 
-  /** 
+  /**
    * Animate to or from `height: auto` and other intrinsic sizes.
    * (Limited Availability)
-   * 
+   *
    * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
    */
   interpolate-size: allow-keywords;
@@ -68,7 +68,7 @@ html {
 
 body {
   line-height: 1.5;
-  min-height: 100vh; /* Fallback */
+  min-height: 100vh;  /* Fallback */
   min-height: 100svh; /* https://www.youtube.com/watch?v=ru3U8MHbFFI */
 }
 
