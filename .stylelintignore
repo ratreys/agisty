@@ -1,0 +1,13 @@
+# Directories to ignore
+.github/
+.vscode/
+assets/fonts/
+node_modules/
+vendor/
+LICENSE
+composer.lock
+pnpm-lock.yaml
+*.php
+*.js
+*.json
+*.txt
