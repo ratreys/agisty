@@ -1,5 +1,5 @@
-.github/
-.vscode/
-assets/fonts/
-node_modules/
-vendor/
+.github
+.vscode
+node_modules
+vendor
+assets/fonts
