@@ -1,8 +1,27 @@
-/** 
+/**
  * Typography and Opentype Default Stylesheet (TODS)
  *
  * https://github.com/clagnut/TODS
+ * https://github.com/github/mona-sans
  */
+
+@font-face {
+  font-family: '__body__';
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: fallback;
+  src:
+    url(../fonts/MonaSansVF.woff2) format(woff2) tech(variations),
+    url(../fonts/MonaSansVF.woff2) format('woff2-variations');
+}
+
+@font-face {
+  font-family: '__mono__';
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+  src: url(../fonts/JetBrainsMono-Rg.woff2) format(woff2);
+}
 
 /* ==============================
    CSS variables
@@ -25,7 +44,7 @@
  * https://clamp.font-size.app/
  * https://grtcalculator.com/styles/
  * https://utopia.fyi
- */ 
+ */
 :root {
 
   /* fs for font-size  */
@@ -50,7 +69,7 @@
    ============================== */
 
 body {
-  font-family: system-ui, ui-sans-serif, sans-serif;
+  font-family: __body__, system-ui, ui-sans-serif, sans-serif;
   font-size: var(--agisty-fs-rg, 1rem);
   font-size-adjust: from-font;
   font-weight: 400;
@@ -112,7 +131,7 @@ body {
    ============================== */
 
 :where(code, pre) {
-  font-family: ui-monospace, monospace;
+  font-family: __mono__, ui-monospace, monospace;
   font-size: var(--agisty-fs-sm, 0.95em);
 }
 
