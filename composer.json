@@ -1,24 +1,43 @@
 {
-  "name": "selftawt/agisty",
-  "description": "Best damn WordPress theme on the planet.",
+  "name": "ratreys/agisty",
+  "description": "A hybrid WordPress theme focusing on readability, performance and accessibility",
   "type": "wordpress-theme",
-  "license": "GPLv3.0",
+  "keywords": ["hybrid", "wordpress", "theme", "readability", "accessibility", "performance"],
+  "homepage": "https://github.com/reysanchez/agisty",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Rey Sanchez",
-      "email": "reysanchez.me@gmail.com"
+      "email": "reysanchez.me@gmail.com",
+      "homepage": "https://selftawt.com",
+      "role": "Developer"
     }
   ],
+  "require": {
+    "php": ">=8.1",
+    "composer/installers": "^2.0"
+  },
   "require-dev": {
-    "pantheon-systems/pantheon-wp-coding-standards": "^2.0"
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "pantheon-systems/pantheon-wp-coding-standards": "^2.0",
+    "phpcompatibility/phpcompatibility-wp": "^2.1"
   },
   "config": {
     "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "composer/installers": true
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true
   },
   "scripts": {
     "phpcs": "vendor/bin/phpcs -s .",
-    "phpcbf": "vendor/bin/phpcbf ."
+    "phpcbf": "vendor/bin/phpcbf .",
+    "lint": [
+      "@phpcs"
+    ],
+    "fix": [
+      "@phpcbf"
+    ]
   }
 }
