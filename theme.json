@@ -35,7 +35,7 @@
       "customSpacingSize": false,
       "defaultSpacingSizes": false,
       "units": ["px", "em", "rem"],
-      "spacingScale": null
+      "spacingSizes": null
     },
     "typography": {
       "customFontSize": false,
