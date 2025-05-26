@@ -1,7 +1,7 @@
 <?php
 /**
  * WP core cleanup.
- * 
+ *
  * @package Agisty
  */
 
@@ -48,34 +48,34 @@ add_filter( 'the_generator', '__return_empty_string' );
  */
 add_filter( 'body_class', function ( $classes ) {
 
-	if ( ! is_array( $classes ) ) {
-		return $classes;
-	}
+    if ( ! is_array( $classes ) ) {
+        return $classes;
+    }
 
-	$allowed_classes = [
-		'admin-bar',
-		'archive',
-		'attachment',
-		'author',
-		'blog',
-		'category',
-		'date',
-		'error404',
-		'home',
-		'logged-in',
-		'no-customize-support',
-		'page',
-		'paged',
-		'privacy-policy',
-		'search',
-		'single',
-		'wp-custom-logo',
-		'wp-embed-responsive',
-		'wp-singular',
-		'wp-theme-' . sanitize_html_class( get_template() ),
-	];
+    $allowed_classes = [
+        'admin-bar',
+        'archive',
+        'attachment',
+        'author',
+        'blog',
+        'category',
+        'date',
+        'error404',
+        'home',
+        'logged-in',
+        'no-customize-support',
+        'page',
+        'paged',
+        'privacy-policy',
+        'search',
+        'single',
+        'wp-custom-logo',
+        'wp-embed-responsive',
+        'wp-singular',
+        'wp-theme-' . sanitize_html_class( get_template() ),
+    ];
 
-	return array_intersect( $classes, $allowed_classes );
+    return array_intersect( $classes, $allowed_classes );
 }, 20 );
 
 /**
@@ -86,25 +86,25 @@ add_filter( 'body_class', function ( $classes ) {
  */
 add_filter( 'post_class', function ( $classes ) {
 
-	if ( ! is_array( $classes ) ) {
-		return $classes;
-	}
+    if ( ! is_array( $classes ) ) {
+        return $classes;
+    }
 
-	$allowed_classes = [
-		'has-post-thumbnail',
-		'post-password-protected',
-		'post-password-required',
-		'status-sticky',
-		'sticky',
-		'type-' . sanitize_html_class( get_post_type() ),
-	];
+    $allowed_classes = [
+        'has-post-thumbnail',
+        'post-password-protected',
+        'post-password-required',
+        'status-sticky',
+        'sticky',
+        'type-' . sanitize_html_class( get_post_type() ),
+    ];
 
-	return array_intersect( $classes, $allowed_classes );
-} );
+    return array_intersect( $classes, $allowed_classes );
+});
 
 /**
  * Disable the Openverse media category in the inserter.
- * 
+ *
  * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#settings_defaults
  * @link https://github.com/WordPress/gutenberg/pull/47404
  * @link https://developer.wordpress.org/news/2024/07/15-ways-to-curate-the-wordpress-editing-experience/
@@ -118,7 +118,7 @@ add_filter( 'block_editor_settings_all', function ( $settings ) {
 
 /**
  * Enable auto anchor generation for Heading blocks.
- * 
+ *
  * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/
  */
 add_filter( 'block_editor_settings_all', function ( $settings ) {
@@ -130,9 +130,9 @@ add_filter( 'block_editor_settings_all', function ( $settings ) {
 
 /**
  * Globally disable the Block Directory.
- * 
+ *
  * Prevent third-party blocks from appearing in the block inspector when performing search.
- * 
+ *
  * @link https://developer.wordpress.org/news/2024/07/15-ways-to-curate-the-wordpress-editing-experience/
  */
 remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
