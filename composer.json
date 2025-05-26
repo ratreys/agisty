@@ -1,16 +1,20 @@
 {
   "name": "ratreys/agisty",
-  "description": "A hybrid WordPress theme focusing on readability, performance and accessibility",
+  "description": "A hybrid WordPress theme focusing on readability, performance, and accessibility",
   "type": "wordpress-theme",
   "keywords": ["hybrid", "wordpress", "theme", "readability", "accessibility", "performance"],
-  "homepage": "https://github.com/reysanchez/agisty",
+  "homepage": "https://github.com/ratreys/agisty",
   "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Rey Sanchez",
       "email": "reysanchez.me@gmail.com",
       "homepage": "https://selftawt.com",
-      "role": "Developer"
+      "role": "Lead Developer"
+    },
+    {
+      "name": "Contributors",
+      "homepage": "https://github.com/ratreys/agisty/graphs/contributors"
     }
   ],
   "require": {
@@ -20,7 +24,9 @@
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
     "pantheon-systems/pantheon-wp-coding-standards": "^2.0",
-    "phpcompatibility/phpcompatibility-wp": "^2.1"
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "phpstan/phpdoc-parser": "^2.1",
+    "slevomat/coding-standard": "^8.18"
   },
   "config": {
     "allow-plugins": {
@@ -31,13 +37,7 @@
     "sort-packages": true
   },
   "scripts": {
-    "phpcs": "vendor/bin/phpcs -s .",
-    "phpcbf": "vendor/bin/phpcbf .",
-    "lint": [
-      "@phpcs"
-    ],
-    "fix": [
-      "@phpcbf"
-    ]
+    "lint": "vendor/bin/phpcs -s .",
+    "lint-fix": "vendor/bin/phpcbf ."
   }
 }
