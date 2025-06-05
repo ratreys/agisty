@@ -1,5 +1,5 @@
 /**
- * CSS reset specific for WordPress hybrid themes.
+ * CSS reset specific for hybrid WordPress themes.
  *
  * This is to provide consistent, and simple baseline CSS
  * that works across many devices and browser versions.
@@ -13,30 +13,6 @@
  * https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
  */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-
-  /**
-   * Resources on doing prefers-reduced-motion correctly:
-   *
-   * https://web.dev/articles/prefers-reduced-motion
-   * https://webkit.org/blog/7551/responsive-design-for-motion/
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
-   */
-  @media (prefers-reduced-motion: reduce) {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    interpolate-size: numeric-only !important;
-    scroll-behavior: auto !important;
-    transition-delay: -1ms !important;
-    transition-duration: 1ms !important;
-  }
-}
-
 /* ==============================
    Main root
    ============================== */
@@ -46,7 +22,7 @@ html {
   scroll-padding-block-start: 24px;
 
   /**
-   * Animate to or from `height: auto` and other intrinsic sizes.
+   * Animate to or from height: auto and other intrinsic sizes.
    * (Limited Availability)
    *
    * https://12daysofweb.dev/2024/calc-size-and-interpolate-size/
@@ -95,10 +71,12 @@ address {
   margin-inline: 0;
 }
 
+/**
+ * 1. Override user agent styles.
+ */
 figure {
-  margin: 0; /* Needed to remove WordPress added margin. */
-  margin-block: 0;
-  margin-inline: 0;
+  margin-block: 0;  /* 1 */
+  margin-inline: 0; /* 1 */
   vertical-align: middle;
 }
 
@@ -111,6 +89,7 @@ figure {
     padding-inline: 0;
   }
 }
+
 
 p {
   margin-block-end: 0;
@@ -161,7 +140,6 @@ img {
 /* Make other replaced elements easier to work with. */
 :where(iframe, svg) {
   display: block;
-  vertical-align: middle;
 }
 
 /* ==============================
@@ -172,4 +150,26 @@ img {
   font-family: inherit;
   font-size: inherit;
   line-height: 1.2;
+}
+
+/**
+  * Resources on doing prefers-reduced-motion correctly:
+  *
+  * https://web.dev/articles/prefers-reduced-motion
+  * https://webkit.org/blog/7551/responsive-design-for-motion/
+  * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+  */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    interpolate-size: numeric-only !important;
+    scroll-behavior: auto !important;
+    transition-delay: -1ms !important;
+    transition-duration: 1ms !important;
+  }
 }
