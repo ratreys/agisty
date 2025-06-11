@@ -3,20 +3,26 @@
 
 # Coding Standards
 # https://developer.wordpress.org/coding-standards/wordpress-coding-standards/
-# https://www.php-fig.org/psr/psr-12/
 
 root = true
 
 [*]
 charset = utf-8
 end_of_line = lf
-indent_style = space
-indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
+indent_style = tab
+
+# Code MUST use an indent of 4 spaces for each indent level, and MUST NOT use tabs for indenting.
+# https://www.php-fig.org/per/coding-style/
 
 [*.php]
+indent_style = space
 indent_size = 4
+
+[*.{css,yaml,yml}]
+indent_style = space
+indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
