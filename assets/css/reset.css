@@ -71,12 +71,9 @@ address {
   margin-inline: 0;
 }
 
-/**
- * 1. Override user agent styles.
- */
 figure {
-  margin-block: 0;  /* 1 */
-  margin-inline: 0; /* 1 */
+  margin-block: 0;
+  margin-inline: 0;
   vertical-align: middle;
 }
 
@@ -89,7 +86,6 @@ figure {
     padding-inline: 0;
   }
 }
-
 
 p {
   margin-block-end: 0;
